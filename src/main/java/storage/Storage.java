@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import Game.*;
+import game.*;
 
 public class Storage {
     private static File save;
@@ -34,7 +34,7 @@ public class Storage {
             while (s.hasNext()) {
                 String reading = s.nextLine();
                 if (reading.equals("Hang man")) {
-                    games.add(new HangMan());
+                    games.add(new HangmanGame());
                 }
             }
         } catch (IOException e) {
