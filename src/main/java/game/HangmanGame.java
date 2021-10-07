@@ -160,4 +160,3 @@ public class HangmanGame extends Game {
     }
 
 }
-
