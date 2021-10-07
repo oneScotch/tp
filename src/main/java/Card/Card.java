@@ -1,4 +1,4 @@
-package Card;
+package card;
 
 public class Card {
     private String codeTip;
