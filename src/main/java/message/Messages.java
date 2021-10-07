@@ -9,7 +9,10 @@ public class Messages {
             +"| |   / _ \\ / _` |/ _ \\ | |_| | | | | '_ \\| __|\n"
             +"| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_\n"
             +" \\____\\___/ \\__,_|\\___| |_| |_|\\__,_|_| |_|\\__|\n";
+
     public static final String MESSAGE_WELCOME = "Hello from\n" + logo;
+
     public static final String MESSAGE_GREET = "Hello! Welcome to Code Hunt\nAre you ready to play?";
+
     public static final String MESSAGE_GOODBYE = "Bye. Hope to see you again soon!";
 }

@@ -3,6 +3,7 @@ package Game;
 import java.util.ArrayList;
 
 public class GameRecord {
+
     public static ArrayList<Game> games;
 
     public GameRecord() {
@@ -12,5 +13,4 @@ public class GameRecord {
     public GameRecord(ArrayList<Game> games) {
         this.games = games;
     }
-
 }

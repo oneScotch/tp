@@ -1,3 +1,5 @@
+package Storage;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -42,6 +44,7 @@ public class Storage {
     }
 
     public void writeToFile(GameRecord games) throws IOException {
+
         try {
             FileWriter fw = new FileWriter(save);
             for (Game game : games.games) {

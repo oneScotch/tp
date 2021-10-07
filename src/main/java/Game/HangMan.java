@@ -10,6 +10,7 @@ public class HangMan extends Game {
     public String getName() {
         return this.name;
     }
+
     public void execute() {
 
     }

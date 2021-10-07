@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class GameMainMenu {
     private static final String DIVIDER = "____________________________________________________________";
+
     private final Scanner in;
 
     public GameMainMenu() {
@@ -15,6 +16,7 @@ public class GameMainMenu {
     public GameMainMenu(InputStream in) {
         this.in = new Scanner(in);
     }
+    
     public void showLine() {
         System.out.println(DIVIDER);
 
@@ -24,6 +26,7 @@ public class GameMainMenu {
         showToUser(Messages.MESSAGE_WELCOME, DIVIDER, Messages.MESSAGE_GREET, DIVIDER);
 
     }
+
     public void showGoodbyeMessage() {
         showToUser(Messages.MESSAGE_GOODBYE);
     }

@@ -1,4 +1,4 @@
-package main.java.Card;
+package Card;
 
 public class Card {
     private String codeTip;
@@ -8,6 +8,7 @@ public class Card {
         this.codeTip = codeTip;
         this.cardType = cardType;
     }
+
 
     public String getCodeTip() {
         return codeTip;
