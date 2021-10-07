@@ -1,10 +1,13 @@
 package card;
 
+import card.Card;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CardManager {
     private int cardCount = 0;
+
     private List<Card> cards;
 
     public CardManager(List<Card> cards) {

@@ -3,7 +3,6 @@ package game;
 import java.util.ArrayList;
 
 public class GameRecord {
-
     public static ArrayList<Game> games;
 
     public GameRecord() {

@@ -48,6 +48,11 @@ public class HangmanGame extends Game {
         }
     }
 
+    @Override
+    public String getName() {
+        return this.secretWord;
+    }
+
     public void displayGameDetails() {
         System.out.println(LOGO);
         System.out.println(GAME_RULES);
