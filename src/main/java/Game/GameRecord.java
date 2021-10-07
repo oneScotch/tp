@@ -1,10 +1,16 @@
 package Game;
 
-public class GameRecord {
-    private static ArrayList<Game> games;
+import java.util.ArrayList;
 
-    GameRecord() {
-        this.games = new ArrayList<Games>();
+public class GameRecord {
+    public static ArrayList<Game> games;
+
+    public GameRecord() {
+        this.games = new ArrayList<Game>();
+    }
+
+    public GameRecord(ArrayList<Game> games) {
+        this.games = games;
     }
 
 }

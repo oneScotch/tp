@@ -1,12 +1,15 @@
 package Game;
 
 public class HangMan extends Game {
-    static final name = "Hang man";
+    static final String name = "Hang man";
 
-    HangMan() {
+    public HangMan() {
 
     }
 
+    public String getName() {
+        return this.name;
+    }
     public void execute() {
 
     }
