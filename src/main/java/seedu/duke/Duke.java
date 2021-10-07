@@ -1,5 +1,7 @@
 package seedu.duke;
 
+import UI.GameMainMenu;
+import message.Messages;
 import java.util.Scanner;
 
 public class Duke {
@@ -7,15 +9,21 @@ public class Duke {
      * Main entry-point for the java.duke.Duke application.
      */
     public static void main(String[] args) {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
-        System.out.println("What is your name?");
+        boolean isExit = false;
+        GameMainMenu ui = new GameMainMenu();
 
-        Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+        ui.showWelcome();
+
+        while(!isExit) {
+            isExit = true;
+        }
+
+        ui.showExitMessage();
     }
+
+    public String showByeMessage() {
+        return Messages.MESSAGE_GOODBYE;
+    }
+
+
 }

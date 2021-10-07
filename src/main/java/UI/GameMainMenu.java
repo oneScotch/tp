@@ -1,10 +1,15 @@
 package UI;
-import message.Message;
+import message.Messages;
 public class GameMainMenu {
     public void showWelcome() {
-        showToUser(Message.MESSAGE_WELCOME,  Message.MESSAGE_GREET);
+        showToUser(Messages.MESSAGE_WELCOME,  Messages.MESSAGE_GREET);
 
     }
+
+    public void showExitMessage() {
+        showToUser(Messages.MESSAGE_GOODBYE);
+    }
+
     private void showToUser(String... message) {
         for (String m : message) {
             String formatted = m.replace("\n", System.lineSeparator());
