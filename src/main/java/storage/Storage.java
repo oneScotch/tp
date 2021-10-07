@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 import game.*;
+
 public class Storage {
     private static File save;
     private static String path;
@@ -22,6 +23,7 @@ public class Storage {
             if (!record.exists()) {
                 record.mkdir();
             }
+
             save = new File (path);
             if (!save.exists()) {
                 save.createNewFile();

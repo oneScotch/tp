@@ -2,5 +2,4 @@ package game;
 
 class GameTest {
 
-
 }
