@@ -8,6 +8,7 @@ public class HangmanGame extends Game {
     public static final String WORDS[] = {"algorithm", "argument", "arrays", "arithmetic operators",
             "assignment operators", "c", "loops", "java", "linux", "python", "statement", "variable",
             "while"};
+    public static final String name = "Hangman";
     public static final Random RANDOM = new Random();
     public static final int MAX_TRIES = 5;
     public static final String LOGO = "\n" +
@@ -46,6 +47,11 @@ public class HangmanGame extends Game {
             hangmanGame.play();
             isPlay = startNewGame();
         }
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 
     public void displayGameDetails() {
