@@ -6,23 +6,23 @@ import java.util.Scanner;
 public class HangmanGame extends Game {
     // Coding Terminologies
     public static final String WORDS[] = {"algorithm", "argument", "arrays", "arithmetic operators",
-        "assignment operators", "c", "loops", "java", "linux", "python", "statement", "variable",
-        "while"};
+            "assignment operators", "c", "loops", "java", "linux", "python", "statement", "variable",
+            "while"};
     public static final Random RANDOM = new Random();
     public static final int MAX_TRIES = 5;
     public static final String LOGO = "\n" +
-        "        .-------------------------------------------------------------------------------.\n" +
-        "        |      _      _                                                                  |\n" +
-        "        |     | |    | |   __ _    _ __      __ _        /\\/\\      __ _    _ __          |\n" +
-        "        |     | |----| |  / _  |  |  _ \\    / _` |      /    \\    / _  |  |  _  \\        |\n" +
-        "        |     | |----| | | (_| |  | | | |  | (_| |     / /\\/\\ |  | (_| |  | | | |        |\n" +
-        "        |     |_|    |_|  \\_ _ |  |_| |_|   \\__, |     \\/    \\/   \\_ _ |  |_| |_|        |\n" +
-        "        |                                    |___/                                       |\n" +
-        "        .--------------------------------------------------------------------------------.\n";
+            "        .-------------------------------------------------------------------------------.\n" +
+            "        |      _      _                                                                  |\n" +
+            "        |     | |    | |   __ _    _ __      __ _        /\\/\\      __ _    _ __          |\n" +
+            "        |     | |----| |  / _  |  |  _ \\    / _` |      /    \\    / _  |  |  _  \\        |\n" +
+            "        |     | |----| | | (_| |  | | | |  | (_| |     / /\\/\\ |  | (_| |  | | | |        |\n" +
+            "        |     |_|    |_|  \\_ _ |  |_| |_|   \\__, |     \\/    \\/   \\_ _ |  |_| |_|        |\n" +
+            "        |                                    |___/                                       |\n" +
+            "        .--------------------------------------------------------------------------------.\n";
     public static final String GAME_RULES = "The purpose of this game is to guess an coding terminology, secretly chosen by the application\n\n" +
-        "You have to guess one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n" +
-        "Enter a lower-case letter and don't forget to enter key after each guess\n\n" +
-        "Let's play the game!\n\n";
+            "You have to guess one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n" +
+            "Enter a lower-case letter and don't forget to enter key after each guess\n\n" +
+            "Let's play the game!\n\n";
     Scanner in = new Scanner(System.in);
     private String secretWord;
     private int length;
@@ -129,26 +129,26 @@ public class HangmanGame extends Game {
         String[] bodyPart = {"", "", "", ""};
 
         switch(remainingGuess) {
-        case 0:
-            bodyPart[3] = " |";
-        case 1:
-            bodyPart[2] = "/|\\";
-        case 2:
-            bodyPart[1] = "/|\\";
-        case 3:
-            bodyPart[0] = "( )";
-            break;
+            case 0:
+                bodyPart[3] = " |";
+            case 1:
+                bodyPart[2] = "/|\\";
+            case 2:
+                bodyPart[1] = "/|\\";
+            case 3:
+                bodyPart[0] = "( )";
+                break;
         }
 
         String hangMan = "--------------"
-            + "\n  |       " + bodyPart[3]
-            + "\n  |       " + bodyPart[3]
-            + "\n  |       " + bodyPart[0]
-            + "\n  |       " + bodyPart[1]
-            + "\n  |       " + bodyPart[2]
-            + "\n  |\n"
-            + "\n  |\n"
-            + "--------------\n";
+                + "\n  |       " + bodyPart[3]
+                + "\n  |       " + bodyPart[3]
+                + "\n  |       " + bodyPart[0]
+                + "\n  |       " + bodyPart[1]
+                + "\n  |       " + bodyPart[2]
+                + "\n  |\n"
+                + "\n  |\n"
+                + "--------------\n";
 
         System.out.println(hangMan);
     }

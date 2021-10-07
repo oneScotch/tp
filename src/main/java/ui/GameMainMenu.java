@@ -16,7 +16,7 @@ public class GameMainMenu {
     public GameMainMenu(InputStream in) {
         this.in = new Scanner(in);
     }
-
+    
     public void showLine() {
         System.out.println(DIVIDER);
 
