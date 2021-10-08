@@ -6,13 +6,15 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import game.*;
+import game.Game;
+import game.GameRecord;
+import game.HangmanGame;
 
 public class Storage {
     private static File save;
     private static String path;
 
-    public Storage(String filePath){
+    public Storage(String filePath) {
         path = filePath;
     }
 
@@ -24,7 +26,7 @@ public class Storage {
                 record.mkdir();
             }
 
-            save = new File (path);
+            save = new File(path);
             if (!save.exists()) {
                 save.createNewFile();
             }
@@ -48,8 +50,9 @@ public class Storage {
         try {
             FileWriter fw = new FileWriter(save);
             for (Game game : games.games) {
-                if (game.getName().equals("Hang man"));
-                fw.write("Hang man\n");
+                if (game.getName().equals("Hang man")) {
+                    fw.write("Hang man\n");
+                }
             }
             fw.close();
         } catch (IOException e) {
