@@ -2,7 +2,7 @@ package message;
 
 public class Messages {
     /**
-     * Store all the messages used in this program
+     * Store all the messages used in this program.
      */
     private static final String logo = "____          _        _   _             _  \n"
             + " / ___|___   __| | ___  | | | |_   _ _ __ | |_ \n"
