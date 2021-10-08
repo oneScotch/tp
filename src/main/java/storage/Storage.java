@@ -50,8 +50,8 @@ public class Storage {
         try {
             FileWriter fw = new FileWriter(save);
             for (Game game : games.games) {
-                if (game.getName().equals("Hang man")) {
-                    fw.write("Hang man\n");
+                if (game.getName().equals("Hang Man")) {
+                    fw.write("Hang Man\n");
                 }
             }
             fw.close();

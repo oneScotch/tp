@@ -52,7 +52,7 @@ public class HangmanGame extends Game {
 
     @Override
     public String getName() {
-        return this.secretWord;
+        return "Hang Man";
     }
     
     public void displayGameDetails() {
@@ -135,18 +135,26 @@ public class HangmanGame extends Game {
     public void displayMan(int remainingGuess) {
         String[] bodyPart = {"", "", "", ""};
 
-        switch (remainingGuess) {
-        case 0:
-            bodyPart[3] = " |";
-        case 1:
-            bodyPart[2] = "/|\\";
-        case 2:
-            bodyPart[1] = "/|\\";
-        case 3:
+        if(remainingGuess == 0) {
             bodyPart[0] = "( )";
-            break;
-        default:
-            break;
+            bodyPart[1] = "/|\\";
+            bodyPart[2] = "/|\\";
+            bodyPart[3] = " |";
+        }
+
+        if(remainingGuess == 1) {
+            bodyPart[0] = "( )";
+            bodyPart[1] = "/|\\";
+            bodyPart[2] = "/|\\";
+        }
+
+        if(remainingGuess == 2) {
+            bodyPart[0] = "( )";
+            bodyPart[1] = "/|\\";
+        }
+
+        if(remainingGuess == 3) {
+            bodyPart[0] = "( )";
         }
 
         String hangMan = "--------------"
