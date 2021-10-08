@@ -2,7 +2,6 @@ package card;
 
 import org.junit.jupiter.api.Assertions;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
     public void testOutput() {
