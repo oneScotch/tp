@@ -1,4 +1,4 @@
-package card;
+package data.card;
 
 public class Card {
     private String codeTip;
