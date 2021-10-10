@@ -14,7 +14,6 @@ public class Player {
         boolean canBeExchanged = cardsCollected.exchange(cardID);
         if (canBeExchanged) {
             System.out.println("Sure, you successfully use one card to get the tip!");
-            // print tip
         } else {
             System.out.println("Ops, it seems that you have already used that card, please choose another one");
         }

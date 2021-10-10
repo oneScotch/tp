@@ -21,10 +21,8 @@ public class Card {
         isUsed = true;
     }
 
-    //可以打成矩形框吗
     @Override
     public String toString() {
         return getContent();
     }
-
 }

@@ -36,11 +36,11 @@ public class CardManager {
         }
     }
 
-    public void ListCards(List<Card> cards) {
+    public void listCards(List<Card> cards) {
         int len = cards.size();
         for (int i = 0; i < len; i++) {
             Card card = cards.get(i);
-            String label = card.checkIfIsUsed()? MARK_USED: MARK_NOT_USED;
+            String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
             int id = i + 1;
             System.out.println(id + ". " + cards.get(i) + " " + label);
         }
@@ -48,17 +48,17 @@ public class CardManager {
 
     public Card deleteCard(int id) {
         System.out.println("Your card " + id + " : " + cards.get(id) + " has been removed!");
-        return cards.remove(id-1);
+        return cards.remove(id - 1);
     }
 
     public void transferTo(CardManager cardsToTransfer) {
-        Card cardGet = cards.remove(0);   //remove form the start of the cardsList
-        cardsToTransfer.add(cardGet);  //add to the end of the cardsCollectedList
+        Card cardGet = cards.remove(0);
+        cardsToTransfer.add(cardGet);
     }
 
     public boolean exchange(int cardID) {
         boolean canBeExchanged = true;
-        Card cardSelected = cards.get(cardID-1);
+        Card cardSelected = cards.get(cardID - 1);
         if (cardSelected.checkIfIsUsed()) {
             canBeExchanged = false;
         } else {
