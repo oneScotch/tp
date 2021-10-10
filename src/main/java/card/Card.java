@@ -1,24 +1,30 @@
 package card;
 
 public class Card {
-    private String codeTip;
-    private int cardType;
+    private String content;
+    private boolean isUsed;
 
-    public Card(String codeTip, int cardType) {
-        this.codeTip = codeTip;
-        this.cardType = cardType;
+    public Card(String content) {
+        this.content = content;
+        this.isUsed = false;
     }
 
-    public String getCodeTip() {
-        return codeTip;
+    public String getContent() {
+        return content;
     }
 
-    public int getCardType() {
-        return cardType;
+    public boolean checkIfIsUsed() {
+        return isUsed;
     }
 
+    public void setAsUsed() {
+        isUsed = true;
+    }
+
+    //可以打成矩形框吗
     @Override
     public String toString() {
-        return codeTip;
+        return getContent();
     }
+
 }
