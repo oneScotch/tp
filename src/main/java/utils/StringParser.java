@@ -1,4 +1,4 @@
-package sg.edu.ntu.scse.cz2002.rrpss.utils;
+package utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,7 @@ import java.util.regex.Pattern;
  * A string parser utility that implements some core functionalities of the
  * built-in {@code StringTokenizer}, but also with some additional
  * application-specific ones.
- * 
- * @author Zhong Ruoyu
- * @version 2.1
+ *
  * @see java.util.StringTokenizer
  */
 public class StringParser {

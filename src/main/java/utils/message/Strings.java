@@ -1,4 +1,4 @@
-package message;
+package utils.message;
 
 /**
  * String constants used in the program.

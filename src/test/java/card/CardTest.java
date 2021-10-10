@@ -1,5 +1,6 @@
 package card;
 
+import data.card.Card;
 import org.junit.jupiter.api.Assertions;
 
 
