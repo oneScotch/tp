@@ -49,7 +49,7 @@ public class StringParser {
 
         /**
          * Initialises a token.
-         * 
+         *
          * @param tokenType the type of the token
          * @param token     the value of the token
          */
@@ -67,7 +67,7 @@ public class StringParser {
      * <li>'Single quoted tokens' with escape {@code \'};</li>
      * <li>Unquoted single tokens.</li>
      * </ul>
-     * 
+     * <p>
      * The pattern is
      * {@code ("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|(\S+)}.
      */
@@ -91,7 +91,7 @@ public class StringParser {
 
     /**
      * Initialises a parser with the string given.
-     * 
+     *
      * @param string the string for the parser to consume
      */
     public StringParser(String string) {
@@ -119,9 +119,9 @@ public class StringParser {
 
     /**
      * Finds if this parser has more unread tokens.
-     * 
+     *
      * @return {@code true} if there are more tokens to be read; {@code false}
-     *         otherwise
+     * otherwise
      * @see java.util.StringTokenizer#hasMoreTokens()
      */
     public boolean hasMoreTokens() {
@@ -130,7 +130,7 @@ public class StringParser {
 
     /**
      * Gets the next unread token from this parser.
-     * 
+     *
      * @return the next token string, if exists; {@code null} otherwise
      * @see java.util.StringTokenizer#nextToken()
      */
@@ -147,7 +147,7 @@ public class StringParser {
      * advanced.
      *
      * @return the number of tokens remaining in the string using the current
-     *         delimiter set.
+     * delimiter set.
      * @see java.util.StringTokenizer#countTokens()
      */
     public int countTokens() {
@@ -156,7 +156,7 @@ public class StringParser {
 
     /**
      * Gets the underlying string of this parser.
-     * 
+     *
      * @return the underlying string
      */
     public String getString() {
@@ -165,7 +165,7 @@ public class StringParser {
 
     /**
      * Gets the unread tokens, combined as a string.
-     * 
+     *
      * @return the unread tokens, combined as a string
      */
     public String getRemaining() {
@@ -174,19 +174,19 @@ public class StringParser {
         for (Token token : remainingTokens) {
             String quotes;
             switch (token.tokenType) {
-                case DOUBLE_QUOTED: {
-                    quotes = "\"";
-                    break;
-                }
-                case SINGLE_QUOTED: {
-                    quotes = "'";
-                    break;
-                }
-                case UNQUOTED:
-                default: {
-                    quotes = "";
-                    break;
-                }
+            case DOUBLE_QUOTED: {
+                quotes = "\"";
+                break;
+            }
+            case SINGLE_QUOTED: {
+                quotes = "'";
+                break;
+            }
+            case UNQUOTED:
+            default: {
+                quotes = "";
+                break;
+            }
             }
             remainingStrings.add(String.format("%s%s%s", quotes, token.token, quotes));
         }

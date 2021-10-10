@@ -53,8 +53,8 @@ public class GameMainMenu extends Menu {
                     break;
                 }
                 case CONTINUE: {
-            /*GameMenu gameMenu = new GameMenu(in, parser);
-            GameMenu.enter();*/
+                    /*GameMenu gameMenu = new GameMenu(in, parser);
+                    GameMenu.enter();*/
                     break;
                 }
                 case HELP: {
@@ -128,8 +128,7 @@ public class GameMainMenu extends Menu {
 
     /**
      * The handler for command "exit". Does all necessary cleanups before the exit.
-     * <p>
-     * Note that the exit does not happen here. It is done by the {@code return}
+     * <p>Note that the exit does not happen here. It is done by the {@code return}
      * statement under the {@link #enter()} method.
      *
      * @param promptToSave whether to prompt to save the current state or not
