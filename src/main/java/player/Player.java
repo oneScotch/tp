@@ -1,6 +1,6 @@
 package player;
 
-import card.CardManager;
+import data.card.CardManager;
 
 public class Player {
     private CardManager cardsCollected = new CardManager();
