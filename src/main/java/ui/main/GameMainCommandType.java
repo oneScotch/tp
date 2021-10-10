@@ -44,8 +44,7 @@ public enum GameMainCommandType {
      * Get command type from a string.
      *
      * @param command the command as a string
-     * @return the corresponding command type if there is a match; {@code null}
-     * otherwise
+     * @return the corresponding command type if there is a match; {@code null} otherwise
      */
     public static GameMainCommandType getCommandType(String command) {
         for (GameMainCommandType commandType : GameMainCommandType.values()) {

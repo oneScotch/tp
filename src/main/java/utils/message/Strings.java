@@ -24,8 +24,8 @@ public class Strings {
             + "| |   / _ \\ / _` |/ _ \\ | |_| | | | | '_ \\| __|\n"
             + "| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_\n"
             + " \\____\\___/ \\__,_|\\___| |_| |_|\\__,_|_| |_|\\__|\n";
-    public static final String MAIN_WELCOME_MESSAGE = logo +
-            String.format("Welcome to %s.Are you ready to play?\n", APP_NAME_LONG) + HELP_MESSAGE;
+    public static final String MAIN_WELCOME_MESSAGE = logo
+            + String.format("Welcome to %s.Are you ready to play?\n", APP_NAME_LONG) + HELP_MESSAGE;
     public static final String MAIN_ABOUT_MESSAGE = String.format("%s (Version %s)\n", APP_NAME_LONG, APP_VERSION)
             + "Developed by Wang Chuhan, Jiang Yuxin, Xue Yushan, Wang Ruisi, Peng Wenxuan";
     public static final String MAIN_EXIT_MESSAGE =

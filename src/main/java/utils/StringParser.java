@@ -68,7 +68,7 @@ public class StringParser {
      * <li>Unquoted single tokens.</li>
      * </ul>
      * <p>
-     * The pattern is
+     *     The pattern is
      * {@code ("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|(\S+)}.
      */
     private static final String REGEX = String.format("(%s)|(%s)|(%s)", "\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\"",
@@ -120,8 +120,7 @@ public class StringParser {
     /**
      * Finds if this parser has more unread tokens.
      *
-     * @return {@code true} if there are more tokens to be read; {@code false}
-     * otherwise
+     * @return {@code true} if there are more tokens to be read; {@code false} otherwise
      * @see java.util.StringTokenizer#hasMoreTokens()
      */
     public boolean hasMoreTokens() {
@@ -146,8 +145,7 @@ public class StringParser {
      * can be called before it returns {@code null}. The current position is not
      * advanced.
      *
-     * @return the number of tokens remaining in the string using the current
-     * delimiter set.
+     * @return the number of tokens remaining in the string using the current delimiter set.
      * @see java.util.StringTokenizer#countTokens()
      */
     public int countTokens() {
