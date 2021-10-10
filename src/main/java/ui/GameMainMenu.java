@@ -1,4 +1,9 @@
+<<<<<<< HEAD:src/main/java/UI/GameMainMenu.java
 package main.java.UI;
+=======
+package ui;
+
+>>>>>>> c8bc0eae9f8239425bc808872ee35545450a6ab2:src/main/java/ui/GameMainMenu.java
 import message.Messages;
 
 import java.io.InputStream;
@@ -6,6 +11,7 @@ import java.util.Scanner;
 
 public class GameMainMenu {
     private static final String DIVIDER = "____________________________________________________________";
+
     private final Scanner in;
 
     public GameMainMenu() {
@@ -15,6 +21,7 @@ public class GameMainMenu {
     public GameMainMenu(InputStream in) {
         this.in = new Scanner(in);
     }
+    
     public void showLine() {
         System.out.println(DIVIDER);
 
@@ -24,6 +31,7 @@ public class GameMainMenu {
         showToUser(Messages.MESSAGE_WELCOME, DIVIDER, Messages.MESSAGE_GREET, DIVIDER);
 
     }
+
     public void showGoodbyeMessage() {
         showToUser(Messages.MESSAGE_GOODBYE);
     }
