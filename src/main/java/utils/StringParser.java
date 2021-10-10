@@ -67,8 +67,7 @@ public class StringParser {
      * <li>'Single quoted tokens' with escape {@code \'};</li>
      * <li>Unquoted single tokens.</li>
      * </ul>
-     * <p>
-     *     The pattern is
+     * The pattern is
      * {@code ("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|(\S+)}.
      */
     private static final String REGEX = String.format("(%s)|(%s)|(%s)", "\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\"",
