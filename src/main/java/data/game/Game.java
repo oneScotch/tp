@@ -1,4 +1,4 @@
-package game;
+package data.game;
 
 public abstract class Game {
 

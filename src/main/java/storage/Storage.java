@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import game.Game;
-import game.GameRecord;
-import game.HangmanGame;
+import data.game.Game;
+import data.game.GameRecord;
+import data.game.HangmanGame;
 
 public class Storage {
     private static File save;
