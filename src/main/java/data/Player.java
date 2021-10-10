@@ -1,5 +1,6 @@
 package data;
 
+import data.card.CardManager;
 import data.game.Game;
 import data.card.Card;
 
@@ -25,19 +26,34 @@ public class Player {
     /**
      * The cards list.
      */
-    private final List<Card> cards;
+    //private final List<Card> cards;
     /**
      * The used cards list.
      */
-    private final List<Card> cardsused;
+    //private final List<Card> cardsused;
 
+    private CardManager cardsCollected = new CardManager();
+    private CardManager cardsToBeCollected = new CardManager();
+
+    public void winCard() {
+        cardsToBeCollected.transferTo(cardsCollected);
+    }
+
+    public void buyTip(int cardID) {
+        boolean canBeExchanged = cardsCollected.exchange(cardID);
+        if (canBeExchanged) {
+            System.out.println("Sure, you successfully use one card to get the tip!");
+        } else {
+            System.out.println("Ops, it seems that you have already used that card, please choose another one");
+        }
+    }
 
     //TODO 暂时为了过test
-    private Player(String name, List<Game> games, List<Card> cards, List<Card> cardsused) {
+    private Player(String name, List<Game> games, CardManager cardsCollected, CardManager cardsToBeCollected) {
         this.name = name;
         this.games = games;
-        this.cards = cards;
-        this.cardsused = cardsused;
+        this.cardsCollected = cardsCollected;
+        this.cardsToBeCollected = cardsToBeCollected;
 
     }
 
