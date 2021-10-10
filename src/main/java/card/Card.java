@@ -8,7 +8,7 @@ public class Card {
         this.codeTip = codeTip;
         this.cardType = cardType;
     }
-    
+
     public String getCodeTip() {
         return codeTip;
     }
