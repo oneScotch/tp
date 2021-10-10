@@ -1,9 +1,5 @@
-<<<<<<< HEAD:src/main/java/UI/GameMainMenu.java
-package main.java.UI;
-=======
 package ui;
 
->>>>>>> c8bc0eae9f8239425bc808872ee35545450a6ab2:src/main/java/ui/GameMainMenu.java
 import message.Messages;
 
 import java.io.InputStream;
