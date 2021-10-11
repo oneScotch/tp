@@ -14,9 +14,9 @@ class CardManagerTest {
     @BeforeEach
     void setUp() {
         ArrayList<Card> cardList = new ArrayList<>();
-        cards.add(new Card("Loops can execute a block of code as long as a specified condition is reached."));
-        cards.add(new Card("Arrays are used to store multiple values in a single variable"));
-        cards.add(new Card("Use the if statement to specify a block of Java code to be executed if a condition is true."));
+        cardList.add(new Card("Loops can execute a block of code as long as a specified condition is reached."));
+        cardList.add(new Card("Arrays are used to store multiple values in a single variable"));
+        cardList.add(new Card("Use the if statement to specify code to be executed if a condition is true."));
         cards = new CardManager(cardList);
     }
 
