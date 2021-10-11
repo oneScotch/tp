@@ -3,10 +3,15 @@ package ui.main;
 import java.util.Scanner;
 import java.util.NoSuchElementException;
 
+import data.Player;
+import utils.IO;
 import utils.message.Strings;
 import ui.Menu;
 import utils.Errors;
 import utils.StringParser;
+import java.util.logging.Logger;
+
+
 
 /**
  * The main menu of the CodeHunt system.
@@ -17,19 +22,13 @@ public class GameMainMenu extends Menu {
      */
     private final Scanner in;
 
-    /**
-     * The parser with the rest of the command to be consumed by the menu.
-     */
-    private final StringParser parser;
 
     /**
      * Creates a new instance of the orderMgr menu.
      *
-     * @param parser the parser to be used by the menu
      */
-    public GameMainMenu(Scanner in, StringParser parser) {
+    public GameMainMenu(Scanner in) {
         this.in = in;
-        this.parser = parser;
     }
 
     public void enter() {
@@ -49,10 +48,15 @@ public class GameMainMenu extends Menu {
                 }
                 switch (commandType) {
                 case NEWGAME: {
-                    //TODO: To be implemented
+                    Player.loadPlayer();
+                    /*GameMenu gameMenu = new GameMenu(in, parser);
+                    GameMenu.enter();*/
                     break;
                 }
                 case CONTINUE: {
+                    String playerId = IO.readString(in, Strings.MAIN_PLAYER_ID_ENTER_PROMPT).trim();
+                    assert playerId == null:"Nothing is inputted!!";
+                    Player.loadPlayer(playerId);
                     /*GameMenu gameMenu = new GameMenu(in, parser);
                     GameMenu.enter();*/
                     break;
