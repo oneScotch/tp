@@ -50,7 +50,7 @@ public class QuizGame extends Game {
 
     @Override
     public void execute() {
-        while(NumOfCorrect < 4) {
+        while (NumOfCorrect < 4) {
             System.out.println(NumOfUserAnswer);
             switch (NumOfUserAnswer % 4) {
             case 0:
