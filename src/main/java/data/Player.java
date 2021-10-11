@@ -40,6 +40,8 @@ public class Player {
     /**
      * The cards list.
      */
+    private static CardManager cardsCollected = new CardManager();
+    private static CardManager cardsToBeCollected = new CardManager();
 
     //private final List<Card> cards;
     /**
@@ -48,8 +50,6 @@ public class Player {
     //private final List<Card> cardsused;
 
 
-    private CardManager cardsCollected = new CardManager();
-    private CardManager cardsToBeCollected = new CardManager();
 
     public void winCard() {
         cardsToBeCollected.transferTo(cardsCollected);
@@ -72,7 +72,6 @@ public class Player {
         this.cardsCollected = cardsCollected;
         this.cardsToBeCollected = cardsToBeCollected;
 
-
     }
 
     public static void deleteCard() {
@@ -94,7 +93,7 @@ public class Player {
             }
         }
 
-        Object[] playerMember = {name, games, cards, cardsused,};
+        Object[] playerMember = {name, games, cardsCollected, cardsToBeCollected};
 
         Path saveFileName = Paths.get(DATAPATH.toString(), PLAYER_FILE_NAME);
         FileOutputStream fos = null;
@@ -129,8 +128,8 @@ public class Player {
             if (playerMember != null) {
                 name = (String) playerMember[0];
                 games = (ArrayList<Game>) playerMember[1];
-                cards = (ArrayList<Card>) playerMember[2];
-                cardsused = (ArrayList<Card>) playerMember[3];
+                cardsCollected = (CardManager) playerMember[2];
+                cardsToBeCollected = (CardManager) playerMember[3];
             }
             ois.close();
         } catch (IOException ex) {
