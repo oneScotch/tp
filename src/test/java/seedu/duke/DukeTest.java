@@ -13,6 +13,6 @@ class DukeTest {
 
     @Test
     void checkEchoFunction() {
-        assertEquals("Test Message", Duke.echoMessage("Test Message"));
+        assertEquals("Test Message", seedu.duke.Duke.echoMessage("Test Message"));
     }
 }

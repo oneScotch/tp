@@ -4,38 +4,66 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardManager {
-    private int cardCount = 0;
     private List<Card> cards;
+    private static final String MARK_NOT_USED = "[ ]";
+    private static final String MARK_USED = "[x]";
 
     public CardManager(List<Card> cards) {
         this.cards = cards;
     }
 
     public CardManager() {
-        this.cards = new ArrayList<>();
+        this(new ArrayList<>());
     }
 
-    public void addCard(String message) {
-
+    public void add(Card card) {
+        cards.add(card);
+        System.out.println("Great! You collect card: " + card.toString());
     }
 
-    public void searchCard(String message) {
-
+    public void searchByKeyWord(String message) {
+        int len = cards.size();
+        int count = 0;
+        for (int i = 0; i < len; i++) {
+            Card currentCard = cards.get(i);
+            if (currentCard.getContent().contains(message)) {
+                System.out.println(currentCard);
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.out.println("Ops! It seems that you do not have any card containing the keyword");
+        }
     }
 
-    public void deleteCard(int id) {
-
+    public void listCards(List<Card> cards) {
+        int len = cards.size();
+        for (int i = 0; i < len; i++) {
+            Card card = cards.get(i);
+            String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
+            int id = i + 1;
+            System.out.println(id + ". " + cards.get(i) + " " + label);
+        }
     }
 
-    public void exchangeCard(int[] cardsToExchange) {
-
+    public Card deleteCard(int id) {
+        System.out.println("Your card " + id + " : " + cards.get(id) + " has been removed!");
+        return cards.remove(id - 1);
     }
 
-    public void listCards() {
-
+    public void transferTo(CardManager cardsToTransfer) {
+        Card cardGet = cards.remove(0);
+        cardsToTransfer.add(cardGet);
     }
 
-    public void markAsUsed(int id) {
-
+    public boolean exchange(int cardID) {
+        boolean canBeExchanged = true;
+        Card cardSelected = cards.get(cardID - 1);
+        if (cardSelected.checkIfIsUsed()) {
+            canBeExchanged = false;
+        } else {
+            cardSelected.setAsUsed();
+        }
+        return canBeExchanged;
     }
 }
