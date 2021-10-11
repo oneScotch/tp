@@ -2,7 +2,6 @@ package card;
 
 import data.card.Card;
 import data.card.CardManager;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
