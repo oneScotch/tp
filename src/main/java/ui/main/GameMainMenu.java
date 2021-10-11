@@ -9,8 +9,8 @@ import utils.message.Strings;
 import ui.Menu;
 import utils.Errors;
 import utils.StringParser;
-import java.util.logging.Logger;
 
+import java.util.logging.Logger;
 
 
 /**
@@ -25,7 +25,6 @@ public class GameMainMenu extends Menu {
 
     /**
      * Creates a new instance of the orderMgr menu.
-     *
      */
     public GameMainMenu(Scanner in) {
         this.in = in;
@@ -55,7 +54,7 @@ public class GameMainMenu extends Menu {
                 }
                 case CONTINUE: {
                     String playerId = IO.readString(in, Strings.MAIN_PLAYER_ID_ENTER_PROMPT).trim();
-                    assert playerId == null:"Nothing is inputted!!";
+                    assert playerId == null : "Nothing is inputted!!";
                     Player.loadPlayer(playerId);
                     /*GameMenu gameMenu = new GameMenu(in, parser);
                     GameMenu.enter();*/

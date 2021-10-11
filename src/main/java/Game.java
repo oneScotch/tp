@@ -1,16 +1,17 @@
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 import logger.MyLogger;
 import ui.main.GameMainMenu;
 
 /**
- * The main of the programme
+ * The main of the programme.
  */
 public class Game {
     /**
-     * Set the logger
+     * Set the logger.
      */
     private static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 

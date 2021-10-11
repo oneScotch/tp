@@ -69,11 +69,7 @@ public class Player {
             }
         }
 
-        Object[] playerMember = {name,
-                games,
-                cards,
-                cardsused,
-        };
+        Object[] playerMember = {name, games, cards, cardsused,};
 
         Path saveFileName = Paths.get(DATAPATH.toString(), PLAYER_FILE_NAME);
         FileOutputStream fos = null;
@@ -127,16 +123,16 @@ public class Player {
     }
 
     /**
-     * Initialise player static members
+     * Initialise player static members.
      */
     public static void initPlayer() {
         //TODO
         Scanner sc = new Scanner(System.in);
         name = IO.readString(sc, Strings.PLAYER_NAME_ENTER_PROMPT).trim();
-        assert name == null:"Nothing is inputted!!";
+        assert name == null : "Nothing is inputted!!";
         String playerId = name + Calendar.getInstance().hashCode();
         PLAYER_FILE_NAME = playerId + ".dat";
-        System.out.println(String.format(Strings.PLAYER_ID_PROMPT,playerId));
+        System.out.println(String.format(Strings.PLAYER_ID_PROMPT, playerId));
 
         /*initGames();
         initCards();
