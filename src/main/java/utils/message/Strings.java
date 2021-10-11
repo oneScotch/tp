@@ -30,9 +30,17 @@ public class Strings {
             + "Developed by Wang Chuhan, Jiang Yuxin, Xue Yushan, Wang Ruisi, Peng Wenxuan";
     public static final String MAIN_EXIT_MESSAGE =
             String.format("Thank you playing %s ! Have a nice day~~", APP_NAME_SHORT);
+    public static final String MAIN_PLAYER_ID_ENTER_PROMPT = "Enter your player ID: ";
 
+    //Player messages
+    public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
+    public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
 
     // Error messages
+    public static final String ERR_PLAYER_FILE_NOTFOUND_MESSAGE =
+            " not found or does not exists. Default settings will be loaded.";
+    public static final String ERR_PLAYER_FILE_CORRUPTED_MESSAGE =
+            "Data file %s is corrupted. Default settings will be loaded instead.";
     public static final String ERR_UNKNOWN_COMMAND = "Unknown command.\n" + HELP_MESSAGE;
     public static final String ERR_UNEXPECTED_INPUT = "Unexpected input.\n" + HELP_MESSAGE;
     public static final String ERR_EMPTY_STRING = "Please provide an input.";
