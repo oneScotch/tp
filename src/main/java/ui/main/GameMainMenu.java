@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.NoSuchElementException;
 
 import data.Player;
+import ui.game.GameMenu;
 import utils.IO;
 import utils.message.Strings;
 import ui.Menu;
@@ -24,7 +25,7 @@ public class GameMainMenu extends Menu {
 
 
     /**
-     * Creates a new instance of the orderMgr menu.
+     * Creates a new instance of the main menu.
      */
     public GameMainMenu(Scanner in) {
         this.in = in;
@@ -48,16 +49,16 @@ public class GameMainMenu extends Menu {
                 switch (commandType) {
                 case NEWGAME: {
                     Player.loadPlayer();
-                    /*GameMenu gameMenu = new GameMenu(in, parser);
-                    GameMenu.enter();*/
+                    GameMenu gameMenu = new GameMenu(in, parser);
+                    gameMenu.enter();
                     break;
                 }
                 case CONTINUE: {
                     String playerId = IO.readString(in, Strings.MAIN_PLAYER_ID_ENTER_PROMPT).trim();
                     assert playerId == null : "Nothing is inputted!!";
                     Player.loadPlayer(playerId);
-                    /*GameMenu gameMenu = new GameMenu(in, parser);
-                    GameMenu.enter();*/
+                    GameMenu gameMenu = new GameMenu(in, parser);
+                    gameMenu.enter();
                     break;
                 }
                 case HELP: {

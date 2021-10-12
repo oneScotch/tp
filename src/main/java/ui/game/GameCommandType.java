@@ -1,30 +1,34 @@
-package ui.main;
+package ui.game;
 
+import ui.main.GameMainCommandType;
 import utils.message.Strings;
 
-public enum GameMainCommandType {
+public enum GameCommandType {
     /**
-     * Command "newGame".
+     * Command "start".
      */
-    NEWGAME("newGame", "Start a new game."),
-    /**
-     * Command "continue".
-     */
-    CONTINUE("continue", "Continue the game stored previously."),
-    /**
-     * Command "help".
-     */
-    HELP("help", "Display a list of available commands."),
+    START("start", "Start and then choose your difficulty level."),
 
     /**
-     * Command "about".
+     * Command "check".
      */
-    ABOUT("about", String.format("Display information about %s.", Strings.APP_NAME_SHORT)),
+    CHECK("check", "Check Current Game Progress."),
+
+    /**
+     * Command "card".
+     */
+    CARD("card", "Manage your holding cards."),
+
+    /**
+     * Command "back".
+     */
+    BACK("back", "Back to main menu."),
 
     /**
      * Command "exit".
      */
     EXIT("exit", String.format("Exit %s.", Strings.APP_NAME_SHORT));
+
     /**
      * The command corresponding to the command type.
      */
@@ -35,7 +39,7 @@ public enum GameMainCommandType {
      */
     private final String info;
 
-    GameMainCommandType(String command, String info) {
+    GameCommandType(String command, String info) {
         this.command = command.toLowerCase();
         this.info = info;
     }
@@ -46,8 +50,8 @@ public enum GameMainCommandType {
      * @param command the command as a string
      * @return the corresponding command type if there is a match; {@code null} otherwise
      */
-    public static GameMainCommandType getCommandType(String command) {
-        for (GameMainCommandType commandType : GameMainCommandType.values()) {
+    public static GameCommandType getCommandType(String command) {
+        for (GameCommandType commandType : GameCommandType.values()) {
             if (command.toLowerCase().equals(commandType.getCommand())) {
                 return commandType;
             }
@@ -62,5 +66,4 @@ public enum GameMainCommandType {
     public String getInfo() {
         return info;
     }
-
 }
