@@ -47,8 +47,15 @@ public class CardManager {
     }
 
     public Card deleteCard(int id) {
-        System.out.println("Your card " + id + " : " + cards.get(id) + " has been removed!");
-        return cards.remove(id - 1);
+        try {
+            boolean isValid = id > 0 && id <= cards.size();
+            assert isValid : "Ops, it seems that you input an invalid card id, please try again!";
+            System.out.println("Your card " + id + " : " + cards.get(id) + " has been removed!");
+            return cards.remove(id - 1);
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     public void transferTo(CardManager cardsToTransfer) {
