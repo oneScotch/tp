@@ -80,6 +80,10 @@ public class Player {
         }
     }
 
+    public static void showCollectedCards() {
+        cardsCollected.listCards();
+    }
+
     public static void deleteCard() {
 
     }
