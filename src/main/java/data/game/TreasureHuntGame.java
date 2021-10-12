@@ -2,7 +2,7 @@ package data.game;
 
 import java.util.Scanner;
 
-public class TreasureHuntGame extends Game{
+public class TreasureHuntGame extends Game {
     public static final String name = "Treasure Hunt";
     public static final String GAME_RULES = "The purpose of the game is to control the treasure hunter's"
             + " to get the treasure. The position of the treasure is marked as '*' on the map, "
@@ -131,7 +131,7 @@ public class TreasureHuntGame extends Game{
                     System.out.print(" ");
                 } else if (this.map[i][j] == 2) {
                     System.out.print("O");
-                } else if (this.map[i][j] == -1){
+                } else if (this.map[i][j] == -1) {
                     System.out.print("*");
                 } else {
                     System.out.print("·");

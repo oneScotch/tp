@@ -10,7 +10,7 @@ public class GuessingNumGame extends Game {
     public static final String LOGO = "";
     public static final String GAME_RULES = "The purpose of the game is to guess the secrect number. "
             + "You have to guess a number between 0 to " + MAX_NUM + " in a maximum of "
-            + MAX_TRIES +" attemps, if the guess is not correct, a tip will be given telling"
+            + MAX_TRIES + " attemps, if the guess is not correct, a tip will be given telling"
             + "whether the number you guess is smaller or larger than the secrect number.";
     private final int secrectNum;
     private int remainingTries;
@@ -36,7 +36,7 @@ public class GuessingNumGame extends Game {
 
     public int generateSecrectNum() {
         final double randomNum = Math.random();
-        return (int)(randomNum*100);
+        return (int)(randomNum * 100);
     }
 
     public void play() {
