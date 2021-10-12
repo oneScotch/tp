@@ -19,18 +19,48 @@ public class Strings {
     public static final String SUBCOMMAND_HELP_MESSAGE = "Please provide a subcommand.";
 
     // Main menu messages
-    private static final String logo = "____          _        _   _             _  \n"
+    private static final String LOGO = "____          _        _   _             _  \n"
             + " / ___|___   __| | ___  | | | |_   _ _ __ | |_ \n"
             + "| |   / _ \\ / _` |/ _ \\ | |_| | | | | '_ \\| __|\n"
             + "| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_\n"
             + " \\____\\___/ \\__,_|\\___| |_| |_|\\__,_|_| |_|\\__|\n";
-    public static final String MAIN_WELCOME_MESSAGE = logo
+    public static final String MAIN_WELCOME_MESSAGE = LOGO
             + String.format("Welcome to %s.Are you ready to play?\n", APP_NAME_LONG) + HELP_MESSAGE;
     public static final String MAIN_ABOUT_MESSAGE = String.format("%s (Version %s)\n", APP_NAME_LONG, APP_VERSION)
             + "Developed by Wang Chuhan, Jiang Yuxin, Xue Yushan, Wang Ruisi, Peng Wenxuan";
     public static final String MAIN_EXIT_MESSAGE =
             String.format("Thank you playing %s ! Have a nice day~~", APP_NAME_SHORT);
     public static final String MAIN_PLAYER_ID_ENTER_PROMPT = "Enter your player ID: ";
+
+    // Game menu messages
+    public static final String GAME_WELCOME_MESSAGE = LOGO
+            + "There you go!";
+    public static final String CHOOSE_LEVEL_MESSAGE = "Please choose your game mode: \n"
+            + "(1) Easy Mode | (2) Difficult Mode.";
+    public static final String GAME_RECORD_MESSAGE = "Here is your Game History.";
+
+    // Card menu messages
+    private static final String PACKAGE = "\n"
+            + "                    ████████████                  \n"
+            + "                  ▒▒▓▓░░░░░░░░▓▓▒▒                  \n"
+            + "                  ▓▓            ▓▓                \n"
+            + "            ▓▓▒▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒░░          \n"
+            + "          ██▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒        \n"
+            + "          ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒          \n"
+            + "          ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓░░        \n"
+            + "          ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▒▒        \n"
+            + "        ░░▓▓▒▒▓▓▒▒                ▒▒▒▒▒▒▒▒░░        \n"
+            + "         ▓▓▒▒▒▒▓▓                  ░░▒▒▒▒▒▒        \n"
+            + "        ▒▒▒▒▓▓▓▓                  ░░▒▒▒▒▒▒░░        \n"
+            + "        ▒▒▒▒▓▓▓▓                  ░░▒▒▒▒▒▒░░        \n"
+            + "        ▓▓▒▒▒▒▓▓                  ░░▒▒▒▒▒▒░░        \n"
+            + "        ▓▓▓▓▓▓▓▓▒▒              ░░▒▒▒▒▒▒▓▓░░        \n"
+            + "          ▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▓▓░░        \n"
+            + "              ████▓▓▓▓████████▓▓▓▓▓▓▒▒            \n";
+
+    public static final String CARD_WELCOME_MESSAGE = PACKAGE
+            + "Here is your package of cards!\n" + HELP_MESSAGE;
+    public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
 
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
@@ -50,5 +80,6 @@ public class Strings {
     public static final String ERR_BOOLEAN_INPUT = "Please enter \"y\" for yes, \"n\" for no.";
     public static final String ERR_DATE_INPUT = "Please enter a valid date.";
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
+    public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
 
 }
