@@ -36,7 +36,7 @@ public class CardManager {
         }
     }
 
-    public void listCards() {
+    public void listCards(List<Card> cards) {
         int len = cards.size();
         for (int i = 0; i < len; i++) {
             Card card = cards.get(i);
