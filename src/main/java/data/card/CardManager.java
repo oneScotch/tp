@@ -23,7 +23,7 @@ public class CardManager {
     }
 
     /**
-     * find card that is not collected within a certain range
+     * find card that is not collected within a certain range.
      * @return the index of the card in the ArrayList, if the cards in the range are all collected, return -1
      */
     public int getCardPosition(int startID) {
@@ -39,8 +39,8 @@ public class CardManager {
 
 
     /**
-     * find the index of the card in the cardList by cardID
-     * return -1 if the cardID is not found
+     * find the index of the card in the cardList by cardID.
+     * @return -1 if the cardID is not found
      */
     public int findCard(int cardID) {
         int len = cards.size();

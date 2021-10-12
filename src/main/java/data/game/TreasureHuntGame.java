@@ -15,7 +15,7 @@ public class TreasureHuntGame extends Game {
     }
 
     /**
-     * execute the game and return cardID collected
+     * execute the game and return cardID collected.
      * @return cardID of the card to collect in the Player class; return 0 if lose
      */
     @Override
@@ -25,7 +25,7 @@ public class TreasureHuntGame extends Game {
         displayMap();
         TreasureHuntGame g = new TreasureHuntGame();
         boolean isWin = g.play();    //changed
-        return isWin ? startID: 0;    // return startID if win return 0 indicates lose
+        return isWin ? startID : 0;    // return startID if win return 0 indicates lose
     }
 
     @Override

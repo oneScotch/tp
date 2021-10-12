@@ -51,7 +51,7 @@ public class Player {
 
 
     /**
-     * startID indicates which game's card is collected
+     * startID indicates which game's card is collected.
      * @param startID the startID return by the "execute()" method of games, startID = 0 indicates loose
      * @return boolean: if win card successfully
      */
