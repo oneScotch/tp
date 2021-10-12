@@ -40,8 +40,8 @@ public class Player {
     /**
      * The cards list.
      */
-    private static CardManager cardsCollected = new CardManager();
-    private static CardManager cardsToBeCollected = new CardManager();
+    private static CardManager cardsCollected;
+    private static CardManager cardsToBeCollected;
 
     //private final List<Card> cards;
     /**
@@ -170,7 +170,64 @@ public class Player {
 
         /*initGames();
         initCards();
-        initCardsUsed();*/
+
+        */
+
+        //init Cards(), CardsUsed()
+        ArrayList<Card> cardsInit = new ArrayList<>();
+        // Init cards for diff games, each with a unique cardID
+        // For game Treasure
+        cardsInit.add(new Card("'Sequence' is the order that commands are executed by a computer", 1));
+        cardsInit.add(new Card("Sequence is a set of logical steps carried out in order.", 2));
+        cardsInit.add(new Card("3", 3));
+        cardsInit.add(new Card("4", 4));
+        cardsInit.add(new Card("5", 5));
+        cardsInit.add(new Card("6", 6));
+        cardsInit.add(new Card("7", 7));
+        cardsInit.add(new Card("8", 8));
+        cardsInit.add(new Card("9", 9));
+        cardsInit.add(new Card("10", 10));
+
+        // For game GuessingNum
+        cardsInit.add(new Card("11", 11));
+        cardsInit.add(new Card("12", 12));
+        cardsInit.add(new Card("13", 13));
+        cardsInit.add(new Card("14", 14));
+        cardsInit.add(new Card("15", 15));
+        cardsInit.add(new Card("16", 16));
+        cardsInit.add(new Card("17", 17));
+        cardsInit.add(new Card("18", 18));
+        cardsInit.add(new Card("19", 19));
+        cardsInit.add(new Card("20", 20));
+
+        // For game QuizGame
+        cardsInit.add(new Card("21", 21));
+        cardsInit.add(new Card("22", 22));
+        cardsInit.add(new Card("23", 23));
+        cardsInit.add(new Card("24", 24));
+        cardsInit.add(new Card("25", 25));
+        cardsInit.add(new Card("26", 26));
+        cardsInit.add(new Card("27", 27));
+        cardsInit.add(new Card("28", 28));
+        cardsInit.add(new Card("29", 29));
+        cardsInit.add(new Card("30", 30));
+
+        // For game HangMan
+        cardsInit.add(new Card("31", 31));
+        cardsInit.add(new Card("32", 32));
+        cardsInit.add(new Card("33", 33));
+        cardsInit.add(new Card("34", 34));
+        cardsInit.add(new Card("35", 35));
+        cardsInit.add(new Card("36", 36));
+        cardsInit.add(new Card("37", 37));
+        cardsInit.add(new Card("38", 38));
+        cardsInit.add(new Card("39", 39));
+        cardsInit.add(new Card("40", 40));
+
+        cardsCollected = new CardManager();
+        cardsToBeCollected = new CardManager(cardsInit);
+
+
     }
 
 }

@@ -21,6 +21,23 @@ public class CardManager {
         System.out.println("Great! You collect card: " + card.toString());
     }
 
+
+    /**
+     * find the index of the card in the cardList by cardID
+     * return -1 if the cardID is not found
+     */
+    public int findCard(int cardID) {
+        int len = cards.size();
+        int index = -1;
+        for (int i = 0; i < len; i++) {
+            if (cards.get(i).getCardID() == cardID) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
     public void searchByKeyWord(String message) {
         int len = cards.size();
         int count = 0;
