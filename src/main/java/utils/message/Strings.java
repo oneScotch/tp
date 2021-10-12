@@ -32,6 +32,13 @@ public class Strings {
             String.format("Thank you playing %s ! Have a nice day~~", APP_NAME_SHORT);
     public static final String MAIN_PLAYER_ID_ENTER_PROMPT = "Enter your player ID: ";
 
+    // Game menu messages
+    public static final String GAME_WELCOME_MESSAGE = logo
+            + "There you go!";
+    public static final String CHOOSE_LEVEL_MESSAGE = "Please choose your game mode: \n"
+            + "(1) Easy Mode | (2) Difficult Mode.";
+    public static final String GAME_RECORD_MESSAGE = "Here is your Game History.";
+
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
     public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
@@ -50,5 +57,6 @@ public class Strings {
     public static final String ERR_BOOLEAN_INPUT = "Please enter \"y\" for yes, \"n\" for no.";
     public static final String ERR_DATE_INPUT = "Please enter a valid date.";
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
+    public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
 
 }

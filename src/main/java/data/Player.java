@@ -74,6 +74,12 @@ public class Player {
 
     }
 
+    public static void showGameProgress() {
+        for(Game game : games) {
+            System.out.println(game.getName());
+        }
+    }
+
     public static void deleteCard() {
 
     }
