@@ -1,5 +1,6 @@
 package ui.game;
 
+import data.game.GuessingNumGame;
 import data.game.HangmanGame;
 import ui.Menu;
 import utils.StringParser;
@@ -38,6 +39,12 @@ public class EasyMenu extends Menu {
         hangmanGame.execute();
 
         System.out.println("Well done! You have finished the first level!");
+
+        System.out.println("Level 2: Guess Number");
+        GuessingNumGame guessingNumGame = new GuessingNumGame();
+        guessingNumGame.execute();
+
+        System.out.println("Well done! You have finished the second level!");
     }
 
     /**
