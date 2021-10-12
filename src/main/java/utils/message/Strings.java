@@ -39,6 +39,29 @@ public class Strings {
             + "(1) Easy Mode | (2) Difficult Mode.";
     public static final String GAME_RECORD_MESSAGE = "Here is your Game History.";
 
+    // Easy game messages
+    private static final String DIVIDER = "=========================================================";
+    public static final String EASY_LOGO = "            _.------.                        .----.__\n"
+            + "           /         \\_.       ._           /---.__  \\\n"
+            + "          |  O    O   |\\\\___  //|          /       `\\ |\n"
+            + "          |  .vvvvv.  | )   `(/ |         | o     o  \\|\n"
+            + "          /  |     |  |/      \\ |  /|   ./| .vvvvv.  |\\\n"
+            + "         /   `^^^^^'  / _   _  `|_ ||  / /| |     |  | \\\n"
+            + "       ./  /|         | O)  O   ) \\|| //' | `^vvvv'  |/\\\\\n"
+            + "      /   / |         \\        /  | | ~   \\          |  \\\\\n"
+            + "      \\  /  |        / \\ Y   /'   | \\     |          |   ~\n"
+            + "       `'   |  _     |  `._/' |   |  \\     7        /\n"
+            + "         _.-'-' `-'-'|  |`-._/   /    \\ _ /    .    |\n"
+            + "    __.-'            \\  \\   .   / \\_.  \\ -|_/\\/ `--.|_\n"
+            + " --'                  \\  \\ |   /    |  |              `-\n"
+            + "                       \\uU \\UU/     |  /   :F_P:\n";
+    public static final String EASY_GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
+            + "We are the Avengers. To protect the world from devastation, we need your help!\n"
+            + "We need to get as many cards ad possible for the last Infinity Gem.\n"
+            + "Win following games and collect the cards.\n"
+            + "Good luck!\n"
+            + "We will be waiting for you and the cards!\n" + DIVIDER;
+
     // Card menu messages
     private static final String PACKAGE = "\n"
             + "                    ████████████                  \n"

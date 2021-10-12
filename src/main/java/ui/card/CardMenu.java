@@ -4,6 +4,7 @@ import data.Player;
 import ui.Menu;
 import ui.game.DifficultMenu;
 import ui.game.EasyMenu;
+import ui.game.GameCommandType;
 import ui.game.GameMenu;
 import ui.main.GameMainCommandType;
 import ui.main.GameMainMenu;
@@ -40,63 +41,69 @@ public class CardMenu extends Menu {
     public void enter() {
         welcome();
         try {
-            if (!parser.hasMoreTokens()) {
-                System.out.println(Strings.SUBCOMMAND_HELP_MESSAGE);
-                help();
-                return;
-            }
-            CardCommandType commandType = CardCommandType.getCommandType(parser.nextToken());
-            if (commandType == null) {
-                Errors.print(parser.getString(), Strings.ERR_UNKNOWN_COMMAND);
-                return;
-            }
-            if (parser.hasMoreTokens()) {
-                Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                return;
-            }
-            switch (commandType) {
-            case LIST: {
-                System.out.println(Strings.LIST_CARD_MESSAGE);
+            while (true) {
+                prompt();
+                String command = in.nextLine();
+                StringParser parser = new StringParser(command);
+                CardCommandType commandType = CardCommandType.getCommandType(parser.nextToken());
+                if (commandType == null) {
+                    Errors.print(parser.getString(), Strings.ERR_UNKNOWN_COMMAND);
+                    return;
+                }
                 if (parser.hasMoreTokens()) {
                     Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                    return;
                 }
-                listCards();
-                break;
+                switch (commandType) {
+                case LIST: {
+                    System.out.println(Strings.LIST_CARD_MESSAGE);
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    listCards();
+                    break;
+                }
+                case DELETE: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    // TODO: add delete function
+                    break;
+                }
+                case FIND: {
+                    // TODO: add find function
+                    break;
+                }
+                case HELP: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    help();
+                    break;
+                }
+                case BACK: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    return;
+                }
+                case EXIT: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    exit(true);
+                    return;
+                }
+                default: {
+                    break;
+                }
+                }
 
-            }
-            case DELETE: {
-                if (parser.hasMoreTokens()) {
-                    Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                }
-                // TODO: add delete function
-                break;
-            }
-            case FIND: {
-                // TODO: add find function
-                break;
-            }
-            case HELP: {
-                if (parser.hasMoreTokens()) {
-                    Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                }
-                help();
-                break;
-            }
-            case BACK: {
-                GameMenu gameMenu = new GameMenu(in, parser);
-                gameMenu.enter();
-                break;
-            }
-            case EXIT: {
-                if (parser.hasMoreTokens()) {
-                    Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                }
-                exit(true);
-                return;
-            }
-            default: {
-                break;
-            }
             }
         } catch (NoSuchElementException e) {
             exit(false);
@@ -109,6 +116,14 @@ public class CardMenu extends Menu {
     private void welcome() {
         System.out.println(Strings.CARD_WELCOME_MESSAGE);
         System.out.println();
+    }
+
+    /**
+     * Displays the prompt of the menu.
+     */
+    private void prompt() {
+        System.out.print(Strings.MAIN_PROMPT);
+        System.out.flush();
     }
 
     /**

@@ -2,6 +2,7 @@ package ui.game;
 
 import data.Player;
 import ui.Menu;
+import ui.card.CardCommandType;
 import ui.card.CardMenu;
 import ui.main.GameMainCommandType;
 import ui.main.GameMainMenu;
@@ -39,68 +40,70 @@ public class GameMenu extends Menu {
     public void enter() {
         welcome();
         try {
-            if (!parser.hasMoreTokens()) {
-                System.out.println(Strings.SUBCOMMAND_HELP_MESSAGE);
+            while (true) {
                 help();
-                return;
-            }
-            GameCommandType commandType = GameCommandType.getCommandType(parser.nextToken());
-            if (commandType == null) {
-                Errors.print(parser.getString(), Strings.ERR_UNKNOWN_COMMAND);
-                return;
-            }
-            if (parser.hasMoreTokens()) {
-                Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                return;
-            }
-            switch (commandType) {
-            case START: {
-                System.out.println(Strings.CHOOSE_LEVEL_MESSAGE);
-                int selection = in.nextInt();
-
-                if (selection == 1) {
-                    EasyMenu easyMenu = new EasyMenu(in, parser);
-                    easyMenu.enter();
-                } else if (selection == 2) {
-                    DifficultMenu easyMenu = new DifficultMenu(in, parser);
-                    easyMenu.enter();
-                } else {
-                    Errors.print(Integer.toString(selection), Strings.ERR_INVALID_NUMBER);
+                prompt();
+                String command = in.nextLine();
+                StringParser parser = new StringParser(command);
+                GameCommandType commandType = GameCommandType.getCommandType(parser.nextToken());
+                if (commandType == null) {
+                    Errors.print(parser.getString(), Strings.ERR_UNKNOWN_COMMAND);
+                    return;
                 }
-
-                break;
-            }
-            case CHECK: {
                 if (parser.hasMoreTokens()) {
                     Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                    return;
                 }
+                switch (commandType) {
+                case START: {
+                    System.out.println(Strings.CHOOSE_LEVEL_MESSAGE);
+                    int selection = in.nextInt();
 
-                showRecord();
-                break;
-            }
-            case CARD: {
-                CardMenu cardMenu = new CardMenu(in, parser);
-                cardMenu.enter();
-                break;
-            }
-            case BACK: {
-                if (parser.hasMoreTokens()) {
-                    Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                    if (selection == 1) {
+                        EasyMenu easyMenu = new EasyMenu(in, parser);
+                        easyMenu.enter();
+                    } else if (selection == 2) {
+                        DifficultMenu easyMenu = new DifficultMenu(in, parser);
+                        easyMenu.enter();
+                    } else {
+                        Errors.print(Integer.toString(selection), Strings.ERR_INVALID_NUMBER);
+                    }
+
+                    break;
                 }
-                GameMainMenu gameMainMenu = new GameMainMenu(in);
-                gameMainMenu.enter();
-                break;
-            }
-            case EXIT: {
-                if (parser.hasMoreTokens()) {
-                    Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                case CHECK: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+
+                    showRecord();
+                    break;
                 }
-                exit(true);
-                return;
-            }
-            default: {
-                break;
-            }
+                case CARD: {
+                    CardMenu cardMenu = new CardMenu(in, parser);
+                    cardMenu.enter();
+                    break;
+                }
+                case BACK: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    return;
+                }
+                case EXIT: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    exit(true);
+                    return;
+                }
+                default: {
+                    break;
+                }
+                }
             }
         } catch (NoSuchElementException e) {
             exit(false);
@@ -112,8 +115,15 @@ public class GameMenu extends Menu {
      */
     private void welcome() {
         System.out.println(Strings.GAME_WELCOME_MESSAGE);
-        help();
         System.out.println();
+    }
+
+    /**
+     * Displays the prompt of the menu.
+     */
+    private void prompt() {
+        System.out.print(Strings.MAIN_PROMPT);
+        System.out.flush();
     }
 
     /**
