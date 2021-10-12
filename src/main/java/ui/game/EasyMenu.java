@@ -48,7 +48,7 @@ public class EasyMenu extends Menu {
     }
 
     /**
-     * Displays the welcome message and the background,
+     * Displays the welcome message and the background.
      */
     private void welcome() {
         System.out.println(Strings.EASY_LOGO);
