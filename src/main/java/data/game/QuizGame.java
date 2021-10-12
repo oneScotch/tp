@@ -76,7 +76,7 @@ public class QuizGame extends Game {
     }
 
     public static String[] MCQ = {"Who is the person that writes code and communicates instructions to a computer? "
-        + "\n[A: Code][B: Programmer][C: Command][D: Algorithm]",
+            + "\n[A: Code][B: Programmer][C: Command][D: Algorithm]",
         "What is the action of finding and fixing errors or mistakes in programs? "
             + "\n[A: Looping][B: Sequencing][C: Debugging][D: Decomposing]",
         "What is an error or mistake called in a program? "
@@ -85,7 +85,7 @@ public class QuizGame extends Game {
         "Of the following, if statements, which one returns true?"
             + "\n[A: X = 1; X > 0;][B: X = \"hi\"; X == \"hello\";][C: X = 0; X == 1;][D: X = \"k\"; X == 1]"};
     public static String[] MRQ = {"Which will the following statement return true?"
-        + "\n[A: 1 == 1][B: \"abc\" == \"bcd\"][C: \"Hello\" == \"hello\"][D: \"Hello\" == \"hello\"]",
+            + "\n[A: 1 == 1][B: \"abc\" == \"bcd\"][C: \"Hello\" == \"hello\"][D: \"Hello\" == \"hello\"]",
         "Choose are programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
         "Choose all the correct codes. \n[A: 1 = x;[B: x++;][C: return x;][D: return y]",
         "Choose correct statements which satisfy Java coding style."
