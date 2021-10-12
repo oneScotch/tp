@@ -50,14 +50,27 @@ public class Player {
     //private final List<Card> cardsused;
 
 
-
-    public void winCard() {
-        cardsToBeCollected.transferTo(cardsCollected);
+    /**
+     * startID indicates which game's card is collected
+     * @param startID the startID return by the "execute()" method of games, startID = 0 indicates loose
+     * @return boolean: if win card successfully
+     */
+    public boolean winCard(int startID) {
+        if (startID == 0) {
+            return false;   // if startID = 0 , actually should not enter this method, need to be solved in the menu
+        }
+        int index = cardsToBeCollected.getCardPosition(startID);
+        boolean isCollected = index == -1 ? false : true;
+        if (isCollected) {
+            cardsToBeCollected.transferTo(cardsCollected, index);
+        }
+        return isCollected;   // return false means not enough cards to collect for this game
     }
 
     public void buyTip(int cardID) {
         boolean canBeExchanged = cardsCollected.exchange(cardID);
         if (canBeExchanged) {
+            // todo : tip-related method
             System.out.println("Sure, you successfully use one card to get the tip!");
         } else {
             System.out.println("Ops, it seems that you have already used that card, please choose another one");

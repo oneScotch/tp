@@ -24,7 +24,7 @@ public class TreasureHuntGame extends Game {
         displayMovements();
         displayMap();
         TreasureHuntGame g = new TreasureHuntGame();
-        boolean isWin = g.play();
+        boolean isWin = g.play();    //changed
         return isWin ? startID: 0;    // return startID if win return 0 indicates lose
     }
 

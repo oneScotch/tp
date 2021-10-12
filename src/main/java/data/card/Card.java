@@ -17,6 +17,10 @@ public class Card implements Serializable {
         this.isCollected = false;
     }
 
+    public Card(Card card) {
+        this(card.getContent(), card.getCardID());
+    }
+
     public int getCardID() {
         return cardID;
     }
@@ -37,8 +41,10 @@ public class Card implements Serializable {
         isUsed = true;
     }
 
-    public void setAsCollected() {
-        isCollected = true;
+    public Card setAsCollected() {
+        Card card = new Card(this);
+        card.isCollected = true;
+        return card;
     }
 
     @Override
