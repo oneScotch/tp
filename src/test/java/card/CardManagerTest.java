@@ -22,7 +22,7 @@ class CardManagerTest {
     @Test
     public void testDeleteCard() {
         Assertions.assertEquals(cards.deleteCard(1),
-                "Loops can execute a block of code as long as a specified condition is reached.");
+                new Card("Loops can execute a block of code as long as a specified condition is reached."));
     }
 
     @Test
