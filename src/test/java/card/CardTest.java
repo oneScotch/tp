@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class CardTest {
     @Test
     public void testOutput() {
-        Assertions.assertEquals(new Card("loop"), "loop");
+        Assertions.assertTrue(new Card("loop").toString().equals("loop"));
     }
 
     @Test
