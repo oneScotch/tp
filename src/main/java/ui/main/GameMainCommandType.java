@@ -10,7 +10,7 @@ public enum GameMainCommandType {
     /**
      * Command "continue".
      */
-    CONTINUE("newGame", "Continue the game stored previously."),
+    CONTINUE("continue", "Continue the game stored previously."),
     /**
      * Command "help".
      */
