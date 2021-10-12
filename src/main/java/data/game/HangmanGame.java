@@ -30,6 +30,7 @@ public class HangmanGame extends Game {
     private int length;
     private char[] guessWord;
     private int remainingTries;
+    private static int startID = 31;
 
     public HangmanGame() {
         this.secretWord = chooseSecretWord();
@@ -39,15 +40,20 @@ public class HangmanGame extends Game {
     }
 
     @Override
-    public void execute() {
+    public int execute() {
         boolean isPlay = true;
         displayGameDetails();
 
+        HangmanGame hangmanGame = new HangmanGame();
+        boolean isWin = hangmanGame.play();
+        /*
         while (isPlay) {
             HangmanGame hangmanGame = new HangmanGame();
-            hangmanGame.play();
-            isPlay = startNewGame();
+            boolean isWin = hangmanGame.play();
+            isPlay = false; // todo: startNewGame();
         }
+        */
+        return isWin ? startID : 0;
     }
 
     @Override
@@ -60,7 +66,8 @@ public class HangmanGame extends Game {
         System.out.println(GAME_RULES);
     }
 
-    public void play() {
+    public boolean play() {
+        boolean isWin = false;
         replaceDashes();
         System.out.println("Your guess word is:");
         displayWord();
@@ -89,14 +96,14 @@ public class HangmanGame extends Game {
 
             if (secretWord.equals(new String(guessWord))) {
                 System.out.println("\nCongratulation! You won.");
-                return;
+                isWin = true;   // changed
             }
         }
         if (!secretWord.equals(new String(guessWord))) {
             System.out.println("\nToo many Guesses! You have been hanged.");
             System.out.println("\nThe secret word was: " + this.secretWord);
         }
-
+        return isWin;  // changed
     }
 
     // choose next word randomly

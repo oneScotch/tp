@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 class CardTest {
     @Test
     public void testOutput() {
-        Assertions.assertTrue(new Card("loop").toString().equals("loop"));
+        Assertions.assertTrue(new Card("loop", 1).toString().equals("loop"));
     }
 
     @Test
     public void testIsUsed() {
-        Assertions.assertFalse(new Card("loop").checkIfIsUsed());
+        Assertions.assertFalse(new Card("loop", 1).checkIfIsUsed());
     }
 }

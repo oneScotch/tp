@@ -8,18 +8,24 @@ public class TreasureHuntGame extends Game {
             + " to get the treasure. The position of the treasure is marked as '*' on the map, "
             + "you need to choose a proper sequence of movement to reach that position.";
     private static int[][] map;
+    private static int startID = 1;   // the start ID
 
     public TreasureHuntGame() {
         this.map = new TreasureHuntMap().getMap();
     }
 
+    /**
+     * execute the game and return cardID collected.
+     * @return cardID of the card to collect in the Player class; return 0 if lose
+     */
     @Override
-    public void execute() {
+    public int execute() {
         displayGameDetails();
         displayMovements();
         displayMap();
         TreasureHuntGame g = new TreasureHuntGame();
-        g.play();
+        boolean isWin = g.play();    //changed
+        return isWin ? startID : 0;    // return startID if win return 0 indicates lose
     }
 
     @Override
@@ -27,7 +33,8 @@ public class TreasureHuntGame extends Game {
         return this.name;
     }
 
-    public void play() {
+    public boolean play() {
+        boolean isWin = false; // todo: add limited attempts to lose the game
         int x = 1;
         int y = 1;
         boolean find = false;
@@ -60,7 +67,10 @@ public class TreasureHuntGame extends Game {
             }
             displayMap();
         }
+        // win
         printSuccessfulMessage();
+        isWin = true;
+        return isWin;
     }
 
     public int[] parseCommand(String input) {

@@ -14,6 +14,7 @@ public class GuessingNumGame extends Game {
             + "whether the number you guess is smaller or larger than the secrect number.";
     private final int secrectNum;
     private int remainingTries;
+    private static int startID = 11;
 
     Scanner in = new Scanner(System.in);
 
@@ -23,10 +24,11 @@ public class GuessingNumGame extends Game {
     }
 
     @Override
-    public void execute() {
+    public int execute() {
         displayGameDetails();
         GuessingNumGame g = new GuessingNumGame();
-        g.play();
+        boolean isWin = g.play();
+        return isWin ? startID : 0;
     }
 
     @Override
@@ -39,7 +41,8 @@ public class GuessingNumGame extends Game {
         return (int)(randomNum * 100);
     }
 
-    public void play() {
+    public boolean play() {
+        boolean isWin = false;
         while (this.remainingTries > 0) {
             Scanner in = new Scanner(System.in);
             printEnterMessage();
@@ -60,13 +63,14 @@ public class GuessingNumGame extends Game {
                 this.remainingTries--;
                 if (input == this.secrectNum) {
                     printSuccessfulMessage();
-                    return;
+                    isWin = true;
                 } else {
                     printFailingMessage(input);
                 }
             }
         }
         printEndingMessage();
+        return isWin;
     }
 
     public void displayGameDetails() {

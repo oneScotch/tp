@@ -14,13 +14,15 @@ public class QuizGame extends Game {
     public static int NumOfCorrect = 0;
     public static int NumOfUserAnswer = 0;
     public String level;
+    private static int startID = 21;
 
     public QuizGame(String level) {
         this.level = level;
     }
 
     @Override
-    public void execute() {
+    public int execute() {
+        boolean isWin = false;   // changed
         while (NumOfCorrect < 4) {
             System.out.println(NumOfUserAnswer);
             switch (NumOfUserAnswer % 4) {
@@ -40,6 +42,7 @@ public class QuizGame extends Game {
                 System.out.println("Error");
             }
             if (NumOfUserAnswer == 4 && NumOfCorrect == 4) {
+                isWin = true;   //added
                 System.out.println("Good! You achieve full mark.\n");
                 break;
             } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
@@ -49,6 +52,7 @@ public class QuizGame extends Game {
             }
         }
         System.out.println("end");
+        return isWin ? startID : 0;   // added
     }
 
     public void getQuestion(String[] questions, String[] answers) {
