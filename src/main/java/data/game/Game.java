@@ -2,7 +2,7 @@ package data.game;
 
 public abstract class Game {
 
-    public abstract void execute();
+    public abstract int execute();
 
     public abstract String getName();
 }
