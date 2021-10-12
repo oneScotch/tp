@@ -22,8 +22,8 @@ class CardManagerTest {
 
     @Test
     public void testDeleteCard() {
-        Assertions.assertEquals(cards.deleteCard(1), 
-                                "Loops can execute a block of code as long as a specified condition is reached.");
+        String content = "Loops can execute a block of code as long as a specified condition is reached.";
+        Assertions.assertTrue(cards.deleteCard(1).toString().equals(content));
     }
 
     @Test
