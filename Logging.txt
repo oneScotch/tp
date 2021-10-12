@@ -1,0 +1,2 @@
+Oct 12, 2021 8:37:16 PM Game main
+INFO: going to start processing

@@ -2,6 +2,7 @@ package ui.game;
 
 import data.game.GuessingNumGame;
 import data.game.HangmanGame;
+import data.game.QuizGame;
 import ui.Menu;
 import utils.StringParser;
 import utils.message.Strings;
@@ -43,6 +44,10 @@ public class EasyMenu extends Menu {
         System.out.println("Level 2: Guess Number");
         GuessingNumGame guessingNumGame = new GuessingNumGame();
         guessingNumGame.execute();
+
+        System.out.println("Level 3: Quiz");
+        QuizGame quizGame = new QuizGame("1");
+        quizGame.execute();
 
         System.out.println("Well done! You have finished the second level!");
     }
