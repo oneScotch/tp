@@ -61,6 +61,11 @@ public class Strings {
             + "Win following games and collect the cards.\n"
             + "Good luck!\n"
             + "We will be waiting for you and the cards!\n" + DIVIDER;
+    public static final String HANG_MAN_START = "\n******************** Level 1: Hang Man ********************\n";
+    public static final String QUIZ_START = "\n******************** Level 2: How Code Works ********************\n";
+    public static final String GUESS_NUM_START = "\n******************** Level 3: Guess Number ********************\n";
+    public static final String TREASURE_HUNT_START = "\n******************** Level 4: Treasure Hunt ********************\n";
+    public static final String FINISH_EASY_MODE = "Well done! You have finished all the task!!";
 
     // Card menu messages
     private static final String PACKAGE = "\n"

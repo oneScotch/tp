@@ -46,7 +46,7 @@ public class QuizGame extends Game {
                 System.out.println("Good! You achieve full mark.\n");
                 break;
             } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
-                System.out.println("Sorry! You did pass this challenge. Please try angin.\n");
+                System.out.println("Sorry! You did not pass this challenge. Please try again.\n");
                 NumOfCorrect = 0;
                 NumOfUserAnswer = 0;
             }

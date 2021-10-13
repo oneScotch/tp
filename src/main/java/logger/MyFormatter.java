@@ -40,8 +40,8 @@ class MyFormatter extends Formatter {
 
     private String calcDate(long millisecs) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd,yyyy HH:mm");
-        Date resultdate = new Date(millisecs);
-        return dateFormat.format(resultdate);
+        Date resultDate = new Date(millisecs);
+        return dateFormat.format(resultDate);
     }
 
     // this method is called just after the handler using this
