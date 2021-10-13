@@ -1,8 +1,8 @@
 package data;
 
 import data.game.Game;
-import data.card.Card;
 import data.card.CardManager;
+import data.card.Card;
 import utils.Errors;
 import utils.IO;
 import utils.message.Strings;
