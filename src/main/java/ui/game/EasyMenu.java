@@ -41,13 +41,13 @@ public class EasyMenu extends Menu {
 
         System.out.println("Well done! You have finished the first level!");
 
-        System.out.println("Level 2: Guess Number");
-        GuessingNumGame guessingNumGame = new GuessingNumGame();
-        guessingNumGame.execute();
-
-        System.out.println("Level 3: Quiz");
+        System.out.println("Level 2: Quiz");
         QuizGame quizGame = new QuizGame("1");
         quizGame.execute();
+
+        System.out.println("Level 3: Guess Number");
+        GuessingNumGame guessingNumGame = new GuessingNumGame();
+        guessingNumGame.execute();
 
         System.out.println("Well done! You have finished the second level!");
     }
