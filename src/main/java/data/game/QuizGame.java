@@ -24,7 +24,7 @@ public class QuizGame extends Game {
     public int execute() {
         boolean isWin = false;   // changed
         while (NumOfCorrect < 4) {
-            System.out.println(NumOfUserAnswer);
+            System.out.println(NumOfUserAnswer + 1);
             switch (NumOfUserAnswer % 4) {
             case 0:
                 getQuestion(MCQ, MCQAnswers);
