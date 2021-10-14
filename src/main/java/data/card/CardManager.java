@@ -19,7 +19,7 @@ public class CardManager {
 
     public void add(Card card) {
         cards.add(card);
-        System.out.println("Great! You collect card: " + card.toString());
+        //System.out.println("Great! You collect card: " + card.toString());
     }
 
     /**
@@ -32,6 +32,7 @@ public class CardManager {
         for (int i = startIndex; i < startIndex + NUM_OF_CARDS_PER_GAME; i++) {
             if (!cards.get(i).checkIfCollected()) {
                 index = i;
+                break;
             }
         }
         return index;
@@ -106,7 +107,7 @@ public class CardManager {
     public void transferTo(CardManager cardsToTransfer, int index) {
         Card cardToCollect = cards.get(index).setAsCollected();
         System.out.println("Great, this is the card you win!");
-        System.out.println(cardsToTransfer);
+        System.out.println(cardToCollect);
         cards.set(index, cardToCollect);   //set the card as "collected" in the cards list
         cardsToTransfer.add(cardToCollect);   //add the "collected" card to cardsToTransfer
     }
