@@ -97,8 +97,16 @@ public class CardManager {
 
     }
 
+    /**
+     * enter this function means you are sure to win the card and there are enough cards
+     * print the card message when you win the card.
+     * @param cardsToTransfer  CardsCollectd
+     * @param index  the index of the card in the ArrayList of the CardsToBeCollected
+     */
     public void transferTo(CardManager cardsToTransfer, int index) {
         Card cardToCollect = cards.get(index).setAsCollected();
+        System.out.println("Great, this is the card you win!");
+        System.out.println(cardsToTransfer);
         cards.set(index, cardToCollect);   //set the card as "collected" in the cards list
         cardsToTransfer.add(cardToCollect);   //add the "collected" card to cardsToTransfer
     }
