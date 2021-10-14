@@ -206,10 +206,10 @@ public class Player {
         cardsInit.add(new Card("10", 10));
 
         // For game GuessingNum
-        cardsInit.add(new Card("Binary search is an efficient algorithm" +
-                " for finding an item from a sorted list of items.", 11));
-        cardsInit.add(new Card("It works by repeatedly dividing in half the portion of the list" +
-                " that could contain the item, until you've narrowed down the possible locations to just one.", 12));
+        cardsInit.add(new Card("Binary search is an efficient algorithm"
+                + " for finding an item from a sorted list of items.", 11));
+        cardsInit.add(new Card("It works by repeatedly dividing in half the portion of the list"
+                + " that could contain the item, until you've narrowed down the possible locations to just one.", 12));
         cardsInit.add(new Card("13", 13));
         cardsInit.add(new Card("14", 14));
         cardsInit.add(new Card("15", 15));
@@ -220,11 +220,11 @@ public class Player {
         cardsInit.add(new Card("20", 20));
 
         // For game QuizGame
-        cardsInit.add(new Card("a variable is an abstract storage location paired " +
-                "with an associated symbolic name", 21));
+        cardsInit.add(new Card("a variable is an abstract storage location paired "
+                + "with an associated symbolic name", 21));
         cardsInit.add(new Card("\n" +
-                "An if else statement in programming is a conditional statement that runs a different set of statements" +
-                " depending on whether an expression is true or false", 22));
+                "An if else statement in programming is a conditional statement that runs a different set of statements"
+                + " depending on whether an expression is true or false", 22));
         cardsInit.add(new Card("23", 23));
         cardsInit.add(new Card("24", 24));
         cardsInit.add(new Card("25", 25));
@@ -235,16 +235,16 @@ public class Player {
         cardsInit.add(new Card("30", 30));
 
         // For game HangMan
-        cardsInit.add(new Card("a loop is a sequence of instruction s that is continually " +
-                "repeated until a certain condition is reached. ", 31));
-        cardsInit.add(new Card("A for loop is a control flow statement for specifying iteration, " +
-                "which allows code to be executed repeatedly.", 32));
-        cardsInit.add(new Card("A \"While\" Loop is used to repeat a specific block of code an unknown" +
-                " number of times, until a condition is met. ", 33));
-        cardsInit.add(new Card("An array is a data structure, which can store a fixed-size collection of " +
-                "elements of the same data type. ", 34));
-        cardsInit.add(new Card("An algorithm is simply a set of steps used " +
-                "to complete a specific task. ", 35));
+        cardsInit.add(new Card("a loop is a sequence of instruction s that is continually "
+                + "repeated until a certain condition is reached. ", 31));
+        cardsInit.add(new Card("A for loop is a control flow statement for specifying iteration, "
+                + "which allows code to be executed repeatedly.", 32));
+        cardsInit.add(new Card("A \"While\" Loop is used to repeat a specific block of code an unknown"
+                + " number of times, until a condition is met. ", 33));
+        cardsInit.add(new Card("An array is a data structure, which can store a fixed-size collection of "
+                + "elements of the same data type. ", 34));
+        cardsInit.add(new Card("An algorithm is simply a set of steps used "
+                + "to complete a specific task. ", 35));
         cardsInit.add(new Card("36", 36));
         cardsInit.add(new Card("37", 37));
         cardsInit.add(new Card("38", 38));
