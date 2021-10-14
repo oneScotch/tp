@@ -32,6 +32,7 @@ public class CardManager {
         for (int i = startIndex; i < startIndex + NUM_OF_CARDS_PER_GAME; i++) {
             if (!cards.get(i).checkIfCollected()) {
                 index = i;
+                break;
             }
         }
         return index;
