@@ -66,7 +66,7 @@ public class HangmanGame extends Game {
     }
 
     public boolean play() {
-        boolean isWin = false;
+        // boolean isWin = false;
         replaceDashes();
         System.out.println("Your guess word is:");
         displayWord();
@@ -103,7 +103,7 @@ public class HangmanGame extends Game {
             System.out.println("\nToo many Guesses! You have been hanged.");
             System.out.println("\nThe secret word was: " + this.secretWord);
         }
-        return isWin;  // changed
+        return false;  // changed
     }
 
     // choose next word randomly
