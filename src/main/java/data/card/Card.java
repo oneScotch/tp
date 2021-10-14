@@ -1,6 +1,8 @@
 package data.card;
 
 
+import utils.message.Strings;
+
 import java.io.Serializable;
 
 public class Card implements Serializable {
@@ -49,6 +51,6 @@ public class Card implements Serializable {
 
     @Override
     public String toString() {
-        return getContent();
+        return Strings.CARD_DIVIDER_MESSAGE + getContent() + Strings.CARD_DIVIDER_MESSAGE;
     }
 }
