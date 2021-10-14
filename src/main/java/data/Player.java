@@ -60,15 +60,15 @@ public class Player {
             return false;   // if startID = 0 , actually should not enter this method, need to be solved in the menu
         }
         int index = cardsToBeCollected.getCardPosition(startID);
-        boolean isCollected = index == -1 ? false : true;
-        if (isCollected) {
+        boolean canBeCollected = index == -1 ? false : true;
+        if (canBeCollected) {
             cardsToBeCollected.transferTo(cardsCollected, index);
-            // TODO: PRINT CARD
+            // print card
         } else {
             System.out.println("Oops! You have already collected all the cards for this game.");
         }
 
-        return isCollected;   // return false means not enough cards to collect for this game
+        return canBeCollected;   // return false means not enough cards to collect for this game
     }
 
     public void buyTip(int cardID) {
