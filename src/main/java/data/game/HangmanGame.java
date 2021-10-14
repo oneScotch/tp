@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class HangmanGame extends Game {
     // Coding Terminologies
-    public static final String[] WORDS = {"algorithm", "argument", "arrays", "c", "loops", "java", "linux"
-            , "python", "statement", "variable", "while"};
+    public static final String[] WORDS = {"algorithm", "argument", "arrays", "c", "loops", "java", "linux",
+        "python", "statement", "variable", "while"};
     public static final String name = "Hangman";
     public static final Random RANDOM = new Random();
     public static final int MAX_TRIES = 5;
