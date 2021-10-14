@@ -7,9 +7,18 @@ public class GuessingNumGame extends Game {
     public static final String name = "GuessingNumber";
     public static final int MAX_NUM = 100;
     public static final int MAX_TRIES = 8;
-    public static final String LOGO = "";
+    public static final String LOGO = " _____ _     _____ ____  ____  _  _      _____   "
+            + "_      _     _      ____  _____ ____ \n"
+            + "/  __// \\ /\\/  __// ___\\/ ___\\/ \\/ \\  /|/  __/  / "
+            + "\\  /|/ \\ /\\/ \\__/|/  _ \\/  __//  __\\\n"
+            + "| |  _| | |||  \\  |    \\|    \\| || |\\ ||| |  _  | |\\"
+            + " ||| | ||| |\\/||| | //|  \\  |  \\/|\n"
+            + "| |_//| \\_/||  /_ \\___ |\\___ || || | \\||| |_//  | | \\"
+            + "||| \\_/|| |  ||| |_\\\\|  /_ |    /\n"
+            + "\\____\\\\____/\\____\\\\____/\\____/\\_/\\_/  \\|\\____\\"
+            + "  \\_/  \\|\\____/\\_/  \\|\\____/\\____\\\\_/\\_\\";
     public static final String GAME_RULES = "The purpose of the game is to guess the secret number. "
-            + "You have to guess a number between 0 to " + MAX_NUM + " in a maximum of "
+            + "You have to guess a number between 0 to " + (MAX_NUM - 1) + " in a maximum of "
             + MAX_TRIES + " attempts, if the guess is not correct, a tip will be given telling"
             + "whether the number you guess is smaller or larger than the secret number.";
     private final int secretNum;
@@ -47,16 +56,13 @@ public class GuessingNumGame extends Game {
             Scanner in = new Scanner(System.in);
             printEnterMessage();
             int input = -1;
-            boolean isCorrectInput = false;
+            boolean isCorrectInput = true;
             try {
                 input = in.nextInt();
-                if (input > MAX_NUM || input < 0) {
-                    printInputOutOfRange();
-                } else {
-                    isCorrectInput = true;
-                }
+                assert input < MAX_NUM && input >= 0 : "Please enter a number between 0 to " + MAX_NUM + ":(\n";
             } catch (InputMismatchException i) {
                 System.out.println("Sorry, please enter an integer between 0 to " + MAX_NUM + ":(\n");
+                isCorrectInput = false;
             }
 
             if (isCorrectInput) {
@@ -64,6 +70,7 @@ public class GuessingNumGame extends Game {
                 if (input == this.secretNum) {
                     printSuccessfulMessage();
                     isWin = true;
+                    break;
                 } else {
                     printFailingMessage(input);
                 }
@@ -74,6 +81,7 @@ public class GuessingNumGame extends Game {
     }
 
     public void displayGameDetails() {
+        System.out.println(LOGO);
         System.out.println(GAME_RULES);
     }
 
@@ -97,9 +105,5 @@ public class GuessingNumGame extends Game {
 
     public void printEnterMessage() {
         System.out.println("Please guess a number: \n");
-    }
-
-    public void printInputOutOfRange() {
-        System.out.println("Please enter a number between 0 to " + MAX_NUM + ":(\n");
     }
 }
