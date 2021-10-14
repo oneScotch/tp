@@ -1,8 +1,10 @@
 package ui.game;
 
+import data.Player;
 import data.game.GuessingNumGame;
 import data.game.HangmanGame;
 import data.game.QuizGame;
+import data.game.TreasureHuntGame;
 import ui.Menu;
 import utils.StringParser;
 import utils.message.Strings;
@@ -33,23 +35,34 @@ public class EasyMenu extends Menu {
 
     @Override
     public void enter() {
+        int cardId;
+
         welcome();
 
-        System.out.println("Level 1: Hang Man");
+        System.out.println(Strings.HANG_MAN_START);
         HangmanGame hangmanGame = new HangmanGame();
-        hangmanGame.execute();
+        cardId = hangmanGame.execute();
+        Player.winCard(cardId);
+
 
         System.out.println("Well done! You have finished the first level!");
 
-        System.out.println("Level 2: Quiz");
+        System.out.println(Strings.QUIZ_START);
         QuizGame quizGame = new QuizGame("1");
-        quizGame.execute();
+        cardId = quizGame.execute();
+        Player.winCard(cardId);
 
-        System.out.println("Level 3: Guess Number");
+        System.out.println(Strings.GUESS_NUM_START);
         GuessingNumGame guessingNumGame = new GuessingNumGame();
-        guessingNumGame.execute();
+        cardId = guessingNumGame.execute();
+        Player.winCard(cardId);
 
-        System.out.println("Well done! You have finished the second level!");
+        System.out.println(Strings.TREASURE_HUNT_START);
+        TreasureHuntGame treasureHuntGame = new TreasureHuntGame();
+        cardId = treasureHuntGame.execute();
+        Player.winCard(cardId);
+
+        System.out.println(Strings.FINISH_EASY_MODE);
     }
 
     /**
