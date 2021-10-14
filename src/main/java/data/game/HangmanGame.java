@@ -95,7 +95,8 @@ public class HangmanGame extends Game {
 
             if (secretWord.equals(new String(guessWord))) {
                 System.out.println("\nCongratulation! You won.");
-                isWin = true;   // changed
+                return true;
+                // isWin = true;   // changed
             }
         }
         if (!secretWord.equals(new String(guessWord))) {
