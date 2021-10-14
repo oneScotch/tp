@@ -222,8 +222,7 @@ public class Player {
         // For game QuizGame
         cardsInit.add(new Card("a variable is an abstract storage location paired "
                 + "with an associated symbolic name", 21));
-        cardsInit.add(new Card("\n" +
-                "An if else statement in programming is a conditional statement that runs a different set of statements"
+        cardsInit.add(new Card("An if else statement in programming is a conditional statement that runs a different set of statements"
                 + " depending on whether an expression is true or false", 22));
         cardsInit.add(new Card("23", 23));
         cardsInit.add(new Card("24", 24));

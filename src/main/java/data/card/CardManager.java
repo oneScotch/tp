@@ -99,7 +99,7 @@ public class CardManager {
 
     /**
      * enter this function means you are sure to win the card and there are enough cards
-     * print the card message when you win the card
+     * print the card message when you win the card.
      * @param cardsToTransfer  CardsCollectd
      * @param index  the index of the card in the ArrayList of the CardsToBeCollected
      */
