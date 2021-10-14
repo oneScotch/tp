@@ -51,6 +51,6 @@ public class Card implements Serializable {
 
     @Override
     public String toString() {
-        return Strings.CARD_DIVIDER_MESSAGE + getContent() + Strings.CARD_DIVIDER_MESSAGE;
+        return getContent();
     }
 }

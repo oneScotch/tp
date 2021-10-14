@@ -1,5 +1,7 @@
 package data.card;
 
+import utils.message.Strings;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,8 +108,9 @@ public class CardManager {
      */
     public void transferTo(CardManager cardsToTransfer, int index) {
         Card cardToCollect = cards.get(index).setAsCollected();
-        System.out.println("Great, this is the card you win!");
+        System.out.println("Great, this is the card you win!\n" + Strings.CARD_DIVIDER_MESSAGE);
         System.out.println(cardToCollect);
+        System.out.println(Strings.CARD_DIVIDER_MESSAGE);
         cards.set(index, cardToCollect);   //set the card as "collected" in the cards list
         cardsToTransfer.add(cardToCollect);   //add the "collected" card to cardsToTransfer
     }
