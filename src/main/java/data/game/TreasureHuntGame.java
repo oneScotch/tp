@@ -1,8 +1,10 @@
 package data.game;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class TreasureHuntGame extends Game {
+public class TreasureHuntGame extends Game implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
     public static final String name = "Treasure Hunt";
     public static final String GAME_RULES = "The purpose of the game is to control the treasure hunter's"
             + " to get the treasure. The position of the treasure is marked as '*' on the map, "

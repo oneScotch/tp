@@ -38,20 +38,18 @@ public class Player {
     private static List<Game> games;
 
     /**
-     * The cards list.
-     */
-    private static CardManager cardsCollected;
-    private static CardManager cardsToBeCollected;
-
-    //private final List<Card> cards;
-    /**
      * The used cards list.
      */
-    //private final List<Card> cardsused;
+    private static CardManager cardsCollected;
+    /**
+     * The cards list.
+     */
+    private static CardManager cardsToBeCollected;
 
 
     /**
      * startID indicates which game's card is collected.
+     *
      * @param startID the startID return by the "execute()" method of games, startID = 0 indicates loose
      * @return boolean: if win card successfully
      */
@@ -189,10 +187,20 @@ public class Player {
         initCards();
 
         */
+        initCards();
 
         //init Cards(), CardsUsed()
+
+
+    }
+
+    /**
+     * Initial cards for diff games, each with a unique cardID.
+     * Initial cardManager for cards and used cards.
+     */
+    private static void initCards() {
         ArrayList<Card> cardsInit = new ArrayList<>();
-        // Init cards for diff games, each with a unique cardID
+        // Init cards for diff games
         // For game Treasure
         cardsInit.add(new Card("'Sequence' is the order that commands are executed by a computer", 1));
         cardsInit.add(new Card("'Sequence' is a set of logical steps carried out in order.", 2));
@@ -253,7 +261,6 @@ public class Player {
 
         cardsCollected = new CardManager();
         cardsToBeCollected = new CardManager(cardsInit);
-
 
     }
 
