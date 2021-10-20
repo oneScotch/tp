@@ -1,9 +1,11 @@
 package data.game;
 
+import java.io.Serializable;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class GuessingNumGame extends Game {
+public class GuessingNumGame extends Game implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
     public static final String name = "GuessingNumber";
     public static final int MAX_NUM = 100;
     public static final int MAX_TRIES = 8;
@@ -47,7 +49,7 @@ public class GuessingNumGame extends Game {
 
     public int generateSecretNum() {
         final double randomNum = Math.random();
-        return (int)(randomNum * 100);
+        return (int) (randomNum * 100);
     }
 
     public boolean play() {

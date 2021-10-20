@@ -4,8 +4,10 @@ import utils.message.Strings;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class CardManager {
+public class CardManager implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
     private List<Card> cards;
     private static final String MARK_NOT_USED = "[ ]";
     private static final String MARK_USED = "[x]";
