@@ -22,17 +22,27 @@ public class TreasureHuntGame extends Game {
     public int execute() {
         displayGameDetails();
         displayMovements();
+        displayMapDetails();
         displayMap();
         TreasureHuntGame g = new TreasureHuntGame();
         boolean isWin = g.play();    //changed
         return isWin ? startID : 0;    // return startID if win return 0 indicates lose
     }
 
+    /**
+     * gets the name of this game
+     * @return string the name of the game
+     *
+     */
     @Override
     public String getName() {
         return this.name;
     }
 
+    /**
+     * executes the main part of game which the user can play with
+     * @return boolean whether the user has won this game
+     */
     public boolean play() {
         boolean isWin = false; // todo: add limited attempts to lose the game
         int x = 1;
@@ -41,15 +51,17 @@ public class TreasureHuntGame extends Game {
         Scanner in = new Scanner(System.in);
         while (!find) {
             String input = in.nextLine();
-            int[] command = parseCommand(input);
-            for (int i = 0; i < command.length; i++) {
-                if (command[i] == 1) {
+            if (!isValidCommand(input)) {
+                continue;
+            }
+            for (int i = 0; i < input.length(); i++) {
+                if (input.charAt(i) == '1') {
                     x = x + 1;
-                } else if (command[i] == 2) {
+                } else if (input.charAt(i) == '2') {
                     x = x - 1;
-                } else if (command[i] == 3) {
+                } else if (input.charAt(i) == '3') {
                     y = y - 1;
-                } else if (command[i] == 4) {
+                } else if (input.charAt(i) == '4') {
                     y = y + 1;
                 }
                 if (canMove(x, y)) {
@@ -60,6 +72,8 @@ public class TreasureHuntGame extends Game {
                     move(x, y);
                 } else {
                     printCannotMoveMessage();
+                    displayMap();
+                    resetMap();
                     x = 1;
                     y = 1;
                     break;
@@ -73,6 +87,19 @@ public class TreasureHuntGame extends Game {
         return isWin;
     }
 
+    public boolean isValidCommand(String input) {
+        for (int i = 0;i < input.length(); i++) {
+            if (input.charAt(i) < 49 || input.charAt(i) > 52) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * parses the command entered by the user
+     * @return int array of the encoded command sequence
+     */
     public int[] parseCommand(String input) {
         String commandString = input.replace(" ", "");
         int[] commandArray = new int[commandString.length()];
@@ -92,6 +119,10 @@ public class TreasureHuntGame extends Game {
         return commandArray;
     }
 
+    /**
+     * determines whether the move is available
+     * @return boolean whether the move is available
+     */
     public boolean canMove(int x, int y) {
         if (this.map[y][x] != 1) {
             return true;
@@ -100,10 +131,17 @@ public class TreasureHuntGame extends Game {
         }
     }
 
+    /**
+     * moves the treasure hunter in the map
+     */
     public void move(int x, int y) {
         this.map[y][x] = 3;
     }
 
+    /**
+     * determines whether the treature hunter have found the treasure
+     * @return boolean whether the treasure is found
+     */
     public boolean found(int x, int y) {
         if (this.map[x][y] == -1) {
             return true;
@@ -112,18 +150,41 @@ public class TreasureHuntGame extends Game {
         }
     }
 
+    public void resetMap() {
+        for (int i = 0; i < this.map.length; i++) {
+            for (int j = 0; j < this.map[0].length; j++) {
+                if (this.map[i][j] == 3) {
+                    this.map[i][j] = 0;
+                }
+            }
+        }
+        System.out.println("Restarted.\n");
+    }
+
+    /**
+     * prints the message that the input move is not available
+     */
     public void printCannotMoveMessage() {
         System.out.println("Sorry, you cannot move like that :(");
     }
 
+    /**
+     * prints the messege that the treasure hunter have found the treasure
+     */
     public void printSuccessfulMessage() {
         System.out.println("Congratulaitons! You have found the treasure!");
     }
 
+    /**
+     * prints the rule of the treasure hunt game
+     */
     public void displayGameDetails() {
         System.out.println(GAME_RULES);
     }
 
+    /**
+     * prints the choices of movement and corresponding instruction numbers
+     */
     public void displayMovements() {
         System.out.println("Enter a sequence of movement(enter the index e.g. 12321):\n"
                 + "1. moveRight()\n"
@@ -132,6 +193,20 @@ public class TreasureHuntGame extends Game {
                 + "4. moveDown()\n");
     }
 
+    /**
+     * prints the explanation of the map
+     */
+    public void displayMapDetails() {
+        System.out.println("Introduction of the map:\n"
+                + "x: walls. You cannot go across it.\n"
+                + "O: start position of the treasure hunter.\n"
+                + "*: treasure position. You need get to there!\n"
+                + "·: noting the path you have covered.\n");
+    }
+
+    /**
+     * prints the map for the user
+     */
     public void displayMap() {
         for (int i = 0; i < this.map.length; i++) {
             for (int j = 0; j < this.map[0].length; j++) {
