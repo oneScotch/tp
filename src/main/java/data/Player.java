@@ -6,8 +6,14 @@ import data.card.Card;
 import utils.Errors;
 import utils.IO;
 import utils.message.Strings;
-
-import java.io.*;
+import java.io.FileWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -139,8 +145,8 @@ public class Player {
     }
 
     /**
-     * save the card information by cardID
-     * @param path
+     * save the card information by cardID.
+     * @param path the file path to save the data
      */
     public static void saveCard(String path) {
         try {
@@ -156,7 +162,7 @@ public class Player {
             }
             FileWriter fw = new FileWriter(path);
             fw.write(collectedIDs);
-            fw.write(System.getProperty( "line.separator" ));
+            fw.write(System.getProperty("line.separator"));
             fw.write(usedIDs);
             fw.close();
         } catch (IOException e) {
