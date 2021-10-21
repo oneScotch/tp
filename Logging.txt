@@ -1,2 +1,2 @@
-10æœˆ 21, 2021 10:42:04 ä¸Šåˆ game.Game main
-ä¿¡æ¯: going to start processing
+10ÔÂ 22, 2021 12:11:04 ÉÏÎç game.Game main
+INFO: going to start processing

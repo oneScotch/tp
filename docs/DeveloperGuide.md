@@ -37,6 +37,11 @@ The rest of the Code Hunt consists of below components:
 - Player: The database of all data for one player
 - Card: The card with coding knowledge that a player can collect
 - CardManager: All operations that player can do to a card list
+- Game: The parent class of game
+- GameRecord: The list storing all the games completed by the user
+- GuessingNumGame: The guessing number game
+- TreasureHuntGame: The treasure hunt game
+- TreasureHuntMap: All the maps for the treasure hunt game
 
 ###How the architecture components interact with each other
 
@@ -47,13 +52,11 @@ The Sequence Diagram below shows how the components interact with each other for
 
 ## Product scope
 ### Target user profile
-
-{Describe the target user profile}
+This product is for children ages 6 and up who have little prior coding experience but have an interest in discovering their interests and talents in the technology field.
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
-
+As digital literacy becomes increasingly important, this product is designed for preparing our next generation to be future-ready. It would raise children's interest in coding by simple coding tasks and help them learn some basic coding skills through different levels of text-based adventure games. It is also designed to help children to develop their logical thinking.
 ## User Stories
 
 |Version| As a ... | I want to ... | So that I can ...|
