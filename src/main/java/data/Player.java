@@ -7,12 +7,7 @@ import utils.Errors;
 import utils.IO;
 import utils.message.Strings;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -27,6 +22,12 @@ import java.util.Calendar;
 public class Player {
     public static final Path DATAPATH = Paths.get(System.getProperty("user.dir"), "data");
     public static String PLAYER_FILE_NAME;
+    public static List<Integer> collectedCardIDs = new ArrayList<>();
+    // store the card id of the card collected -- for storage use
+    public static List<Integer> usedCardIDs = new ArrayList<>();
+    // store the card id of the card used to buy tips -- for storage use
+    public static final int COLLECTED_LENGTH = 10;
+    public static final int USED_LENGTH = 5;
     /**
      * The name of the restaurant.
      */
@@ -60,7 +61,8 @@ public class Player {
         int index = cardsToBeCollected.getCardPosition(startID);
         boolean canBeCollected = index == -1 ? false : true;
         if (canBeCollected) {
-            cardsToBeCollected.transferTo(cardsCollected, index);
+            int cardID = cardsToBeCollected.transferTo(cardsCollected, index);
+            collectedCardIDs.add(cardID);
             // print card
         } else {
             System.out.println("Oops! You have already collected all the cards for this game.");
@@ -69,10 +71,11 @@ public class Player {
         return canBeCollected;   // return false means not enough cards to collect for this game
     }
 
-    public void buyTip(int cardID) {
+    public static void buyTip(int cardID) {
         boolean canBeExchanged = cardsCollected.exchange(cardID);
         if (canBeExchanged) {
             // todo : tip-related method
+            usedCardIDs.add(cardID);
             System.out.println("Sure, you successfully use one card to get the tip!");
         } else {
             System.out.println("Ops, it seems that you have already used that card, please choose another one");
@@ -134,6 +137,53 @@ public class Player {
         }
 
     }
+
+    /**
+     * save the card information by cardID
+     * @param path
+     */
+    public static void saveCard(String path) {
+        try {
+            String collectedIDs = "Collected:";
+            String usedIDs = "Used:";
+            for (int i = 0; i < collectedCardIDs.size(); i++) {
+                collectedIDs += collectedCardIDs.get(i);
+                collectedIDs += " ";
+            }
+            for (int i = 0; i < usedCardIDs.size(); i++) {
+                usedIDs += usedCardIDs.get(i);
+                usedIDs += " ";
+            }
+            FileWriter fw = new FileWriter(path);
+            fw.write(collectedIDs);
+            fw.write(System.getProperty( "line.separator" ));
+            fw.write(usedIDs);
+            fw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void loadCard(String path) throws FileNotFoundException {
+        File f = new File(path);
+        Scanner sc = new Scanner(f);
+        // Assume the first line stores the card message
+        String collectedIDs = sc.nextLine();
+        String usedIDs = sc.nextLine();
+        String[] collectedIdArray = collectedIDs.substring(COLLECTED_LENGTH).split(" ");
+        for (int i = 0; i < collectedIdArray.length; i++) {
+            int collectedCardID = Integer.parseInt(collectedIdArray[i]);
+            cardsToBeCollected.transferTo(cardsCollected, cardsToBeCollected.findCard(collectedCardID));
+            collectedCardIDs.add(collectedCardID);
+        }
+        String[] usedIdArray = usedIDs.substring(USED_LENGTH).split(" ");
+
+        for (int i = 0; i < usedIdArray.length; i++) {
+            int usedCardID = Integer.parseInt(usedIdArray[i]);
+            buyTip(usedCardID);
+        }
+    }
+
 
     /**
      * Load restaurant previous save state.

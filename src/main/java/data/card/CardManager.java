@@ -107,14 +107,16 @@ public class CardManager implements Serializable {
      * print the card message when you win the card.
      * @param cardsToTransfer  CardsCollectd
      * @param index  the index of the card in the ArrayList of the CardsToBeCollected
+     * @return the cardID of the card collected
      */
-    public void transferTo(CardManager cardsToTransfer, int index) {
+    public int transferTo(CardManager cardsToTransfer, int index) {
         Card cardToCollect = cards.get(index).setAsCollected();
         System.out.println("Great, this is the card you win!\n" + Strings.CARD_DIVIDER_MESSAGE);
         System.out.println(cardToCollect);
         System.out.println(Strings.CARD_DIVIDER_MESSAGE);
         cards.set(index, cardToCollect);   //set the card as "collected" in the cards list
         cardsToTransfer.add(cardToCollect);   //add the "collected" card to cardsToTransfer
+        return cardToCollect.getCardID();
     }
 
     public boolean exchange(int cardID) {
