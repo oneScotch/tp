@@ -35,7 +35,8 @@ The rest of the Code Hunt consists of below components:
 
 **Data**:
 - Player: The database of all data for one player
-- Card
+- Card: The card with coding knowledge that a player can collect
+- CardManager: All operations that player can do to a card list
 
 ###How the architecture components interact with each other
 
