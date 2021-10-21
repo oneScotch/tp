@@ -32,7 +32,7 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * gets the name of this game
+     * gets the name of this game.
      * @return string the name of the game
      *
      */
@@ -42,7 +42,7 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * executes the main part of game which the user can play with
+     * executes the main part of game which the user can play with.
      * @return boolean whether the user has won this game
      */
     public boolean play() {
@@ -89,6 +89,10 @@ public class TreasureHuntGame extends Game implements Serializable {
         return isWin;
     }
 
+    /**
+     * checks whether the input command is valid.
+     * @return boolean whether the input command is valid
+     */
     public boolean isValidCommand(String input) {
         for (int i = 0;i < input.length(); i++) {
             if (input.charAt(i) < 49 || input.charAt(i) > 52) {
@@ -99,7 +103,7 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * parses the command entered by the user
+     * parses the command entered by the user.
      * @return int array of the encoded command sequence
      */
     public int[] parseCommand(String input) {
@@ -122,7 +126,7 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * determines whether the move is available
+     * determines whether the move is available.
      * @return boolean whether the move is available
      */
     public boolean canMove(int x, int y) {
@@ -134,14 +138,14 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * moves the treasure hunter in the map
+     * moves the treasure hunter in the map.
      */
     public void move(int x, int y) {
         this.map[y][x] = 3;
     }
 
     /**
-     * determines whether the treature hunter have found the treasure
+     * determines whether the treature hunter have found the treasure.
      * @return boolean whether the treasure is found
      */
     public boolean found(int x, int y) {
@@ -152,6 +156,9 @@ public class TreasureHuntGame extends Game implements Serializable {
         }
     }
 
+    /**
+     * resets the map.
+     */
     public void resetMap() {
         for (int i = 0; i < this.map.length; i++) {
             for (int j = 0; j < this.map[0].length; j++) {
@@ -164,28 +171,28 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * prints the message that the input move is not available
+     * prints the message that the input move is not available.
      */
     public void printCannotMoveMessage() {
         System.out.println("Sorry, you cannot move like that :(");
     }
 
     /**
-     * prints the messege that the treasure hunter have found the treasure
+     * prints the messege that the treasure hunter have found the treasure.
      */
     public void printSuccessfulMessage() {
         System.out.println("Congratulaitons! You have found the treasure!");
     }
 
     /**
-     * prints the rule of the treasure hunt game
+     * prints the rule of the treasure hunt game.
      */
     public void displayGameDetails() {
         System.out.println(GAME_RULES);
     }
 
     /**
-     * prints the choices of movement and corresponding instruction numbers
+     * prints the choices of movement and corresponding instruction numbers.
      */
     public void displayMovements() {
         System.out.println("Enter a sequence of movement(enter the index e.g. 12321):\n"
@@ -196,7 +203,7 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * prints the explanation of the map
+     * prints the explanation of the map.
      */
     public void displayMapDetails() {
         System.out.println("Introduction of the map:\n"
@@ -207,7 +214,7 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * prints the map for the user
+     * prints the map for the user.
      */
     public void displayMap() {
         for (int i = 0; i < this.map.length; i++) {

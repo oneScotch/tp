@@ -29,15 +29,16 @@ public class GuessingNumGame extends Game implements Serializable {
 
     Scanner in = new Scanner(System.in);
 
-    /**
-     * execute the game and return cardID collected.
-     * @return cardID of the card to collect in the Player class; return 0 if lose
-     */
+
     public GuessingNumGame() {
         this.secretNum = generateSecretNum() % MAX_NUM;
         this.remainingTries = MAX_TRIES;
     }
 
+    /**
+     * execute the game and return cardID collected.
+     * @return cardID of the card to collect in the Player class; return 0 if lose
+     */
     @Override
     public int execute() {
         displayGameDetails();
@@ -47,7 +48,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * gets the name of this game
+     * gets the name of this game.
      * @return string the name of the game
      *
      */
@@ -57,7 +58,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * randomly generated a number between 0 and max number minus 1 to be guessed
+     * randomly generated a number between 0 and max number minus 1 to be guessed.
      * @return the randomly generated integer
      */
     public int generateSecretNum() {
@@ -66,7 +67,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * executes the main part of game which the user can play with
+     * executes the main part of game which the user can play with.
      * @return boolean whether the user has won this game
      */
     public boolean play() {
@@ -100,7 +101,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * prints the messege that the user have guessed the secrect number
+     * prints the messege that the user have guessed the secrect number.
      */
     public void printSuccessfulMessage() {
         System.out.println("Nice! You have guess the secret number " + this.secretNum
@@ -108,7 +109,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * prints the rule of the guessing number game
+     * prints the rule of the guessing number game.
      */
     public void displayGameDetails() {
         System.out.println(LOGO);
@@ -116,7 +117,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * prints the messege that the guess is incorrect and displays the number of remaining tries
+     * prints the messege that the guess is incorrect and displays the number of remaining tries.
      */
     public void printFailingMessage(int guess) {
         if (guess > this.secretNum) {
@@ -128,14 +129,14 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * prints the messege that the tries have been used up
+     * prints the messege that the tries have been used up.
      */
     public void printEndingMessage() {
         System.out.println("Oops! You have used up the chances. Game over :(");
     }
 
     /**
-     * prints the messege telling the unser to enter a number for guessing
+     * prints the messege telling the unser to enter a number for guessing.
      */
     public void printEnterMessage() {
         System.out.println("Please guess a number: \n");
