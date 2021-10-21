@@ -70,27 +70,22 @@ public class Strings {
 
     // Card menu messages
     private static final String PACKAGE = "\n"
-            + "                    ████████████                  \n"
-            + "                  ▒▒▓▓░░░░░░░░▓▓▒▒                  \n"
-            + "                  ▓▓            ▓▓                \n"
-            + "            ▓▓▒▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒░░          \n"
-            + "          ██▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒        \n"
-            + "          ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒          \n"
-            + "          ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓░░        \n"
-            + "          ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▒▒        \n"
-            + "        ░░▓▓▒▒▓▓▒▒                ▒▒▒▒▒▒▒▒░░        \n"
-            + "         ▓▓▒▒▒▒▓▓                  ░░▒▒▒▒▒▒        \n"
-            + "        ▒▒▒▒▓▓▓▓                  ░░▒▒▒▒▒▒░░        \n"
-            + "        ▒▒▒▒▓▓▓▓                  ░░▒▒▒▒▒▒░░        \n"
-            + "        ▓▓▒▒▒▒▓▓                  ░░▒▒▒▒▒▒░░        \n"
-            + "        ▓▓▓▓▓▓▓▓▒▒              ░░▒▒▒▒▒▒▓▓░░        \n"
-            + "          ▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▓▓░░        \n"
-            + "              ████▓▓▓▓████████▓▓▓▓▓▓▒▒            \n";
+            + "      ___           ___           ___          _____    \n"
+            + "     /  /\\         /  /\\         /  /\\        /  /::\\   \n"
+            + "    /  /:/        /  /::\\       /  /::\\      /  /:/\\:\\  \n"
+            + "   /  /:/        /  /:/\\:\\     /  /:/\\:\\    /  /:/  \\:\\ \n"
+            + "  /  /:/  ___   /  /:/~/::\\   /  /:/~/:/   /__/:/ \\__\\:|\n"
+            + " /__/:/  /  /\\ /__/:/ /:/\\:\\ /__/:/ /:/___ \\  \\:\\ /  /:/\n"
+            + " \\  \\:\\ /  /:/ \\  \\:\\/:/__\\/ \\  \\:\\/:::::/  \\  \\:\\  /:/ \n"
+            + "  \\  \\:\\  /:/   \\  \\::/       \\  \\::/~~~~    \\  \\:\\/:/  \n"
+            + "   \\  \\:\\/:/     \\  \\:\\        \\  \\:\\         \\  \\::/   \n"
+            + "    \\  \\::/       \\  \\:\\        \\  \\:\\         \\__\\/    \n"
+            + "     \\__\\/         \\__\\/         \\__\\/                  \n";
 
     public static final String CARD_WELCOME_MESSAGE = PACKAGE
             + "Here is your package of cards!\n" + HELP_MESSAGE;
     public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
-
+    public static final String CARD_DIVIDER_MESSAGE = "\n♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧\n";
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
     public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";

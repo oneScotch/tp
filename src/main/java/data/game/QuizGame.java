@@ -1,10 +1,12 @@
 package data.game;
 
+import java.io.Serializable;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
-public class QuizGame extends Game {
+public class QuizGame extends Game implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
     public static String MCQName = "multiple-choice question";
     public static String MRQName = "multiple-response question";
     public static String TFQName = " true-false question";
@@ -24,7 +26,7 @@ public class QuizGame extends Game {
     public int execute() {
         boolean isWin = false;   // changed
         while (NumOfCorrect < 4) {
-            System.out.println(NumOfUserAnswer);
+            System.out.println(NumOfUserAnswer + 1);
             switch (NumOfUserAnswer % 4) {
             case 0:
                 getQuestion(MCQ, MCQAnswers);

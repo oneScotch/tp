@@ -1,8 +1,10 @@
 package data.game;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GameRecord {
+public class GameRecord implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
 
     public static ArrayList<Game> games;
 

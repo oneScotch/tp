@@ -1,9 +1,11 @@
 package data.game;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HangmanGame extends Game {
+public class HangmanGame extends Game implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
     // Coding Terminologies
     public static final String[] WORDS = {"algorithm", "argument", "arrays", "c", "loops", "java", "linux",
         "python", "statement", "variable", "while"};
@@ -59,7 +61,7 @@ public class HangmanGame extends Game {
     public String getName() {
         return "Hang Man";
     }
-    
+
     public void displayGameDetails() {
         System.out.println(LOGO);
         System.out.println(GAME_RULES);
@@ -96,6 +98,7 @@ public class HangmanGame extends Game {
             if (secretWord.equals(new String(guessWord))) {
                 System.out.println("\nCongratulation! You won.");
                 isWin = true;   // changed
+                break;
             }
         }
         if (!secretWord.equals(new String(guessWord))) {

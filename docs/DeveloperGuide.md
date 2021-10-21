@@ -1,12 +1,47 @@
 # Developer Guide
 
 ## Acknowledgements
+Inspiration for User Guide and Developer Guide: AddressBook (Level 3)
+https://se-education.org/addressbook-level3/DeveloperGuide.html
+https://se-education.org/addressbook-level3/UserGuide.html
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
 ## Design & implementation
+###System Architecture
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+System Architecture diagram of the design of Code Hunt:
+//Todo {diagram}
+
+**Main component of the architecture (Game.java)**
+
+On launch, the Game.java initialises the logger and input scanner. It calls Game main menu to enter the game.
+
+The rest of the Code Hunt consists of below components:
+
+**Ui** :Command Line User Interface of Code Hunt. (Menu classes)
+- main/Game main menu: Loads previous record or initializes the components in the correct sequence, and connects them up with each other.
+- game/Game menu: Chooses easy/difficult game level; Checks game progress/ achieved cards content.
+- game/Easy menu, Difficult menu: Two game levels.
+- card/Card menu: 
+
+**Parser**: Parser to parser user inputs from Ui.
+
+**IO**: The input/output formatter.
+
+**Errors**: Show different error information.
+
+**Messages** Numbers/Strings: Store all the constant values used in this programme
+
+**Data**:
+- Player: The database of all data for one player
+- Card
+
+###How the architecture components interact with each other
+
+The Sequence Diagram below shows how the components interact with each other for the scenario where the user issues the command
+//TODO {diagram}
+
 
 
 ## Product scope

@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 
 /**
  * The main menu of the CodeHunt system.
+ *
+ * @author Wang Ruisi
  */
 public class GameMainMenu extends Menu {
     /**

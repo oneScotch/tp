@@ -1,6 +1,8 @@
 package data.card;
 
 
+import utils.message.Strings;
+
 import java.io.Serializable;
 
 public class Card implements Serializable {

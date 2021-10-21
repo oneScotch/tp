@@ -1,9 +1,13 @@
 package data.card;
 
+import utils.message.Strings;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class CardManager {
+public class CardManager implements Serializable {
+    private static final long serialVersionUID = -9135686500512288865L;
     private List<Card> cards;
     private static final String MARK_NOT_USED = "[ ]";
     private static final String MARK_USED = "[x]";
@@ -106,8 +110,9 @@ public class CardManager {
      */
     public void transferTo(CardManager cardsToTransfer, int index) {
         Card cardToCollect = cards.get(index).setAsCollected();
-        System.out.println("Great, this is the card you win!");
+        System.out.println("Great, this is the card you win!\n" + Strings.CARD_DIVIDER_MESSAGE);
         System.out.println(cardToCollect);
+        System.out.println(Strings.CARD_DIVIDER_MESSAGE);
         cards.set(index, cardToCollect);   //set the card as "collected" in the cards list
         cardsToTransfer.add(cardToCollect);   //add the "collected" card to cardsToTransfer
     }

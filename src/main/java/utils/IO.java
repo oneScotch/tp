@@ -170,35 +170,6 @@ public class IO {
     }
 
     /**
-     * Reads a date string from the {@code Scanner} provided.
-     *
-     * @param in      the {@code Scanner} from which input is read
-     * @param prompt  the prompt to show
-     * @param pattern the pattern of the date string
-     * @return the date string read, or {@code null} if the pattern is invalid
-     * @throws NoSuchElementException if input is exhausted
-     * @throws IllegalStateException  if this scanner is closed
-     */
-    public static String readDateString(Scanner in, String prompt, String pattern)
-            throws NoSuchElementException, IllegalStateException {
-        SimpleDateFormat sdf;
-        try {
-            sdf = new SimpleDateFormat(pattern);
-        } catch (IllegalArgumentException e) {
-            return null;
-        }
-        while (true) {
-            String input = readString(in, prompt);
-            try {
-                sdf.parse(input);
-                return input;
-            } catch (ParseException e) {
-                Errors.print(Strings.ERR_DATE_INPUT, false);
-            }
-        }
-    }
-
-    /**
      * Reads a time string from the {@code Scanner} provided.
      *
      * @param in      the {@code Scanner} from which input is read
@@ -223,6 +194,35 @@ public class IO {
                 return input;
             } catch (ParseException e) {
                 Errors.print(Strings.ERR_TIME_INPUT, false);
+            }
+        }
+    }
+
+    /**
+     * Reads a date string from the {@code Scanner} provided.
+     *
+     * @param in      the {@code Scanner} from which input is read
+     * @param prompt  the prompt to show
+     * @param pattern the pattern of the date string
+     * @return the date string read, or {@code null} if the pattern is invalid
+     * @throws NoSuchElementException if input is exhausted
+     * @throws IllegalStateException  if this scanner is closed
+     */
+    public static String readDateString(Scanner in, String prompt, String pattern)
+        throws NoSuchElementException, IllegalStateException {
+        SimpleDateFormat sdf;
+        try {
+            sdf = new SimpleDateFormat(pattern);
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+        while (true) {
+            String input = readString(in, prompt);
+            try {
+                sdf.parse(input);
+                return input;
+            } catch (ParseException e) {
+                Errors.print(Strings.ERR_DATE_INPUT, false);
             }
         }
     }
