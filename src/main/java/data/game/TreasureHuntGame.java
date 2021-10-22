@@ -203,17 +203,6 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * prints the explanation of the map.
-     */
-    public void displayMapDetails() {
-        System.out.println("Introduction of the map:\n"
-                + "x: walls. You cannot go across it.\n"
-                + "O: start position of the treasure hunter.\n"
-                + "*: treasure position. You need get to there!\n"
-                + "·: noting the path you have covered.\n");
-    }
-
-    /**
      * prints the map for the user.
      */
     public void displayMap() {
@@ -233,5 +222,16 @@ public class TreasureHuntGame extends Game implements Serializable {
             }
             System.out.println();
         }
+    }
+
+    /**
+     * prints the explanation of the map.
+     */
+    public void displayMapDetails() {
+        System.out.println("Introduction of the map:\n"
+            + "x: walls. You cannot go across it.\n"
+            + "O: start position of the treasure hunter.\n"
+            + "*: treasure position. You need get to there!\n"
+            + "·: noting the path you have covered.\n");
     }
 }
