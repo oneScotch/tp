@@ -31,7 +31,7 @@ The rest of the Code Hunt consists of below components:
 
 **Errors**: Show different error information.
 
-**Messages** Numbers/Strings: Store all the constant values used in this programme
+**Messages** Numbers/Strings: Store all the constant values that are used in this programme and shown to user
 
 **Data**:
 - Player: The database of all data for one player
@@ -39,6 +39,7 @@ The rest of the Code Hunt consists of below components:
 - CardManager: All operations that player can do to a card list
 - Game: The parent class of game
 - GameRecord: The list storing all the games completed by the user
+- QuizGame: The game base on four forms of quiz
 - GuessingNumGame: The guessing number game
 - TreasureHuntGame: The treasure hunt game
 - TreasureHuntMap: All the maps for the treasure hunt game
@@ -51,12 +52,14 @@ The Sequence Diagram below shows how the components interact with each other for
 
 
 ## Product scope
+
 ### Target user profile
 This product is for children ages 6 and up who have little prior coding experience but have an interest in discovering their interests and talents in the technology field.
 
 ### Value proposition
 
 As digital literacy becomes increasingly important, this product is designed for preparing our next generation to be future-ready. It would raise children's interest in coding by simple coding tasks and help them learn some basic coding skills through different levels of text-based adventure games. It is also designed to help children to develop their logical thinking.
+
 ## User Stories
 
 |Version| As a ... | I want to ... | So that I can ...|
