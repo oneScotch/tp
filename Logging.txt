@@ -1,2 +1,2 @@
-10月 26, 2021 8:48:29 下午 game.Game main
+10月 26, 2021 9:06:56 下午 game.Game main
 INFO: going to start processing
