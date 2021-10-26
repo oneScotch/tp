@@ -42,7 +42,6 @@ public class CardManager implements Serializable {
         return index;
     }
 
-
     /**
      * find the index of the card in the cardList by cardID.
      * @return -1 if the cardID is not found
