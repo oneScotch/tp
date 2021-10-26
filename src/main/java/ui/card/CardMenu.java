@@ -73,7 +73,6 @@ public class CardMenu extends Menu {
                     break;
                 }
                 case FIND: {
-                    System.out.println(Strings.FIND_CARD_MESSAGE);
                     if (parser.hasMoreTokens()) {
                         Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
                         continue;
@@ -116,9 +115,13 @@ public class CardMenu extends Menu {
     }
 
     private void findCard() {
+
     }
 
     private void deleteCard() {
+        System.out.println(Strings.DELETE_CARD_MESSAGE);
+        prompt();
+
     }
 
     /**
