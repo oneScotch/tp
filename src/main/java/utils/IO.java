@@ -71,31 +71,6 @@ public class IO {
     }
 
     /**
-     * Reads an integer from the {@code Scanner} provided.
-     *
-     * @param in     the {@code Scanner} from which input is read
-     * @param prompt the prompt to show
-     * @return the integer read
-     * @throws NoSuchElementException if input is exhausted
-     * @throws IllegalStateException  if this scanner is closed
-     */
-    public static int readInt(Scanner in, String prompt) throws NoSuchElementException, IllegalStateException {
-        int result = 0;
-        while (true) {
-            try {
-                System.out.print(prompt);
-                result = in.nextInt();
-                in.nextLine();
-                break;
-            } catch (InputMismatchException ime) {
-                in.nextLine();
-                Errors.print(Strings.ERR_INPUT_MISMATCH_INT_EXPECTED, false);
-            }
-        }
-        return result;
-    }
-
-    /**
      * Reads a double from the {@code Scanner} provided.
      *
      * @param in     the {@code Scanner} from which input is read
@@ -115,6 +90,31 @@ public class IO {
             } catch (InputMismatchException ime) {
                 in.nextLine();
                 Errors.print(Strings.ERR_INPUT_MISMATCH_DOUBLE_EXPECTED, false);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Reads an integer from the {@code Scanner} provided.
+     *
+     * @param in     the {@code Scanner} from which input is read
+     * @param prompt the prompt to show
+     * @return the integer read
+     * @throws NoSuchElementException if input is exhausted
+     * @throws IllegalStateException  if this scanner is closed
+     */
+    public static int readInt(Scanner in, String prompt) throws NoSuchElementException, IllegalStateException {
+        int result = 0;
+        while (true) {
+            try {
+                System.out.print(prompt);
+                result = in.nextInt();
+                in.nextLine();
+                break;
+            } catch (InputMismatchException ime) {
+                in.nextLine();
+                Errors.print(Strings.ERR_INPUT_MISMATCH_INT_EXPECTED, false);
             }
         }
         return result;

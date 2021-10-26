@@ -34,32 +34,6 @@ public class StringParser {
     }
 
     /**
-     * A token consumed by the parser.
-     */
-    private class Token {
-        /**
-         * The type of this token.
-         */
-        TokenType tokenType;
-
-        /**
-         * The value of this token.
-         */
-        String token;
-
-        /**
-         * Initialises a token.
-         *
-         * @param tokenType the type of the token
-         * @param token     the value of the token
-         */
-        Token(TokenType tokenType, String token) {
-            this.tokenType = tokenType;
-            this.token = token;
-        }
-    }
-
-    /**
      * The RegEx pattern that matches any of the following, seperated by any number
      * of whitespace characters:
      * <ul>
@@ -88,6 +62,32 @@ public class StringParser {
      */
     private int next = 0;
 
+    /**
+     * A token consumed by the parser.
+     */
+    private class Token {
+        /**
+         * The type of this token.
+         */
+        TokenType tokenType;
+
+        /**
+         * The value of this token.
+         */
+        String token;
+
+        /**
+         * Initialises a token.
+         *
+         * @param tokenType the type of the token
+         * @param token     the value of the token
+         */
+        Token(TokenType tokenType, String token) {
+            this.tokenType = tokenType;
+            this.token = token;
+        }
+    }
+    
     /**
      * Initialises a parser with the string given.
      *

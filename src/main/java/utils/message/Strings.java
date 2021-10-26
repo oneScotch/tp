@@ -41,6 +41,12 @@ public class Strings {
 
     // Easy game messages
     private static final String DIVIDER = "=========================================================";
+    public static final String EASY_GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
+        + "We are the Avengers. To protect the world from devastation, we need your help!\n"
+        + "We need to get as many cards ad possible for the last Infinity Gem.\n"
+        + "Win following games and collect the cards.\n"
+        + "Good luck!\n"
+        + "We will be waiting for you and the cards!\n" + DIVIDER;
     public static final String EASY_LOGO = "            _.------.                        .----.__\n"
             + "           /         \\_.       ._           /---.__  \\\n"
             + "          |  O    O   |\\\\___  //|          /       `\\ |\n"
@@ -55,12 +61,6 @@ public class Strings {
             + "    __.-'            \\  \\   .   / \\_.  \\ -|_/\\/ `--.|_\n"
             + " --'                  \\  \\ |   /    |  |              `-\n"
             + "                       \\uU \\UU/     |  /   :F_P:\n";
-    public static final String EASY_GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
-            + "We are the Avengers. To protect the world from devastation, we need your help!\n"
-            + "We need to get as many cards ad possible for the last Infinity Gem.\n"
-            + "Win following games and collect the cards.\n"
-            + "Good luck!\n"
-            + "We will be waiting for you and the cards!\n" + DIVIDER;
     public static final String HANG_MAN_START = "\n******************** Level 1: Hang Man ********************\n";
     public static final String QUIZ_START = "\n******************** Level 2: How Code Works ********************\n";
     public static final String GUESS_NUM_START = "\n******************** Level 3: Guess Number ********************\n";
@@ -86,15 +86,12 @@ public class Strings {
             + "Here is your package of cards!\n" + HELP_MESSAGE;
     public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
     public static final String CARD_DIVIDER_MESSAGE = "\n♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧\n";
-    //Player messages
-    public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
-    public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
 
     // Error messages
     public static final String ERR_PLAYER_FILE_NOTFOUND_MESSAGE =
-            " not found or does not exists. Default settings will be loaded.";
+        " not found or does not exists. Default settings will be loaded.";
     public static final String ERR_PLAYER_FILE_CORRUPTED_MESSAGE =
-            "Data file %s is corrupted. Default settings will be loaded instead.";
+        "Data file %s is corrupted. Default settings will be loaded instead.";
     public static final String ERR_UNKNOWN_COMMAND = "Unknown command.\n" + HELP_MESSAGE;
     public static final String ERR_UNEXPECTED_INPUT = "Unexpected input.\n" + HELP_MESSAGE;
     public static final String ERR_EMPTY_STRING = "Please provide an input.";
@@ -106,4 +103,7 @@ public class Strings {
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
     public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
 
+    //Player messages
+    public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
+    public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
 }
