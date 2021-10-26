@@ -69,11 +69,16 @@ public class CardMenu extends Menu {
                         Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
                         continue;
                     }
-                    // TODO: add delete function
+                    deleteCard();
                     break;
                 }
                 case FIND: {
-                    // TODO: add find function
+                    System.out.println(Strings.FIND_CARD_MESSAGE);
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    findCard();
                     break;
                 }
                 case HELP: {
@@ -108,6 +113,12 @@ public class CardMenu extends Menu {
         } catch (NoSuchElementException e) {
             exit(false);
         }
+    }
+
+    private void findCard() {
+    }
+
+    private void deleteCard() {
     }
 
     /**
