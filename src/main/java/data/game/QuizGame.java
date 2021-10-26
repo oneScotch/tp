@@ -90,6 +90,7 @@ public class QuizGame extends Game implements Serializable {
         "Who invented Java language? \n[A: Jackie Chan][B: Linus Torvalds][C: Fabrice Bellard][D: James Gosling]",
         "Of the following, if statements, which one returns true?"
             + "\n[A: X = 1; X > 0;][B: X = \"hi\"; X == \"hello\";][C: X = 0; X == 1;][D: X = \"k\"; X == 1]"};
+
     public static String[] MRQ = {"Which will the following statement return true?"
             + "\n[A: 1 == 1][B: \"abc\" == \"bcd\"][C: \"Hello\" == \"hello\"][D: \"Hello\" == \"Hello\"]",
         "Choose are programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
@@ -97,6 +98,7 @@ public class QuizGame extends Game implements Serializable {
         "Choose correct statements which satisfy Java coding style."
             + "\n[A: x=1][B: int a[] = new int[20];][C: int[] a = new int[20];][D: x = 2]",
         "Choose all Java Language Keywords. \n[A: continue][B: final][C: hello][D: private]"};
+
     public static String[] TFQ = {"Is \"R\" a programming language? \n[True][False]",
         "Can \"for\" and \"while\" both be used to form a loop? \n[True][False]",
         "\"do while\" may not necessarily be executed. \n[True][False]",
@@ -112,5 +114,47 @@ public class QuizGame extends Game implements Serializable {
     public static String[] MRQAnswers = {"AD", "AC", "BC", "CD", "ABD"};
     public static String[] TFQAnswers = {"True", "True", "False", "False"};
     public static String[] FIBAnswers = {"infinite loop", "0", "debugging", "class", "11"};
+
+    public static String[] MCQD = {"What is HTML used for?"
+            + "\n[A: Create web pages][B: Add style to the document][C: Create music][D: Code games]",
+        "What is CSS used for?"
+            + "\n[A: Create web pages][B: Create music][C: Add style to the document][D: Code games]",
+        "Let x be an integer which can take a value of 0 or 1. "
+            + "The statement if(x ==0) x = 1; else x = 0; is equivalent to which one of the following?"
+            + "\n[A: x = 1 + x;][B: x = 1 - x;][C: x = x - 1;][D: x = 1 % x;]"};
+
+
+    public static String[] MRQD = {"How do you get your website online?(choose all the steps)"
+            + "\n[A: Pick a domain name]"
+            + "\n[B: Register your domain name]"
+            + "\n[C: Choose a web hosting company]\n[D: Upload your website]",
+        "Consider the following statement(s) about Java:\n"
+            + "[A: All white-space characters (blanks) are ignored by the compiler.]\n"
+            + "[B: Java keywords can be used as variable names.]\n"
+            + "[C: An identifier does not begin with a digit and does not contain any spaces.]\n"
+            + "[D: The execution of Java applications begins at method main.]\n"
+            + "Which of them is correct?"};
+
+    public static String[] FIBD = {"What does HTML stand for? _______",
+        "What does CSS stand for? _______",
+        "What does SQL stand for?  _______"};
+
+    public static String[] MCQDAnswers = {"A", "C", "B"};
+    public static String[] MRQDAnswers = {"ABCD", "CD"};
+    public static String[] FIBDAnswers = {"HyperText Markup Language", "Cascading Style Sheets",
+        "Structured Query Language"};
+
+    public static String[] QuizCards = {"Abstraction, means ignoring the non-essential "
+            + "details of an object and concentrating on its essential details.",
+        "Maintains classes of the local file system, in a separate namespace.",
+        "Avoids execution of the program whose byte code has been changed illegally.",
+        "Java is an Object-Oriented Programming (OOP) structure.",
+        "Java performs input and output operations using streams.",
+        "Prefer returning Empty Collections instead of Null",
+        "Use Strings carefully",
+        "Avoiding Memory leaks by simple tricks",
+        "Avoiding Deadlocks in Java",
+        "Interface is Better Than Abstract Class",
+        "Better to Avoid BigDecimal and BigInteger"};
 }
 
