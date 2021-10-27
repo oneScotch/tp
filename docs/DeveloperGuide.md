@@ -11,7 +11,7 @@ https://se-education.org/addressbook-level3/UserGuide.html
 ###System Architecture
 
 System Architecture diagram of the design of Code Hunt:
-//Todo {diagram}
+// Todo {diagram}
 
 **Main component of the architecture (Game.java)**
 
@@ -34,15 +34,18 @@ The rest of the Code Hunt consists of below components:
 **Messages** Numbers/Strings: Store all the constant values that are used in this programme and shown to user
 
 **Data**:
-- Player: The database of all data for one player
-- Card: The card with coding knowledge that a player can collect
-- CardManager: All operations that player can do to a card list
-- Game: The parent class of game
-- GameRecord: The list storing all the games completed by the user
-- QuizGame: The game base on four forms of quiz
-- GuessingNumGame: The guessing number game
-- TreasureHuntGame: The treasure hunt game
-- TreasureHuntMap: All the maps for the treasure hunt game
+- `Player`: The database of all data for one player
+- `Card`: The card with coding knowledge that a player can collect
+- `CardManager`: All operations that player can do to a card list
+- `Game`: The parent class of game
+- `GameRecord`: The list storing all the games completed by the user
+- `QuizGame`: The game base on four forms of quiz
+- `GuessingNumGame`: The guessing number game
+- `TreasureHuntGame`: The treasure hunt game
+- `TreasureHuntMap`: All the maps for the treasure hunt game
+
+The Class Diagram shows the associations between classes:
+![](https://github.com/Mist0919/tp/blob/master/diagrams/Class.png)
 
 ###How the architecture components interact with each other
 

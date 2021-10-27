@@ -178,10 +178,10 @@ public class TreasureHuntGame extends Game implements Serializable {
     }
 
     /**
-     * prints the messege that the treasure hunter have found the treasure.
+     * prints the message that the treasure hunter have found the treasure.
      */
     public void printSuccessfulMessage() {
-        System.out.println("Congratulaitons! You have found the treasure!");
+        System.out.println("Congratulations! You have found the treasure!");
     }
 
     /**

@@ -4,6 +4,7 @@ package utils.message;
  * String constants used in the program.
  */
 public class Strings {
+
     private Strings() {
         // Disallow instantiation
     }
@@ -86,6 +87,7 @@ public class Strings {
             + "Here is your package of cards!\n" + HELP_MESSAGE;
     public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
     public static final String CARD_DIVIDER_MESSAGE = "\n♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧\n";
+    public static final String DELETE_CARD_MESSAGE = "Enter the ID of card to delete: ";
 
     // Error messages
     public static final String ERR_PLAYER_FILE_NOTFOUND_MESSAGE =

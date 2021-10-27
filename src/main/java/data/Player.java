@@ -116,7 +116,6 @@ public class Player {
 
     }
 
-
     public static void savePlayer() {
 
         if (!Files.exists(DATAPATH)) {
@@ -141,7 +140,6 @@ public class Player {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
 
     /**
@@ -189,7 +187,6 @@ public class Player {
             buyTip(usedCardID);
         }
     }
-
 
     /**
      * Load restaurant previous save state.

@@ -44,7 +44,6 @@ public class EasyMenu extends Menu {
         cardId = hangmanGame.execute();
         Player.winCard(cardId);
 
-
         System.out.println("Well done! You have finished the first level!");
 
         System.out.println(Strings.QUIZ_START);
