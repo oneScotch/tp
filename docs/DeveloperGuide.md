@@ -45,7 +45,7 @@ The rest of the Code Hunt consists of below components:
 - `TreasureHuntMap`: All the maps for the treasure hunt game
 
 The Class Diagram shows the associations between classes:
-![](https://plantuml.com/class-diagram)
+![](https://github.com/Mist0919/tp/blob/master/diagrams/Class.png)
 
 ###How the architecture components interact with each other
 
