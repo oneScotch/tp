@@ -22,10 +22,14 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 
 {Give detailed description of each feature}
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+###Main menu
+#### start a new game `newgame`
+Start a new game 
+Format: `newgame`
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+#### continue the game recorded previously `continue`
+Continue with a locally stored game progress
+Format: `continue`
 
 * The `DEADLINE` can be in a natural language format.
 * The `TODO_NAME` cannot contain punctuation.  
@@ -40,7 +44,8 @@ Example of usage:
 
 **Q**: How do I transfer my data to another computer? 
 
-**A**: {your answer here}
+**A**: Copy the local folder containing the CodeHunt jar file and `{username}.txt file to another device
+(only copy the txt file is available, but ensure that it is in the same folder with CodeHunt jar file)
 
 ## Command Summary
 
