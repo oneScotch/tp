@@ -36,6 +36,13 @@ Type "help" to see a list of available commands.
 - `about`       Display information about Code Hunt.
 - `exit`        Exit Code Hunt.
 
+###Intermediate page
+- `start`       Start the game
+- `check`       Check current game progress
+- `card`        Manage your holding cards
+- 'back'        Back to main menu
+- `exit`        Exit Code Hunt
+
 ###Difficulty level page: choose game difficulty level
 - `Easy Level`:
 - `Difficult Level`:
@@ -44,9 +51,13 @@ Type "help" to see a list of available commands.
 
 ##Games
 - `Guessing Number Game`
+  The game is to guess the secret number in a given range in limited attempts
 - `Hangman Game`
+   The game is to guess a word about coding by giving a letter every time with limited failing attempts
 - `Quiz Game`
-- `Treasure Hunt Game`
+   The game is to do a mini quiz about coding containing different types of questions like MCQ, TFQ, MRQ and fill-in-blank quesitons 
+- `Treasure Hunt Game` 
+   The game is to move the treasure hunter to find the treasure noted in the map
 
 ##Card
 - `winCard`
