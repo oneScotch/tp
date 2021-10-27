@@ -101,23 +101,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * gets a tip about the secret number.
-     */
-    public void getTip() {
-        int lowerBound = 0;
-        int upperBound = MAX_NUM - 1;
-        if (secretNum > MAX_NUM / 5) {
-            lowerBound = secretNum - MAX_NUM / 5;
-        }
-        if (secretNum < 4 * MAX_NUM / 5) {
-            upperBound = secretNum + MAX_NUM / 5;
-        }
-        System.out.println("The secret number is between " + lowerBound + " and "
-                + upperBound);
-    }
-
-    /**
-     * prints the messege that the user have guessed the secrect number.
+     * prints the message that the user have guessed the secret number.
      */
     public void printSuccessfulMessage() {
         System.out.println("Nice! You have guess the secret number " + this.secretNum
@@ -133,7 +117,7 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * prints the messege that the guess is incorrect and displays the number of remaining tries.
+     * prints the message that the guess is incorrect and displays the number of remaining tries.
      */
     public void printFailingMessage(int guess) {
         if (guess > this.secretNum) {
@@ -145,14 +129,14 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
-     * prints the messege that the tries have been used up.
+     * prints the message that the tries have been used up.
      */
     public void printEndingMessage() {
         System.out.println("Oops! You have used up the chances. Game over :(");
     }
 
     /**
-     * prints the messege telling the unser to enter a number for guessing.
+     * prints the message telling the user to enter a number for guessing.
      */
     public void printEnterMessage() {
         System.out.println("Please guess a number: \n");
