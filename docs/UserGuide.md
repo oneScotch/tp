@@ -2,17 +2,14 @@
 
 ## Introduction
 
-Code Hunt is a text-based adventure game using command lines for children aged 6 and up who have little prior coding experience but have an interest in coding to learn basic coding knowledge through playing games and collecting knowledge cards.
+{Give a product intro}
 
 ## Quick Start
 
 {Give steps to get started quickly}
 
 1. Ensure that you have Java 11 or above installed.
-2. Down the latest version of `CodeHunt` from [here](https://github.com/nus-cs2113-AY2122S1/tp).
-3. Copy the file to the folder you want to use as the home folder for your CodeHunt.
-4. Double-click the file to start the game.
-5. Type the command in the command box and press Enter to execute it.
+1. Down the latest version of `Duke` from [here](http://link.to/duke).
 
 ## Features 
 
