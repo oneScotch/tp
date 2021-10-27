@@ -60,7 +60,7 @@ Type "help" to see a list of available commands.
 ## FAQ
 
 **Q**: How do I reload my game? 
-
+=======
 **A**: Remember the username given to you when you first play the game. You can reload the game by entering 
 this username next time.
 
