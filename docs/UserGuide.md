@@ -42,13 +42,19 @@ Type "help" to see a list of available commands.
 
 ###Game page
 
-
-
 ##Games
 - `Guessing Number Game`
 - `Hangman Game`
 - `Quiz Game`
 - `Treasure Hunt Game`
+
+##Card
+- `winCard`
+- `listCard`
+- `deleteCard`
+- `findCard`
+- `buyTip`
+
 
 
 ## FAQ
