@@ -1,0 +1,94 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Game
+abstract class Menu
+interface Serializable
+
+HangmanGame <|-- Game
+GuessingNumGame <|-- Game
+QuizGame <|-- Game
+TreasureHuntGame <|-- Game
+
+EasyMenu ..> Card
+TreasureHuntGame ..> TreasureHuntMap
+GameMenu ..> GameCommandType
+CardMenu ..> CardCommandType
+
+Card"*" --> CardManager
+CardManager"2" --> Player
+Game"*" --> GameRecord
+Game"*" --> Player
+StringParser"1" --> EasyMenu
+
+CardMenu <|-- Menu
+EasyMenu <|-- Menu
+GameMenu <|-- Menu
+
+Game..|> Serializable
+Card..|> Serializable
+CardManager..|>Serializable
+
+abstract class Game {
++<<abstract>> execute()
++<<abstract>> getName()
+}
+
+abstract class Menu {
++<<abstract>> enter()
+}
+
+class Card {
+-String content
+-boolean isUsed
+-int cardID
+-boolean isCollected
+}
+
+class CardManager {
+-List<Card> card
+}
+
+class GameRecord {
++ArrayList<Game> games
+}
+
+class EasyMenu {
+-Scanner in
+-StringParser parser
+}
+
+class TreasureHuntMap {
++int[][][] mapList
+}
+
+class IO{
+}
+
+class Player{
++List<Integer> collectedCardIDs
++List<Integer> usedCardIDs
+-String name
+-List<Game> games
+-CardManager cardsCollected
+-CardManager cardToBeCollected
+}
+
+enum CardCommandType {
+LIST
+DELETE
+FIND
+HELP
+BACK
+EXIT
+}
+
+enum GameCommandType {
+START
+CHECK
+CARD
+BACK
+EXIT
+}
+
+@enduml
