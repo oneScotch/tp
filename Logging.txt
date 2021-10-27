@@ -1,4 +1,0 @@
-10月 26, 2021 9:06:56 下午 game.Game main
-INFO: going to start processing
-10月 26, 2021 9:21:10 下午 game.Game main
-INFO: end of processing
