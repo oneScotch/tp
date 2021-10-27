@@ -5,10 +5,14 @@ abstract class Game
 abstract class Menu
 interface Serializable
 
-HangmanGame <|-- Game
-GuessingNumGame <|-- Game
-QuizGame <|-- Game
-TreasureHuntGame <|-- Game
+HangmanGame --|> Game
+GuessingNumGame --|> Game
+QuizGame --|> Game
+TreasureHuntGame --|> Game
+
+CardMenu --|> Menu
+EasyMenu --|> Menu
+GameMenu --|> Menu
 
 EasyMenu ..> Card
 TreasureHuntGame ..> TreasureHuntMap
@@ -21,9 +25,6 @@ Game"*" --> GameRecord
 Game"*" --> Player
 StringParser"1" --> EasyMenu
 
-CardMenu <|-- Menu
-EasyMenu <|-- Menu
-GameMenu <|-- Menu
 
 Game..|> Serializable
 Card..|> Serializable
