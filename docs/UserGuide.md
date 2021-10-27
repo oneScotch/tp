@@ -18,37 +18,54 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 6. If you need any help, you can refer to [this website](http://link.to/duke) to check the User Guide
 
 
-## Features 
+## UI pages
+###Main page:
+```
+ ____          _        _   _             _  
+/ ___|___   __| | ___  | | | |_   _ _ __ | |_
+| |   / _ \ / _` |/ _ \ | |_| | | | | '_ \| __|
+| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_
+\____\___/ \__,_|\___| |_| |_|\__,_|_| |_|\__|
+Welcome to A text-based code game for children ages 6 and up(Code Hunt).Are you ready to play?
+Type "help" to see a list of available commands.
+```
 
-{Give detailed description of each feature}
+- `newgame`     Start a new game. The system will give you a string of user number that is used to continue the game next time.
+- `continue`    Continue the game stored previously.
+- `help `       Display a list of available commands.
+- `about`       Display information about Code Hunt.
+- `exit`        Exit Code Hunt.
 
-###Main menu
-#### start a new game `newgame`
-Start a new game 
-Format: `newgame`
+###Difficulty level page: choose game difficulty level
+- `Easy Level`:
+- `Difficult Level`:
 
-#### continue the game recorded previously `continue`
-Continue with a locally stored game progress
-Format: `continue`
+###Game page
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
+##Games
+- `Guessing Number Game`
+- `Hangman Game`
+- `Quiz Game`
+- `Treasure Hunt Game`
 
-Example of usage: 
+##Card
+- `winCard`
+- `listCard`
+- `deleteCard`
+- `findCard`
+- `buyTip`
 
-`todo n/Write the rest of the User Guide d/next week`
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
 
 ## FAQ
 
-**Q**: How do I transfer my data to another computer? 
-
-**A**: Copy the local folder containing the CodeHunt jar file and `{username}.txt file to another device
-(only copy the txt file is available, but ensure that it is in the same folder with CodeHunt jar file)
+**Q**: How do I reload my game? 
+=======
+**A**: Remember the username given to you when you first play the game. You can reload the game by entering 
+this username next time.
 
 ## Command Summary
 
 {Give a 'cheat sheet' of commands here}
 
-* Add todo `todo n/TODO_NAME d/DEADLINE`
+
