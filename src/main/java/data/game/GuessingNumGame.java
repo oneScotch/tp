@@ -58,6 +58,22 @@ public class GuessingNumGame extends Game implements Serializable {
     }
 
     /**
+     * gets a tip about the secret number.
+     */
+    public void getTip() {
+        int lowerBound = 0;
+        int upperBound = MAX_NUM - 1;
+        if (secretNum > MAX_NUM / 5) {
+            lowerBound = secretNum - MAX_NUM / 5;
+        }
+        if (secretNum < 4 * MAX_NUM / 5) {
+            upperBound = secretNum + MAX_NUM / 5;
+        }
+        System.out.println("The secret number is between " + lowerBound + " and "
+                + upperBound);
+    }
+
+    /**
      * randomly generated a number between 0 and max number minus 1 to be guessed.
      * @return the randomly generated integer
      */
