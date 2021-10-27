@@ -18,32 +18,48 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 6. If you need any help, you can refer to [this website](http://link.to/duke) to check the User Guide
 
 
-## Features 
+## UI pages
+###Main page:
+```
+ ____          _        _   _             _  
+/ ___|___   __| | ___  | | | |_   _ _ __ | |_
+| |   / _ \ / _` |/ _ \ | |_| | | | | '_ \| __|
+| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_
+\____\___/ \__,_|\___| |_| |_|\__,_|_| |_|\__|
+Welcome to A text-based code game for children ages 6 and up(Code Hunt).Are you ready to play?
+Type "help" to see a list of available commands.
+```
 
-{Give detailed description of each feature}
+- `newgame`     Start a new game. The system will give you a string of user number that is used to continue the game next time.
+- `continue`    Continue the game stored previously.
+- `help `       Display a list of available commands.
+- `about`       Display information about Code Hunt.
+- `exit`        Exit Code Hunt.
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+###Difficulty level page: choose game difficulty level
+- `Easy Level`:
+- `Difficult Level`:
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+###Game page
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
 
-Example of usage: 
 
-`todo n/Write the rest of the User Guide d/next week`
+##Games
+- `Guessing Number Game`
+- `Hangman Game`
+- `Quiz Game`
+- `Treasure Hunt Game`
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
 
 ## FAQ
 
-**Q**: How do I transfer my data to another computer? 
+**Q**: How do I reload my game? 
 
-**A**: {your answer here}
+**A**: Remember the username given to you when you first play the game. You can reload the game by entering 
+this username next time.
 
 ## Command Summary
 
 {Give a 'cheat sheet' of commands here}
 
-* Add todo `todo n/TODO_NAME d/DEADLINE`
+
