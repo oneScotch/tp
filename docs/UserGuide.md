@@ -19,7 +19,7 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 
 
 ## UI pages
-###Main page:
+### Main page:
 ```
  ____          _        _   _             _  
 / ___|___   __| | ___  | | | |_   _ _ __ | |_
@@ -36,20 +36,20 @@ Type "help" to see a list of available commands.
 - `about`       Display information about Code Hunt.
 - `exit`        Exit Code Hunt.
 
-###Intermediate page
+### Intermediate page
 - `start`       Start the game
 - `check`       Check current game progress
 - `card`        Manage your holding cards
 - 'back'        Back to main menu
 - `exit`        Exit Code Hunt
 
-###Difficulty level page: choose game difficulty level
+### Difficulty level page: choose game difficulty level
 - `Easy Level`:
 - `Difficult Level`:
 
-###Game page
+### Game page
 
-##Games
+## Games
 - `Guessing Number Game`
   The game is to guess the secret number in a given range in limited attempts
 - `Hangman Game`
@@ -59,7 +59,7 @@ Type "help" to see a list of available commands.
 - `Treasure Hunt Game` 
    The game is to move the treasure hunter to find the treasure noted in the map
 
-##Card
+## Card
 - `winCard`
 - `listCard`
 - `deleteCard`
@@ -77,6 +77,16 @@ this username next time.
 
 ## Command Summary
 
-{Give a 'cheat sheet' of commands here}
+Action |  Format | Function
+ ------------ | ------------- | -------------
+newgame | newgame | Start a new game
+continue | econtinue | Continue the game stored previously
+help | help | Display a list of available commands
+about | about | Display information about Code Hunt
+exit | exit | Exit Code Hunt
+start | start | Start the game
+check | check | Check current game progress
+card | card | Manage your holding cards
+back | back | Back to main menu
 
 
