@@ -261,28 +261,40 @@ public class Player {
         // For game Treasure
         cardsInit.add(new Card("'Sequence' is the order that commands are executed by a computer", 1));
         cardsInit.add(new Card("'Sequence' is a set of logical steps carried out in order.", 2));
-        cardsInit.add(new Card("3", 3));
-        cardsInit.add(new Card("4", 4));
-        cardsInit.add(new Card("5", 5));
-        cardsInit.add(new Card("6", 6));
-        cardsInit.add(new Card("7", 7));
-        cardsInit.add(new Card("8", 8));
-        cardsInit.add(new Card("9", 9));
-        cardsInit.add(new Card("10", 10));
+        cardsInit.add(new Card("Binary Search algorithm could only be implemented over a sorted array.", 3));
+        cardsInit.add(new Card("Small unsorted arrays would take considerate time in sorting "
+                + "and then searching the desired element. So, binary search is not preferred in such cases.", 4));
+        cardsInit.add(new Card("Binary search has better time complexity and thus takes less compilation time", 5));
+        cardsInit.add(new Card("In Java, everything is an Object. Java can be easily extended "
+                + "since it is based on the Object model.", 6));
+        cardsInit.add(new Card("'break' terminates the loop or switch statement and transfers execution "
+                + "to the statement immediately following the loop or switch.", 7));
+        cardsInit.add(new Card("'+' can be used to add values on either side of the operator.", 8));
+        cardsInit.add(new Card("'+=' add AND assignment operator. It adds right operand to the left "
+                + "operand and assign the result to left operand.", 9));
+        cardsInit.add(new Card("'*=' multiply AND assignment operator. It multiplies right operand with the "
+                + "left operand and assign the result to left operand.", 10));
 
         // For game GuessingNum
         cardsInit.add(new Card("Binary search is an efficient algorithm"
                 + " for finding an item from a sorted list of items.", 11));
         cardsInit.add(new Card("It works by repeatedly dividing in half the portion of the list"
                 + " that could contain the item, until you've narrowed down the possible locations to just one.", 12));
-        cardsInit.add(new Card("13", 13));
-        cardsInit.add(new Card("14", 14));
-        cardsInit.add(new Card("15", 15));
-        cardsInit.add(new Card("16", 16));
-        cardsInit.add(new Card("17", 17));
-        cardsInit.add(new Card("18", 18));
-        cardsInit.add(new Card("19", 19));
-        cardsInit.add(new Card("20", 20));
+        cardsInit.add(new Card("Binary Search algorithm could only be implemented over a sorted array.", 13));
+        cardsInit.add(new Card("Small unsorted arrays would take considerate time in sorting "
+                + "and then searching the desired element. So, binary search is not preferred in such cases.", 14));
+        cardsInit.add(new Card("Binary search has better time complexity and thus takes less compilation time", 15));
+        cardsInit.add(new Card("Binary search is used to search element in a given "
+                + "sorted array with more efficiency.", 16));
+        cardsInit.add(new Card("'&& (logical and)' is Called Logical AND operator. If both the operands are non-zero,"
+                + " then the condition becomes true.", 17));
+        cardsInit.add(new Card("'=' is a simple assignment operator. Assigns values from right side operands "
+                + "to left side operand.", 18));
+        cardsInit.add(new Card("The array elements are accessed through the index. Array indices are 0-based; "
+                + "that is, they start from 0 to arrayRefVar.length-1.", 19));
+        cardsInit.add(new Card("When processing array elements, we often use either for loop or foreach "
+                + "loop because all of the elements in "
+                + "an array are of the same type and the size of the array is known.", 20));
 
         // For game QuizGame
         cardsInit.add(new Card("a variable is an abstract storage location paired "
@@ -290,14 +302,22 @@ public class Player {
         cardsInit.add(new Card("An if else statement in programming is "
                 + "a conditional statement that runs a different set of statements"
                 + " depending on whether an expression is true or false", 22));
-        cardsInit.add(new Card("23", 23));
-        cardsInit.add(new Card("24", 24));
-        cardsInit.add(new Card("25", 25));
-        cardsInit.add(new Card("26", 26));
-        cardsInit.add(new Card("27", 27));
-        cardsInit.add(new Card("28", 28));
-        cardsInit.add(new Card("29", 29));
-        cardsInit.add(new Card("30", 30));
+        cardsInit.add(new Card("Java provides a data structure, the array, which stores a fixed-size sequential "
+                + "collection of elements of the same type.", 23));
+        cardsInit.add(new Card("A constructor initializes an object when it is created. It has the same name as "
+                + "its class and is syntactically similar to a method. However, constructors have "
+                + "no explicit return type.", 24));
+        cardsInit.add(new Card("Java defines several bitwise operators,"
+                + " which can be applied to the integer types, "
+                + "long, int, short, char, and byte.", 25));
+        cardsInit.add(new Card("'modifier' defines the access type of the method and it is optional to use.", 26));
+        cardsInit.add(new Card("You can use one if or else if statement inside another if or else "
+                + "if statement(s)", 27));
+        cardsInit.add(new Card("A switch statement allows a variable to be tested for equality against"
+                + " a list of values.", 28));
+        cardsInit.add(new Card("Short data type is a 16-bit signed two's complement integer", 29));
+        cardsInit.add(new Card("Short data type can also be used to save memory as byte data type."
+                + " A short is 2 times smaller than an integer", 30));
 
         // For game HangMan
         cardsInit.add(new Card("a loop is a sequence of instruction s that is continually "
@@ -310,11 +330,17 @@ public class Player {
                 + "elements of the same data type. ", 34));
         cardsInit.add(new Card("An algorithm is simply a set of steps used "
                 + "to complete a specific task. ", 35));
-        cardsInit.add(new Card("36", 36));
-        cardsInit.add(new Card("37", 37));
-        cardsInit.add(new Card("38", 38));
-        cardsInit.add(new Card("39", 39));
-        cardsInit.add(new Card("40", 40));
+        cardsInit.add(new Card("Array is the variable that stores elements of a similar data type. ", 36));
+        cardsInit.add(new Card("Knowledge of how to use a certain condition, "
+                + "such that a set of code should execute only if a certain condition is true. "
+                + "In case of a false condition,"
+                + " the program should exit and should not continue the code further.", 37));
+        cardsInit.add(new Card("Class is like a template that contains state and behavior, "
+                + "which corresponding to programming is field and method. "
+                + "In Object-Oriented languages like Java, everything revolves around Class and Object.", 38));
+        cardsInit.add(new Card("A function can take parameters and process them to get the desired output. ", 39));
+        cardsInit.add(new Card("Abstraction, means ignoring the non-essential details of an object "
+                + "and concentrating on its essential details.", 40));
 
         cardsCollected = new CardManager();
         cardsToBeCollected = new CardManager(cardsInit);

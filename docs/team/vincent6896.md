@@ -1,4 +1,4 @@
-# Jiang Yuxin's Project Portfolio Page
+# Wang Chuhan's Project Portfolio Page
 
 ## Project: Code Hunt
 
@@ -8,3 +8,8 @@ to learn basic coding knowledge through playing games and collecting knowledge c
 
 ### Summary of Contributions
 Given below are my contributions to the project.
+
+* New Feature:
+* Code contributed:
+* Project management
+* Enhancements to existing features:

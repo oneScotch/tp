@@ -53,17 +53,14 @@ public class IO {
     public static String readStringFromAvailable(Scanner in, String prompt, String[] available)
             throws NoSuchElementException, IllegalStateException {
         String result = null;
-        while (true) {
+        boolean matched = false;
+        while (!matched) {
             result = readString(in, prompt);
-            boolean matched = false;
             for (String str : available) {
                 if (result.toLowerCase().equals(str.toLowerCase())) {
                     matched = true;
                     break;
                 }
-            }
-            if (matched) {
-                break;
             }
             Errors.print(Strings.ERR_UNKNOWN_INPUT, false);
         }
