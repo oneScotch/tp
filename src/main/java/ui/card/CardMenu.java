@@ -69,7 +69,6 @@ public class CardMenu extends Menu {
                     break;
                 }
                 case HELP: {
-
                     help();
                     break;
                 }

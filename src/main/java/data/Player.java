@@ -101,8 +101,12 @@ public class Player {
     }
 
     public static void showGameProgress() {
-        for (Game game : games) {
-            System.out.println(game.getName());
+        if (games == null) {
+            System.out.println(Strings.NO_GAME_RECORD_MESSAGE);
+        } else {
+            for (Game game : games) {
+                System.out.println(game.getName());
+            }
         }
     }
 
