@@ -44,22 +44,20 @@ public class StringParser {
      * The pattern is
      * {@code ("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|(\S+)}.
      */
-    private static final String REGEX = String.format("(%s)|(%s)|(%s)", "\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\"",
-            "'[^'\\\\]*(?:\\\\.[^'\\\\]*)*'", "\\S+");
+    private static final String REGEX_DOUBLE = "\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\"";
+    private static final String REGEX_SINGLE = "'[^'\\\\]*(?:\\\\.[^'\\\\]*)*'";
+    private static final String REGEX_UNQUOTED = "\\S+";
+    private static final String REGEX = String.format("(%s)|(%s)|(%s)", REGEX_DOUBLE,
+            REGEX_SINGLE, REGEX_UNQUOTED);
 
-    /**
-     * The string that needs to be processed by the parser.
-     */
+    //The string that needs to be processed by the parser.
+
     private final String string;
 
-    /**
-     * The list of tokens parsed by the parser.
-     */
+    // The list of tokens parsed by the parser.
     private final List<Token> tokens;
 
-    /**
-     * Pointer to the next unread token.
-     */
+    // Pointer to the next unread token.
     private int next = 0;
 
     /**
