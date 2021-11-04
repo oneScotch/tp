@@ -278,7 +278,8 @@ public class Player {
         cardsInit.add(new Card("Small unsorted arrays would take considerate time in sorting "
                 + "and then searching the desired element. So, binary search is not preferred in such cases.", 14));
         cardsInit.add(new Card("Binary search has better time complexity and thus takes less compilation time", 15));
-        cardsInit.add(new Card("Binary search is used to search element in a given sorted array with more efficiency.", 16));
+        cardsInit.add(new Card("Binary search is used to search element in a given "
+                + "sorted array with more efficiency.", 16));
         cardsInit.add(new Card("'&& (logical and)' is Called Logical AND operator. If both the operands are non-zero,"
                 + " then the condition becomes true.", 17));
         cardsInit.add(new Card("'=' is a simple assignment operator. Assigns values from right side operands "
