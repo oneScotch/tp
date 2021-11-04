@@ -8,7 +8,7 @@ public class HangmanGame extends Game implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;
     // Coding Terminologies
     public static final String[] EASY_WORDS = {"python", "argument", "arrays", "loops", "java", "linux",
-            "statement", "variable", "while"};
+        "statement", "variable", "while"};
     public static final String[] HARD_WORDS = {"c", "algorithm", "oop"};
     public static final String name = "Hangman";
     public static final Random RANDOM = new Random();
@@ -53,13 +53,8 @@ public class HangmanGame extends Game implements Serializable {
         this.guessWord = new char[length];
         displayGameDetails();
         boolean isWin;
-        HangmanGame hangmanGame = new HangmanGame();
 
-        if (isEasy) {
-            isWin = hangmanGame.playEasy();
-        } else {
-            isWin = hangmanGame.playHard();
-        }
+        isWin = play();
 
         return isWin ? startID : 0;
     }
@@ -74,49 +69,7 @@ public class HangmanGame extends Game implements Serializable {
         System.out.println(GAME_RULES);
     }
 
-    public boolean playEasy() {
-        boolean isWin = false;
-        replaceDashes();
-        System.out.println("Your guess word is:");
-        displayWord();
-
-        while (this.remainingTries > 0) {
-            System.out.println("\nEnter your guess letter:");
-            char guessLetter = in.next().charAt(0);
-
-            int guess = isGuessTrue(guessLetter);
-
-            if (guess == 0) {
-                remainingTries--;
-                System.out.println("\nWhoops! that letter is not present in the word");
-                displayMan(remainingTries);
-            }
-            if (guess == 1) {
-                System.out.println("\nYay! You have found the letter");
-            }
-            if (guess == 2) {
-                System.out.println("\nYou have already guessed this letter. Try something else!");
-            }
-
-            System.out.println("You can have " + this.remainingTries + " more wrong attempts");
-            System.out.println("Your guess word is:");
-            displayWord();
-
-            if (secretWord.equals(new String(guessWord))) {
-                System.out.println("\nCongratulation! You won.");
-                isWin = true;   // changed
-                break;
-            }
-        }
-        if (!secretWord.equals(new String(guessWord))) {
-            System.out.println("\nToo many Guesses! You have been hanged.");
-            System.out.println("\nThe secret word was: " + this.secretWord);
-        }
-        return isWin;  // changed
-    }
-
-    public boolean playHard() {
-
+    public boolean play() {
         boolean isWin = false;
         replaceDashes();
         System.out.println("Your guess word is:");

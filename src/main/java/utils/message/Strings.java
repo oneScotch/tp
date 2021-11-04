@@ -59,7 +59,7 @@ public class Strings {
 
     // Easy game messages
     private static final String DIVIDER = "=========================================================";
-    public static final String EASY_GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
+    public static final String _GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
         + "We are the Avengers. To protect the world from devastation, we need your help!\n"
         + "We need to get as many cards ad possible for the last Infinity Gem.\n"
         + "Win following games and collect the cards.\n"
@@ -84,7 +84,29 @@ public class Strings {
     public static final String GUESS_NUM_START = "\n******************** Level 3: Guess Number ********************\n";
     public static final String TREASURE_HUNT_START = "\n******************** "
             + "Level 4: Treasure Hunt ********************\n";
-    public static final String FINISH_EASY_MODE = "Well done! You have finished all the task!!";
+    public static final String FINISH_EASY_MODE = "Congratulation! You have finished all the tasks of Easy Mode!!";
+    public static final String GAME_END_SIGN = " Game ended. Enter your choice: \n"
+            + "(1) continue | (2) again | (3) exit\n";
+
+    // Difficult game messages
+    public static final String DIFFICULT_LOGO = "                     ==\\\\\n"
+            + "                     || \\\\\n"
+            + "                  ________\\\n"
+            + "                 |________|\\\n"
+            + "                 | .\\  /. | \\\n"
+            + "                {|   ^^   |}\n"
+            + "                  \\ /||\\ /\n"
+            + "                   \\|__|/\n"
+            + "              =____||  ||____=\n"
+            + "     \\\\/\\    /                \\    /\\//\n"
+            + "    \\\\/  \\  /           .      \\  /  \\//\n"
+            + "     /    \\/                    \\/    \\\n"
+            + "      \\            .                 /\n"
+            + "       \\                            /\n"
+            + "        \\_                        _/\n";
+
+    public static final String FINISH_DIFFICULT_MODE = "Congratulation! "
+            + "You have finished all the tasks of Difficult Mode!!";
 
     // Card menu messages
     private static final String PACKAGE = "\n"
@@ -121,7 +143,7 @@ public class Strings {
     public static final String ERR_DATE_INPUT = "Please enter a valid date.";
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
     public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
-
+    public static final String ERR_PLAY_INVALID_NUMBER = "Please enter a number from either 1, 2 or 3.";
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
     public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
