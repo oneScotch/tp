@@ -26,12 +26,7 @@ public enum CardCommandType {
     /**
      * Command "back".
      */
-    BACK("back", "Back to game menu."),
-
-    /**
-     * Command "exit".
-     */
-    EXIT("exit", String.format("Exit %s.", Strings.APP_NAME_SHORT));
+    BACK("back", "Back to game menu.");
 
     /**
      * The command corresponding to the command type.

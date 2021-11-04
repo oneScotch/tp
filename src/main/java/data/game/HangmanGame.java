@@ -7,8 +7,9 @@ import java.util.Scanner;
 public class HangmanGame extends Game implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;
     // Coding Terminologies
-    public static final String[] WORDS = {"algorithm", "argument", "arrays", "c", "loops", "java", "linux",
-        "python", "statement", "variable", "while"};
+    public static final String[] EASY_WORDS = {"python", "argument", "arrays", "loops", "java", "linux",
+        "statement", "variable", "while"};
+    public static final String[] HARD_WORDS = {"c", "algorithm", "oop"};
     public static final String name = "Hangman";
     public static final Random RANDOM = new Random();
     public static final int MAX_TRIES = 5;
@@ -23,17 +24,20 @@ public class HangmanGame extends Game implements Serializable {
             + "        .--------------------------------------------------------------------------------.\n";
     public static final String GAME_RULES = "The purpose of this game is to guess an coding terminology, "
             + "secretly chosen by the application\n\n"
-            + "You have to guess one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n"
+            + "You have to guess only one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n"
             + "Enter a lower-case letter and don't forget to enter key after each guess\n\n"
             + "Let's play the game!\n\n";
+
     Scanner in = new Scanner(System.in);
     private String secretWord;
     private int length;
     private char[] guessWord;
     private int remainingTries;
     private static int startID = 31;
+    private boolean isEasy;
 
     public HangmanGame() {
+        this.isEasy = true;
         this.secretWord = chooseSecretWord();
         this.length = secretWord.length();
         this.remainingTries = MAX_TRIES;
@@ -41,19 +45,17 @@ public class HangmanGame extends Game implements Serializable {
     }
 
     @Override
-    public int execute() {
-        boolean isPlay = true;
+    public int execute(boolean isEasy) {
+        this.isEasy = isEasy;
+        this.secretWord = chooseSecretWord();
+        this.length = secretWord.length();
+        this.remainingTries = MAX_TRIES;
+        this.guessWord = new char[length];
         displayGameDetails();
+        boolean isWin;
 
-        HangmanGame hangmanGame = new HangmanGame();
-        boolean isWin = hangmanGame.play();
-        /*
-        while (isPlay) {
-            HangmanGame hangmanGame = new HangmanGame();
-            boolean isWin = hangmanGame.play();
-            isPlay = false; // todo: startNewGame();
-        }
-        */
+        isWin = play();
+
         return isWin ? startID : 0;
     }
 
@@ -76,6 +78,11 @@ public class HangmanGame extends Game implements Serializable {
         while (this.remainingTries > 0) {
             System.out.println("\nEnter your guess letter:");
             char guessLetter = in.next().charAt(0);
+
+            while (!Character.isAlphabetic(guessLetter)) {
+                System.out.println("OOP! Invalid input, please enter an alphabet.");
+                guessLetter = in.next().charAt(0);
+            }
 
             int guess = isGuessTrue(guessLetter);
 
@@ -110,7 +117,12 @@ public class HangmanGame extends Game implements Serializable {
 
     // choose next word randomly
     public String chooseSecretWord() {
-        return WORDS[RANDOM.nextInt(WORDS.length)];
+        if (isEasy) {
+            return EASY_WORDS[RANDOM.nextInt(EASY_WORDS.length)];
+        } else {
+            return HARD_WORDS[RANDOM.nextInt(HARD_WORDS.length)];
+        }
+
     }
 
     public void replaceDashes() {

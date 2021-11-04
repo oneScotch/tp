@@ -33,6 +33,7 @@ public class Player {
     // store the card id of the card used to buy tips -- for storage use
     public static final int COLLECTED_LENGTH = 10;
     public static final int USED_LENGTH = 5;
+
     /**
      * The name of the restaurant.
      */
@@ -47,6 +48,7 @@ public class Player {
      * The used cards list.
      */
     private static CardManager cardsCollected;
+
     /**
      * The cards list.
      */
@@ -98,8 +100,12 @@ public class Player {
     }
 
     public static void showGameProgress() {
-        for (Game game : games) {
-            System.out.println(game.getName());
+        if (games == null) {
+            System.out.println(Strings.NO_GAME_RECORD_MESSAGE);
+        } else {
+            for (Game game : games) {
+                System.out.println(game.getName());
+            }
         }
     }
 
