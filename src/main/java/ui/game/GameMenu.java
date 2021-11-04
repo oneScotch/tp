@@ -55,8 +55,7 @@ public class GameMenu extends Menu {
                 }
                 switch (commandType) {
                 case START: {
-                    System.out.println(Strings.CHOOSE_LEVEL_MESSAGE);
-                    int selection = in.nextInt();
+                    int selection = IO.readInt(in, Strings.CHOOSE_LEVEL_MESSAGE);
 
                     if (selection == 1) {
                         EasyMenu easyMenu = new EasyMenu(in, parser);

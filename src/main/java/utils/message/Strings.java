@@ -37,7 +37,7 @@ public class Strings {
     public static final String GAME_WELCOME_MESSAGE = LOGO
             + "There you go!\n" + HELP_MESSAGE;
     public static final String CHOOSE_LEVEL_MESSAGE = "Please choose your game mode: \n"
-            + "(1) Easy Mode | (2) Difficult Mode.";
+            + "(1) Easy Mode | (2) Difficult Mode.\n";
     public static final String GAME_RECORD_MESSAGE = "Here is your Game History.";
 
     // Easy game messages
