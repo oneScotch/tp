@@ -61,6 +61,7 @@ public class EasyMenu extends Menu {
         cardId = treasureHuntGame.execute();
         Player.winCard(cardId);
 
+
         System.out.println(Strings.FINISH_EASY_MODE);
     }
 

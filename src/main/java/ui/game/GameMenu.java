@@ -11,6 +11,8 @@ import utils.IO;
 import utils.StringParser;
 import utils.message.Strings;
 
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -55,8 +57,7 @@ public class GameMenu extends Menu {
                 }
                 switch (commandType) {
                 case START: {
-                    System.out.println(Strings.CHOOSE_LEVEL_MESSAGE);
-                    int selection = in.nextInt();
+                    int selection = IO.readInt(in, Strings.CHOOSE_LEVEL_MESSAGE);
 
                     if (selection == 1) {
                         EasyMenu easyMenu = new EasyMenu(in, parser);
@@ -67,15 +68,9 @@ public class GameMenu extends Menu {
                     } else {
                         Errors.print(Integer.toString(selection), Strings.ERR_INVALID_NUMBER);
                     }
-
                     break;
                 }
                 case CHECK: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
-
                     showRecord();
                     break;
                 }
@@ -85,25 +80,13 @@ public class GameMenu extends Menu {
                     break;
                 }
                 case HELP: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     help();
                     break;
                 }
                 case BACK: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     return;
                 }
                 case EXIT: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     exit(true);
                     return;
                 }
@@ -159,9 +142,11 @@ public class GameMenu extends Menu {
      * @param promptToSave whether to prompt to save the current state or not
      */
     public void exit(boolean promptToSave) {
-        // TODO: Implement "prompt to save" functionality
-        System.out.println(Strings.MAIN_EXIT_MESSAGE);
-        System.out.println();
+        String in = "exit";
+        System.setIn(new ByteArrayInputStream(in.getBytes(StandardCharsets.UTF_8)));
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+        scanner.close();
     }
 
 }
