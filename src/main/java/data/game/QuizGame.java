@@ -24,20 +24,26 @@ public class QuizGame extends Game implements Serializable {
 
     @Override
     public int execute() {
+        System.out.println("Welcome to quiz game. "
+                + "You must get all correct answers of four questions to pass this challenge!");
         boolean isWin = false;   // changed
         while (NumOfCorrect < 4) {
-            System.out.println(NumOfUserAnswer + 1);
             switch (NumOfUserAnswer % 4) {
             case 0:
+                System.out.println("1. MCQ (answer format: eg. A)");
                 getQuestion(MCQ, MCQAnswers);
                 break;
             case 1:
+                System.out.println("2. MRQ (answer format: eg. ABD)");
                 getQuestion(MRQ, MRQAnswers);
                 break;
             case 2:
+                System.out.println("3. TFQ (answer format: eg. False)");
                 getQuestion(TFQ, TFQAnswers);
                 break;
             case 3:
+                System.out.println("4. FIB (answer format: "
+                        + "[if the answer is a verb, just -ing format] eg. looking)");
                 getQuestion(FIB, FIBAnswers);
                 break;
             default:
@@ -65,7 +71,8 @@ public class QuizGame extends Game implements Serializable {
             System.out.println("Congratulations! The answer is correct!\n");
             NumOfCorrect++;
         } else {
-            System.out.println("Oops! The answer is not correct.\n");
+            System.out.println("Oops! The answer is not correct.");
+            System.out.println("Correct answer: " + answers[index] + "\n");
         }
         NumOfUserAnswer++;
     }
@@ -105,7 +112,7 @@ public class QuizGame extends Game implements Serializable {
         "\"hello\" is a Java Language Keywords. \n[True][False]"};
 
     public static String[] FIB = {"What is loop that can loop endlessly?",
-        "Which integer number represents false in Java?",
+        "Which integer number represents false in C language?",
         "______ is the process of finding errors and fixing them within a program.",
         "______ defines the common variables and methods of a set of objects.",
         "If A=10, then after B=++A, the value of B is _______."};
