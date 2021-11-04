@@ -41,24 +41,24 @@ public class DifficultMenu extends Menu {
 
         System.out.println(Strings.HANG_MAN_START);
         HangmanGame hangmanGame = new HangmanGame();
-        cardId = hangmanGame.execute();
+        cardId = hangmanGame.execute(false);
         Player.winCard(cardId);
 
         System.out.println("Well done! You have finished the first level!");
 
         System.out.println(Strings.QUIZ_START);
         QuizGame quizGame = new QuizGame("1");
-        cardId = quizGame.execute();
+        cardId = quizGame.execute(false);
         Player.winCard(cardId);
 
         System.out.println(Strings.GUESS_NUM_START);
         GuessingNumGame guessingNumGame = new GuessingNumGame();
-        cardId = guessingNumGame.execute();
+        cardId = guessingNumGame.execute(false);
         Player.winCard(cardId);
 
         System.out.println(Strings.TREASURE_HUNT_START);
         TreasureHuntGame treasureHuntGame = new TreasureHuntGame();
-        cardId = treasureHuntGame.execute();
+        cardId = treasureHuntGame.execute(false);
         Player.winCard(cardId);
 
         System.out.println(Strings.FINISH_EASY_MODE);

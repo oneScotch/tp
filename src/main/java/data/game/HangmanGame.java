@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class HangmanGame extends Game implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;
     // Coding Terminologies
-    public static final String[] EASYWORDS = {"python", "argument", "arrays", "loops", "java", "linux",
+    public static final String[] EASY_WORDS = {"python", "argument", "arrays", "loops", "java", "linux",
             "statement", "variable", "while"};
-    public static final String[] HARDWORDS = {"c", "algorithm", "oop"};
+    public static final String[] HARD_WORDS = {"c", "algorithm", "oop"};
     public static final String name = "Hangman";
     public static final Random RANDOM = new Random();
     public static final int MAX_TRIES = 5;
@@ -27,15 +27,17 @@ public class HangmanGame extends Game implements Serializable {
             + "You have to guess only one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n"
             + "Enter a lower-case letter and don't forget to enter key after each guess\n\n"
             + "Let's play the game!\n\n";
+
     Scanner in = new Scanner(System.in);
     private String secretWord;
     private int length;
     private char[] guessWord;
     private int remainingTries;
     private static int startID = 31;
-    private boolean difficultLevel;
+    private boolean isEasy;
+
     public HangmanGame() {
-        this.difficultLevel = true;
+        this.isEasy = true;
         this.secretWord = chooseSecretWord();
         this.length = secretWord.length();
         this.remainingTries = MAX_TRIES;
@@ -43,19 +45,19 @@ public class HangmanGame extends Game implements Serializable {
     }
 
     @Override
-    public int execute(boolean difficultLevel) {
-        this.difficultLevel = difficultLevel;
+    public int execute(boolean isEasy) {
+        this.isEasy = isEasy;
         this.secretWord = chooseSecretWord();
         this.length = secretWord.length();
         this.remainingTries = MAX_TRIES;
         this.guessWord = new char[length];
         displayGameDetails();
         boolean isWin;
-        if (difficultLevel) {
-            HangmanGame hangmanGame = new HangmanGame();
+        HangmanGame hangmanGame = new HangmanGame();
+
+        if (isEasy) {
             isWin = hangmanGame.playEasy();
         } else {
-            HangmanGame hangmanGame = new HangmanGame();
             isWin = hangmanGame.playHard();
         }
 
@@ -157,10 +159,10 @@ public class HangmanGame extends Game implements Serializable {
 
     // choose next word randomly
     public String chooseSecretWord() {
-        if (difficultLevel) {
-            return EASYWORDS[RANDOM.nextInt(EASYWORDS.length)];
+        if (isEasy) {
+            return EASY_WORDS[RANDOM.nextInt(EASY_WORDS.length)];
         } else {
-            return HARDWORDS[RANDOM.nextInt(HARDWORDS.length)];
+            return HARD_WORDS[RANDOM.nextInt(HARD_WORDS.length)];
         }
 
     }
