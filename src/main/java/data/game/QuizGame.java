@@ -127,31 +127,31 @@ public class QuizGame extends Game implements Serializable {
 
     public static String[] MCQ = {"Who is the person that writes code and communicates instructions to a computer? "
             + "\n[A: Code][B: Programmer][C: Command][D: Algorithm]",
-            "What is the action of finding and fixing errors or mistakes in programs? "
-                    + "\n[A: Looping][B: Sequencing][C: Debugging][D: Decomposing]",
-            "What is an error or mistake called in a program? "
-                    + "\n[A: Bug][B: Program][C: Code][D: Loop]",
-            "Who invented Java language? \n[A: Jackie Chan][B: Linus Torvalds][C: Fabrice Bellard][D: James Gosling]",
-            "Of the following, if statements, which one returns true?"
-                    + "\n[A: X = 1; X > 0;][B: X = \"hi\"; X == \"hello\";][C: X = 0; X == 1;][D: X = \"k\"; X == 1]"};
+        "What is the action of finding and fixing errors or mistakes in programs? "
+                + "\n[A: Looping][B: Sequencing][C: Debugging][D: Decomposing]",
+        "What is an error or mistake called in a program? "
+                + "\n[A: Bug][B: Program][C: Code][D: Loop]",
+        "Who invented Java language? \n[A: Jackie Chan][B: Linus Torvalds][C: Fabrice Bellard][D: James Gosling]",
+        "Of the following, if statements, which one returns true?"
+                + "\n[A: X = 1; X > 0;][B: X = \"hi\"; X == \"hello\";][C: X = 0; X == 1;][D: X = \"k\"; X == 1]"};
 
     public static String[] MRQ = {"Which will the following statement return true?"
             + "\n[A: 1 == 1][B: \"abc\" == \"bcd\"][C: \"Hello\" == \"hello\"][D: \"Hello\" == \"Hello\"]",
-            "Choose are programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
-            "Choose all the correct codes. \n[A: 1 = x;[B: x++;][C: return x;][D: return y]",
-            "Choose correct statements which satisfy Java coding style."
-                    + "\n[A: x=1][B: int a[] = new int[20];][C: int[] a = new int[20];][D: x = 2]",
-            "Choose all Java Language Keywords. \n[A: continue][B: final][C: hello][D: private]"};
+        "Choose are programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
+        "Choose all the correct codes. \n[A: 1 = x;[B: x++;][C: return x;][D: return y]",
+        "Choose correct statements which satisfy Java coding style."
+                + "\n[A: x=1][B: int a[] = new int[20];][C: int[] a = new int[20];][D: x = 2]",
+        "Choose all Java Language Keywords. \n[A: continue][B: final][C: hello][D: private]"};
 
     public static String[] TFQ = {"Is \"R\" a programming language? \n[True][False]",
-            "Can \"for\" and \"while\" both be used to form a loop? \n[True][False]",
-            "\"hello\" is a Java Language Keywords. \n[True][False]"};
+        "Can \"for\" and \"while\" both be used to form a loop? \n[True][False]",
+        "\"hello\" is a Java Language Keywords. \n[True][False]"};
 
     public static String[] FIB = {"What is loop that can loop endlessly?",
-            "Which integer number represents false in C language?",
-            "______ is the process of finding errors and fixing them within a program.",
-            "______ defines the common variables and methods of a set of objects.",
-            "If A=10, then after B=++A, the value of B is _______."};
+        "Which integer number represents false in C language?",
+        "______ is the process of finding errors and fixing them within a program.",
+        "______ defines the common variables and methods of a set of objects.",
+        "If A=10, then after B=++A, the value of B is _______."};
 
 
     public static String[] MCQAnswers = {"B", "C", "A", "D", "A"};
@@ -161,21 +161,21 @@ public class QuizGame extends Game implements Serializable {
 
     public static String[] MCQD = {"What is HTML used for?"
             + "\n[A: Create web pages][B: Add style to the document][C: Create music][D: Code games]",
-            "What is CSS used for?"
+        "What is CSS used for?"
                     + "\n[A: Create web pages][B: Create music][C: Add style to the document][D: Code games]",
-            "Let x be an integer which can take a value of 0 or 1. "
+        "Let x be an integer which can take a value of 0 or 1. "
                     + "The statement if(x ==0) x = 1; else x = 0; is equivalent to which one of the following?"
                     + "\n[A: x = 1 + x;][B: x = 1 - x;][C: x = x - 1;][D: x = 1 % x;]"};
 
     public static String[] TFQD = {"Is \"SDLC\" stands for Software Development Life Cycle? \n[True][False]",
-            "Can \"BFS\" and \"DFS\" both be used to graph traversal? \n[True][False]",
-            "\"do while\" may not necessarily be executed. \n[True][False]"};
+        "Can \"BFS\" and \"DFS\" both be used to graph traversal? \n[True][False]",
+        "\"do while\" may not necessarily be executed. \n[True][False]"};
 
     public static String[] MRQD = {"How do you get your website online?(choose all the steps)"
             + "\n[A: Pick a domain name]"
             + "\n[B: Register your domain name]"
             + "\n[C: Choose a web hosting company]\n[D: Upload your website]",
-            "Consider the following statement(s) about Java:\n"
+        "Consider the following statement(s) about Java:\n"
                     + "[A: All white-space characters (blanks) are ignored by the compiler.]\n"
                     + "[B: Java keywords can be used as variable names.]\n"
                     + "[C: An identifier does not begin with a digit and does not contain any spaces.]\n"
@@ -190,18 +190,18 @@ public class QuizGame extends Game implements Serializable {
     public static String[] MCQDAnswers = {"A", "C", "B"};
     public static String[] MRQDAnswers = {"ABCD", "CD"};
     public static String[] FIBDAnswers = {"HyperText Markup Language", "Cascading Style Sheets",
-            "Structured Query Language"};
+        "Structured Query Language"};
 
     public static String[] QuizCards = {"Abstraction, means ignoring the non-essential "
             + "details of an object and concentrating on its essential details.",
-            "Maintains classes of the local file system, in a separate namespace.",
-            "Avoids execution of the program whose byte code has been changed illegally.",
-            "Java is an Object-Oriented Programming (OOP) structure.",
-            "Java performs input and output operations using streams.",
-            "Prefer returning Empty Collections instead of Null",
-            "Use Strings carefully",
-            "Avoiding Memory leaks by simple tricks",
-            "Avoiding Deadlocks in Java",
-            "Interface is Better Than Abstract Class",
-            "Better to Avoid BigDecimal and BigInteger"};
+        "Maintains classes of the local file system, in a separate namespace.",
+        "Avoids execution of the program whose byte code has been changed illegally.",
+        "Java is an Object-Oriented Programming (OOP) structure.",
+        "Java performs input and output operations using streams.",
+        "Prefer returning Empty Collections instead of Null",
+        "Use Strings carefully",
+        "Avoiding Memory leaks by simple tricks",
+        "Avoiding Deadlocks in Java",
+        "Interface is Better Than Abstract Class",
+        "Better to Avoid BigDecimal and BigInteger"};
 }

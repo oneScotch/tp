@@ -8,7 +8,7 @@ public class HangmanGame extends Game implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;
     // Coding Terminologies
     public static final String[] EASY_WORDS = {"python", "argument", "arrays", "loops", "java", "linux",
-            "statement", "variable", "while"};
+        "statement", "variable", "while"};
     public static final String[] HARD_WORDS = {"c", "algorithm", "oop"};
     public static final String name = "Hangman";
     public static final Random RANDOM = new Random();
