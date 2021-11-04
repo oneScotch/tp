@@ -30,25 +30,25 @@ public class QuizGame extends Game implements Serializable {
         if (difficultLevel) {
             while (NumOfCorrect < 4) {
                 switch (NumOfUserAnswer % 4) {
-                    case 0:
-                        System.out.println("1. MCQ (answer format: eg. A)");
-                        getQuestion(MCQ, MCQAnswers);
-                        break;
-                    case 1:
-                        System.out.println("2. MRQ (answer format: eg. ABD)");
-                        getQuestion(MRQ, MRQAnswers);
-                        break;
-                    case 2:
-                        System.out.println("3. TFQ (answer format: eg. False)");
-                        getQuestion(TFQ, TFQAnswers);
-                        break;
-                    case 3:
-                        System.out.println("4. FIB (answer format: "
-                                + "[if the answer is a verb, just -ing format] eg. looking)");
-                        getQuestion(FIB, FIBAnswers);
-                        break;
-                    default:
-                        System.out.println("Error");
+                case 0:
+                    System.out.println("1. MCQ (answer format: eg. A)");
+                    getQuestion(MCQ, MCQAnswers);
+                    break;
+                case 1:
+                    System.out.println("2. MRQ (answer format: eg. ABD)");
+                    getQuestion(MRQ, MRQAnswers);
+                    break;
+                case 2:
+                    System.out.println("3. TFQ (answer format: eg. False)");
+                    getQuestion(TFQ, TFQAnswers);
+                    break;
+                case 3:
+                    System.out.println("4. FIB (answer format: "
+                        + "[if the answer is a verb, just -ing format] eg. looking)");
+                    getQuestion(FIB, FIBAnswers);
+                    break;
+                default:
+                    System.out.println("Error");
                 }
                 if (NumOfUserAnswer == 4 && NumOfCorrect == 4) {
                     isWin = true;   //added
@@ -65,25 +65,25 @@ public class QuizGame extends Game implements Serializable {
         } else {
             while (NumOfCorrect < 4) {
                 switch (NumOfUserAnswer % 4) {
-                    case 0:
-                        System.out.println("1. MCQ (answer format: eg. A)");
-                        getQuestion(MCQD, MCQDAnswers);
-                        break;
-                    case 1:
-                        System.out.println("2. MRQ (answer format: eg. ABD)");
-                        getQuestion(MRQD, MRQDAnswers);
-                        break;
-                    case 2:
-                        System.out.println("3. TFQ (answer format: eg. False)");
-                        getQuestion(TFQD, TFQDAnswers);
-                        break;
-                    case 3:
-                        System.out.println("4. FIB (answer format: "
-                                + "[if the answer is a verb, just -ing format] eg. looking)");
-                        getQuestion(FIBD, FIBDAnswers);
-                        break;
-                    default:
-                        System.out.println("Error");
+                case 0:
+                    System.out.println("1. MCQ (answer format: eg. A)");
+                    getQuestion(MCQD, MCQDAnswers);
+                    break;
+                case 1:
+                    System.out.println("2. MRQ (answer format: eg. ABD)");
+                    getQuestion(MRQD, MRQDAnswers);
+                    break;
+                case 2:
+                    System.out.println("3. TFQ (answer format: eg. False)");
+                    getQuestion(TFQD, TFQDAnswers);
+                    break;
+                case 3:
+                    System.out.println("4. FIB (answer format: "
+                        + "[if the answer is a verb, just -ing format] eg. looking)");
+                    getQuestion(FIBD, FIBDAnswers);
+                    break;
+                default:
+                    System.out.println("Error");
                 }
                 if (NumOfUserAnswer == 4 && NumOfCorrect == 4) {
                     isWin = true;   //added
@@ -152,6 +152,7 @@ public class QuizGame extends Game implements Serializable {
             "______ is the process of finding errors and fixing them within a program.",
             "______ defines the common variables and methods of a set of objects.",
             "If A=10, then after B=++A, the value of B is _______."};
+
 
     public static String[] MCQAnswers = {"B", "C", "A", "D", "A"};
     public static String[] MRQAnswers = {"AD", "AC", "BC", "CD", "ABD"};
