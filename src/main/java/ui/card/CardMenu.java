@@ -108,7 +108,7 @@ public class CardMenu extends Menu {
      * Displays the prompt of the menu.
      */
     private void prompt() {
-        System.out.print(Strings.MAIN_PROMPT);
+        System.out.print(Strings.CARD_PROMPT);
         System.out.flush();
     }
 

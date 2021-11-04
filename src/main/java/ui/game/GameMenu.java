@@ -108,7 +108,7 @@ public class GameMenu extends Menu {
      * Displays the prompt of the menu.
      */
     private void prompt() {
-        System.out.print(Strings.MAIN_PROMPT);
+        System.out.print(Strings.GAME_PROMPT);
         System.out.flush();
     }
 
