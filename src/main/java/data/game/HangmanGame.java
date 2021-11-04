@@ -23,7 +23,7 @@ public class HangmanGame extends Game implements Serializable {
             + "        .--------------------------------------------------------------------------------.\n";
     public static final String GAME_RULES = "The purpose of this game is to guess an coding terminology, "
             + "secretly chosen by the application\n\n"
-            + "You have to guess one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n"
+            + "You have to guess only one letter at a time and you can have " + MAX_TRIES + " wrong attempts\n\n"
             + "Enter a lower-case letter and don't forget to enter key after each guess\n\n"
             + "Let's play the game!\n\n";
     Scanner in = new Scanner(System.in);
