@@ -23,11 +23,11 @@ public class QuizGame extends Game implements Serializable {
     }
 
     @Override
-    public int execute(boolean difficultLevel) {
+    public int execute(boolean isEasy) {
         System.out.println("Welcome to quiz game. "
                 + "You must get all correct answers of four questions to pass this challenge!");
         boolean isWin = false;   // changed
-        if (difficultLevel) {
+        if (isEasy) {
             while (NumOfCorrect < 4) {
                 switch (NumOfUserAnswer % 4) {
                 case 0:
