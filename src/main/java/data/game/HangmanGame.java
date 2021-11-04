@@ -79,6 +79,11 @@ public class HangmanGame extends Game implements Serializable {
             System.out.println("\nEnter your guess letter:");
             char guessLetter = in.next().charAt(0);
 
+            while (!Character.isAlphabetic(guessLetter)) {
+                System.out.println("OOP! Invalid input, please enter an alphabet.");
+                guessLetter = in.next().charAt(0);
+            }
+
             int guess = isGuessTrue(guessLetter);
 
             if (guess == 0) {
