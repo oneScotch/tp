@@ -47,7 +47,7 @@ public class DifficultMenu extends Menu {
             return;
         }
 
-        if (startGuessNum()== 3) {
+        if (startGuessNum() == 3) {
             return;
         }
 

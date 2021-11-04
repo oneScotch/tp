@@ -183,8 +183,8 @@ public class QuizGame extends Game implements Serializable {
                     + "Which of them is correct?"};
 
     public static String[] FIBD = {"What does HTML stand for? _______",
-            "What does CSS stand for? _______",
-            "What does SQL stand for?  _______"};
+        "What does CSS stand for? _______",
+        "What does SQL stand for?  _______"};
 
     public static String[] TFQDAnswers = {"True", "True", "False"};
     public static String[] MCQDAnswers = {"A", "C", "B"};
