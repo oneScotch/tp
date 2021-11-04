@@ -59,7 +59,7 @@ public class Strings {
 
     // Easy game messages
     private static final String DIVIDER = "=========================================================";
-    public static final String EASY_GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
+    public static final String _GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
         + "We are the Avengers. To protect the world from devastation, we need your help!\n"
         + "We need to get as many cards ad possible for the last Infinity Gem.\n"
         + "Win following games and collect the cards.\n"
@@ -89,6 +89,24 @@ public class Strings {
             + "(1) continue | (2) again | (3) exit\n";
 
     // Difficult game messages
+    public static final String DIFFICULT_LOGO = "                     ==\\\\\n"
+            + "                     || \\\\\n"
+            + "                  ________\\\n"
+            + "                 |________|\\\n"
+            + "                 | .\\  /. | \\\n"
+            + "                {|   ^^   |}\n"
+            + "                  \\ /||\\ /\n"
+            + "                   \\|__|/\n"
+            + "              =____||  ||____=\n"
+            + "     \\\\/\\    /                \\    /\\//\n"
+            + "    \\\\/  \\  /           .      \\  /  \\//\n"
+            + "     /    \\/                    \\/    \\\n"
+            + "      \\            .                 /\n"
+            + "       \\                            /\n"
+            + "        \\_                        _/\n";
+
+    public static final String FINISH_DIFFICULT_MODE = "Congratulation! "
+            + "You have finished all the tasks of Difficult Mode!!";
 
     // Card menu messages
     private static final String PACKAGE = "\n"

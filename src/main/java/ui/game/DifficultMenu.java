@@ -47,7 +47,7 @@ public class DifficultMenu extends Menu {
 
         startTreasureHunt();
 
-        System.out.println(Strings.FINISH_EASY_MODE);
+        System.out.println(Strings.FINISH_DIFFICULT_MODE);
 
         // TODO: SAVE PLAYER
     }
@@ -56,8 +56,8 @@ public class DifficultMenu extends Menu {
      * Displays the welcome message and the background.
      */
     private void welcome() {
-        System.out.println(Strings.EASY_LOGO);
-        System.out.println(Strings.EASY_GAME_WELCOME_MESSAGE);
+        System.out.println(Strings.DIFFICULT_LOGO);
+        System.out.println(Strings._GAME_WELCOME_MESSAGE);
         System.out.println();
     }
 

@@ -57,7 +57,7 @@ public class EasyMenu extends Menu {
      */
     private void welcome() {
         System.out.println(Strings.EASY_LOGO);
-        System.out.println(Strings.EASY_GAME_WELCOME_MESSAGE);
+        System.out.println(Strings._GAME_WELCOME_MESSAGE);
         System.out.println();
     }
 
