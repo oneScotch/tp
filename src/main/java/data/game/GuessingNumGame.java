@@ -40,7 +40,7 @@ public class GuessingNumGame extends Game implements Serializable {
      * @return cardID of the card to collect in the Player class; return 0 if lose
      */
     @Override
-    public int execute() {
+    public int execute(boolean isEasy) {
         displayGameDetails();
         GuessingNumGame g = new GuessingNumGame();
         boolean isWin = g.play();
