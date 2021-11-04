@@ -23,44 +23,81 @@ public class QuizGame extends Game implements Serializable {
     }
 
     @Override
-    public int execute() {
+    public int execute(boolean difficultLevel) {
         System.out.println("Welcome to quiz game. "
                 + "You must get all correct answers of four questions to pass this challenge!");
         boolean isWin = false;   // changed
-        while (NumOfCorrect < 4) {
-            switch (NumOfUserAnswer % 4) {
-            case 0:
-                System.out.println("1. MCQ (answer format: eg. A)");
-                getQuestion(MCQ, MCQAnswers);
-                break;
-            case 1:
-                System.out.println("2. MRQ (answer format: eg. ABD)");
-                getQuestion(MRQ, MRQAnswers);
-                break;
-            case 2:
-                System.out.println("3. TFQ (answer format: eg. False)");
-                getQuestion(TFQ, TFQAnswers);
-                break;
-            case 3:
-                System.out.println("4. FIB (answer format: "
+        if (difficultLevel) {
+            while (NumOfCorrect < 4) {
+                switch (NumOfUserAnswer % 4) {
+                case 0:
+                    System.out.println("1. MCQ (answer format: eg. A)");
+                    getQuestion(MCQ, MCQAnswers);
+                    break;
+                case 1:
+                    System.out.println("2. MRQ (answer format: eg. ABD)");
+                    getQuestion(MRQ, MRQAnswers);
+                    break;
+                case 2:
+                    System.out.println("3. TFQ (answer format: eg. False)");
+                    getQuestion(TFQ, TFQAnswers);
+                    break;
+                case 3:
+                    System.out.println("4. FIB (answer format: "
                         + "[if the answer is a verb, just -ing format] eg. looking)");
-                getQuestion(FIB, FIBAnswers);
-                break;
-            default:
-                System.out.println("Error");
+                    getQuestion(FIB, FIBAnswers);
+                    break;
+                default:
+                    System.out.println("Error");
+                }
+                if (NumOfUserAnswer == 4 && NumOfCorrect == 4) {
+                    isWin = true;   //added
+                    System.out.println("Good! You achieve full mark.\n");
+                    break;
+                } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
+                    System.out.println("Sorry! You did not pass this challenge. Please try again.\n");
+                    NumOfCorrect = 0;
+                    NumOfUserAnswer = 0;
+                }
             }
-            if (NumOfUserAnswer == 4 && NumOfCorrect == 4) {
-                isWin = true;   //added
-                System.out.println("Good! You achieve full mark.\n");
-                break;
-            } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
-                System.out.println("Sorry! You did not pass this challenge. Please try again.\n");
-                NumOfCorrect = 0;
-                NumOfUserAnswer = 0;
+            System.out.println("end");
+            return isWin ? startID : 0;   // added
+        } else {
+            while (NumOfCorrect < 4) {
+                switch (NumOfUserAnswer % 4) {
+                case 0:
+                    System.out.println("1. MCQ (answer format: eg. A)");
+                    getQuestion(MCQD, MCQDAnswers);
+                    break;
+                case 1:
+                    System.out.println("2. MRQ (answer format: eg. ABD)");
+                    getQuestion(MRQD, MRQDAnswers);
+                    break;
+                case 2:
+                    System.out.println("3. TFQ (answer format: eg. False)");
+                    getQuestion(TFQD, TFQDAnswers);
+                    break;
+                case 3:
+                    System.out.println("4. FIB (answer format: "
+                        + "[if the answer is a verb, just -ing format] eg. looking)");
+                    getQuestion(FIBD, FIBDAnswers);
+                    break;
+                default:
+                    System.out.println("Error");
+                }
+                if (NumOfUserAnswer == 4 && NumOfCorrect == 4) {
+                    isWin = true;   //added
+                    System.out.println("Good! You achieve full mark.\n");
+                    break;
+                } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
+                    System.out.println("Sorry! You did not pass this challenge. Please try again.\n");
+                    NumOfCorrect = 0;
+                    NumOfUserAnswer = 0;
+                }
             }
+            System.out.println("end");
+            return isWin ? startID : 0;   // added
         }
-        System.out.println("end");
-        return isWin ? startID : 0;   // added
     }
 
     public void getQuestion(String[] questions, String[] answers) {
@@ -108,7 +145,6 @@ public class QuizGame extends Game implements Serializable {
 
     public static String[] TFQ = {"Is \"R\" a programming language? \n[True][False]",
         "Can \"for\" and \"while\" both be used to form a loop? \n[True][False]",
-        "\"do while\" may not necessarily be executed. \n[True][False]",
         "\"hello\" is a Java Language Keywords. \n[True][False]"};
 
     public static String[] FIB = {"What is loop that can loop endlessly?",
@@ -119,7 +155,7 @@ public class QuizGame extends Game implements Serializable {
 
     public static String[] MCQAnswers = {"B", "C", "A", "D", "A"};
     public static String[] MRQAnswers = {"AD", "AC", "BC", "CD", "ABD"};
-    public static String[] TFQAnswers = {"True", "True", "False", "False"};
+    public static String[] TFQAnswers = {"True", "True", "False"};
     public static String[] FIBAnswers = {"infinite loop", "0", "debugging", "class", "11"};
 
     public static String[] MCQD = {"What is HTML used for?"
@@ -130,6 +166,9 @@ public class QuizGame extends Game implements Serializable {
             + "The statement if(x ==0) x = 1; else x = 0; is equivalent to which one of the following?"
             + "\n[A: x = 1 + x;][B: x = 1 - x;][C: x = x - 1;][D: x = 1 % x;]"};
 
+    public static String[] TFQD = {"Is \"SDLC\" stands for Software Development Life Cycle? \n[True][False]",
+        "Can \"BFS\" and \"DFS\" both be used to graph traversal? \n[True][False]",
+        "\"do while\" may not necessarily be executed. \n[True][False]"};
 
     public static String[] MRQD = {"How do you get your website online?(choose all the steps)"
             + "\n[A: Pick a domain name]"
@@ -146,6 +185,7 @@ public class QuizGame extends Game implements Serializable {
         "What does CSS stand for? _______",
         "What does SQL stand for?  _______"};
 
+    public static String[] TFQDAnswers = {"True", "True", "False"};
     public static String[] MCQDAnswers = {"A", "C", "B"};
     public static String[] MRQDAnswers = {"ABCD", "CD"};
     public static String[] FIBDAnswers = {"HyperText Markup Language", "Cascading Style Sheets",
