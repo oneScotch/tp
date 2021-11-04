@@ -41,18 +41,17 @@ public class GameMenu extends Menu {
         welcome();
         try {
             while (true) {
-                help();
                 prompt();
                 String command = in.nextLine();
                 StringParser parser = new StringParser(command);
                 GameCommandType commandType = GameCommandType.getCommandType(parser.nextToken());
                 if (commandType == null) {
                     Errors.print(parser.getString(), Strings.ERR_UNKNOWN_COMMAND);
-                    return;
+                    continue;
                 }
                 if (parser.hasMoreTokens()) {
                     Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                    return;
+                    continue;
                 }
                 switch (commandType) {
                 case START: {
@@ -83,6 +82,14 @@ public class GameMenu extends Menu {
                 case CARD: {
                     CardMenu cardMenu = new CardMenu(in, parser);
                     cardMenu.enter();
+                    break;
+                }
+                case HELP: {
+                    if (parser.hasMoreTokens()) {
+                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
+                        continue;
+                    }
+                    help();
                     break;
                 }
                 case BACK: {
