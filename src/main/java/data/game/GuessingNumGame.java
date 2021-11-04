@@ -8,7 +8,6 @@ public class GuessingNumGame extends Game implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;
     public static final String name = "GuessingNumber";
     public static final int MAX_NUM = 100;
-    public static final int MAX_TRIES = 8;
     public static final String LOGO = " _____ _     _____ ____  ____  _  _      _____   "
             + "_      _     _      ____  _____ ____ \n"
             + "/  __// \\ /\\/  __// ___\\/ ___\\/ \\/ \\  /|/  __/  / "
@@ -20,19 +19,28 @@ public class GuessingNumGame extends Game implements Serializable {
             + "\\____\\\\____/\\____\\\\____/\\____/\\_/\\_/  \\|\\____\\"
             + "  \\_/  \\|\\____/\\_/  \\|\\____/\\____\\\\_/\\_\\";
     public static final String GAME_RULES = "The purpose of the game is to guess the secret number. "
-            + "You have to guess a number between 0 to " + (MAX_NUM - 1) + " in a maximum of "
-            + MAX_TRIES + " attempts, if the guess is not correct, a tip will be given telling"
+            + "You have to guess a number between 0 to " + (MAX_NUM - 1) + " in limited attempts, "
+            + "if the guess is not correct, a tip will be given telling"
             + "whether the number you guess is smaller or larger than the secret number.";
+    private final int maxTries;
     private final int secretNum;
     private int remainingTries;
     private static int startID = 11;
 
     Scanner in = new Scanner(System.in);
 
-
-    public GuessingNumGame() {
+    /**
+     * Constructs a guessing number game according to whether it is difficult.
+     * @param boolean isDifficult identifies whether the game is at difficult level
+     */
+    public GuessingNumGame(boolean isDifficult) {
         this.secretNum = generateSecretNum() % MAX_NUM;
-        this.remainingTries = MAX_TRIES;
+        if (!isDifficult) {
+            this.maxTries = 20;
+        } else {
+            this.maxTries = 8;
+        }
+        this.remainingTries = maxTries;
     }
 
     /**
@@ -42,7 +50,7 @@ public class GuessingNumGame extends Game implements Serializable {
     @Override
     public int execute(boolean isEasy) {
         displayGameDetails();
-        GuessingNumGame g = new GuessingNumGame();
+        GuessingNumGame g = new GuessingNumGame(0);
         boolean isWin = g.play();
         return isWin ? startID : 0;
     }
@@ -106,7 +114,7 @@ public class GuessingNumGame extends Game implements Serializable {
                 if (input == this.secretNum) {
                     printSuccessfulMessage();
                     isWin = true;
-                    break;
+                    return isWin;
                 } else {
                     printFailingMessage(input);
                 }
@@ -121,7 +129,7 @@ public class GuessingNumGame extends Game implements Serializable {
      */
     public void printSuccessfulMessage() {
         System.out.println("Nice! You have guess the secret number " + this.secretNum
-                + " in " + (MAX_TRIES - this.remainingTries) + " attempts.\n");
+                + " in " + (maxTries - this.remainingTries) + " attempts.\n");
     }
 
     /**
