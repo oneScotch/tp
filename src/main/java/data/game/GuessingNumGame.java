@@ -20,7 +20,7 @@ public class GuessingNumGame extends Game implements Serializable {
             + "  \\_/  \\|\\____/\\_/  \\|\\____/\\____\\\\_/\\_\\";
     public static final String GAME_RULES = "The purpose of the game is to guess the secret number. "
             + "You have to guess a number between 0 to " + (MAX_NUM - 1) + " in limited attempts, "
-            + "if the guess is not correct, a tip will be given telling"
+            + "if the guess is not correct, a tip will be given telling "
             + "whether the number you guess is smaller or larger than the secret number.";
     private final int maxTries;
     private final int secretNum;
