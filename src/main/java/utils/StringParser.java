@@ -14,11 +14,11 @@ import java.util.regex.Pattern;
  */
 public class StringParser {
     /**
-     * The type of a token.
+     * The type of token.
      */
     private enum TokenType {
         /**
-         * Double quoted token.
+         * Double-quoted token.
          */
         DOUBLE_QUOTED,
 
