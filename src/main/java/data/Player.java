@@ -1,5 +1,4 @@
 package data;
-
 import data.game.Game;
 import data.card.CardManager;
 import data.card.Card;
@@ -320,7 +319,7 @@ public class Player {
                 + " A short is 2 times smaller than an integer", 30));
 
         // For game HangMan
-        cardsInit.add(new Card("a loop is a sequence of instruction s that is continually "
+        cardsInit.add(new Card("a loop is a sequence of instructions that is continually "
                 + "repeated until a certain condition is reached. ", 31));
         cardsInit.add(new Card("A for loop is a control flow statement for specifying iteration, "
                 + "which allows code to be executed repeatedly.", 32));

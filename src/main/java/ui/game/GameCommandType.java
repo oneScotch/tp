@@ -17,7 +17,7 @@ public enum GameCommandType {
     /**
      * Command "card".
      */
-    CARD("card", "Manage your holding cards."),
+    CARD("card", "Manage your holding cards. You can view coding knowledge here!"),
 
     /**
      * Command "help".
