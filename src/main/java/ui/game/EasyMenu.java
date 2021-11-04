@@ -39,13 +39,21 @@ public class EasyMenu extends Menu {
     public void enter() {
         welcome();
 
-        startHangMan();
+        if (startHangMan() == 3) {
+            return;
+        }
 
-        startQuizGame();
+        if (startQuizGame() == 3) {
+            return;
+        }
 
-        startGuessNum();
+        if (startGuessNum()== 3) {
+            return;
+        }
 
-        startTreasureHunt();
+        if (startTreasureHunt() == 3) {
+            return;
+        }
 
         System.out.println(Strings.FINISH_EASY_MODE);
 
@@ -61,11 +69,10 @@ public class EasyMenu extends Menu {
         System.out.println();
     }
 
-    private void startHangMan() {
-        int playStatus = 2;
+    private int startHangMan() {
         int cardId;
 
-        while (playStatus == 2) {
+        while (true) {
             System.out.println(Strings.HANG_MAN_START);
             HangmanGame hangmanGame = new HangmanGame();
             cardId = hangmanGame.execute(true);
@@ -74,22 +81,17 @@ public class EasyMenu extends Menu {
             // TODO: STORE GAME RECORD
 
             System.out.print(hangmanGame.getName());
-            playStatus = setPlayStatus();
-
-            if (playStatus == 1) {
-                return;
-            } else if (playStatus == 3) {
-                // TODO: EXIT TO GAME MENU
+            int playStatus = setPlayStatus();
+            if (playStatus != 2) {
+                return playStatus;
             }
-
         }
     }
 
-    private void startQuizGame() {
-        int playStatus = 2;
+    private int startQuizGame() {
         int cardId;
 
-        while (playStatus == 2) {
+        while (true) {
             System.out.println(Strings.QUIZ_START);
             QuizGame quizGame = new QuizGame("1");
             cardId = quizGame.execute(true);
@@ -98,22 +100,17 @@ public class EasyMenu extends Menu {
             // TODO: STORE GAME RECORD
 
             System.out.print(quizGame.getName());
-            playStatus = setPlayStatus();
-
-            if (playStatus == 1) {
-                return;
-            } else if (playStatus == 3) {
-                // TODO: EXIT TO GAME MENU
+            int playStatus = setPlayStatus();
+            if (playStatus != 2) {
+                return playStatus;
             }
-
         }
     }
 
-    private void startGuessNum() {
-        int playStatus = 2;
+    private int startGuessNum() {
         int cardId;
 
-        while (playStatus == 2) {
+        while (true) {
             System.out.println(Strings.GUESS_NUM_START);
             GuessingNumGame guessingNumGame = new GuessingNumGame();
             cardId = guessingNumGame.execute(true);
@@ -122,22 +119,17 @@ public class EasyMenu extends Menu {
             // TODO: STORE GAME RECORD
 
             System.out.print(guessingNumGame.getName());
-            playStatus = setPlayStatus();
-
-            if (playStatus == 1) {
-                return;
-            } else if (playStatus == 3) {
-                // TODO: EXIT TO GAME MENU
+            int playStatus = setPlayStatus();
+            if (playStatus != 2) {
+                return playStatus;
             }
-
         }
     }
 
-    private void startTreasureHunt() {
-        int playStatus = 2;
+    private int startTreasureHunt() {
         int cardId;
 
-        while (playStatus == 2) {
+        while (true) {
             System.out.println(Strings.TREASURE_HUNT_START);
             TreasureHuntGame treasureHuntGame = new TreasureHuntGame();
             cardId = treasureHuntGame.execute(true);
@@ -146,14 +138,10 @@ public class EasyMenu extends Menu {
             // TODO: STORE GAME RECORD
 
             System.out.print(treasureHuntGame.getName());
-            playStatus = setPlayStatus();
-
-            if (playStatus == 1) {
-                return;
-            } else if (playStatus == 3) {
-                // TODO: EXIT TO GAME MENU
+            int playStatus = setPlayStatus();
+            if (playStatus != 2) {
+                return playStatus;
             }
-
         }
     }
 

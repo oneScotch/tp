@@ -86,10 +86,6 @@ public class GameMenu extends Menu {
                 case BACK: {
                     return;
                 }
-                case EXIT: {
-                    exit(true);
-                    return;
-                }
                 default: {
                     break;
                 }
@@ -142,11 +138,8 @@ public class GameMenu extends Menu {
      * @param promptToSave whether to prompt to save the current state or not
      */
     public void exit(boolean promptToSave) {
-        String in = "exit";
-        System.setIn(new ByteArrayInputStream(in.getBytes(StandardCharsets.UTF_8)));
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
-        scanner.close();
+        // TODO: Implement "prompt to save" functionality
+        System.out.println(Strings.MAIN_EXIT_MESSAGE);
+        System.out.println();
     }
-
 }

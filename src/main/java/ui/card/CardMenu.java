@@ -75,10 +75,6 @@ public class CardMenu extends Menu {
                 case BACK: {
                     return;
                 }
-                case EXIT: {
-                    exit(true);
-                    return;
-                }
                 default: {
                     break;
                 }
