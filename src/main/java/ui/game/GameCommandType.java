@@ -20,6 +20,11 @@ public enum GameCommandType {
     CARD("card", "Manage your holding cards."),
 
     /**
+     * Command "help".
+     */
+    HELP("help", "Display a list of available commands."),
+
+    /**
      * Command "back".
      */
     BACK("back", "Back to main menu."),
