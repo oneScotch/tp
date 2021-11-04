@@ -19,8 +19,8 @@ public class Strings {
     public static final String GAME_MENU = " [GAME MENU]";
     public static final String CARD_MENU = " [CARD MENU]";
     public static final String MAIN_PROMPT = String.format("%s > ", APP_NAME_SHORT + MAIN_MENU);
-    public static final String GAME_PROMPT = String.format("%s > ", APP_NAME_SHORT + GAME_MENU) ;
-    public static final String CARD_PROMPT = String.format("%s > ", APP_NAME_SHORT + CARD_MENU) ;
+    public static final String GAME_PROMPT = String.format("%s > ", APP_NAME_SHORT + GAME_MENU);
+    public static final String CARD_PROMPT = String.format("%s > ", APP_NAME_SHORT + CARD_MENU);
     public static final String HELP_MESSAGE = "Type \"help\" to see a list of available commands.";
     public static final String SUBCOMMAND_HELP_MESSAGE = "Please provide a subcommand.";
 
