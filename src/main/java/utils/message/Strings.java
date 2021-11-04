@@ -11,7 +11,7 @@ public class Strings {
 
     // Application name and version
     public static final String APP_NAME_LONG = "A text-based code game for children ages 6 and up(Code Hunt)";
-    public static final String APP_NAME_SHORT = "Code Hunt";
+    public static final String APP_NAME_SHORT = "Code Hunt [MAIN MENU]";
     public static final String APP_VERSION = "1.0";
 
     // Prompt
@@ -26,7 +26,9 @@ public class Strings {
             + "| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_\n"
             + " \\____\\___/ \\__,_|\\___| |_| |_|\\__,_|_| |_|\\__|\n";
     public static final String MAIN_WELCOME_MESSAGE = LOGO
-            + String.format("Welcome to %s.Are you ready to play?\n", APP_NAME_LONG) + HELP_MESSAGE;
+            + String.format("Welcome to %s.Are you ready to play?\n "
+            + "Remember, you can't play the next game until you pass through the processing one. "
+            + "Good luck, young knight! ", APP_NAME_LONG) + HELP_MESSAGE;
     public static final String MAIN_ABOUT_MESSAGE = String.format("%s (Version %s)\n", APP_NAME_LONG, APP_VERSION)
             + "Developed by Wang Chuhan, Jiang Yuxin, Xue Yushan, Wang Ruisi, Peng Wenxuan";
     public static final String MAIN_EXIT_MESSAGE =
