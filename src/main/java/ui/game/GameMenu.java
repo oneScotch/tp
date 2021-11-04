@@ -66,15 +66,9 @@ public class GameMenu extends Menu {
                     } else {
                         Errors.print(Integer.toString(selection), Strings.ERR_INVALID_NUMBER);
                     }
-
                     break;
                 }
                 case CHECK: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
-
                     showRecord();
                     break;
                 }
@@ -84,25 +78,13 @@ public class GameMenu extends Menu {
                     break;
                 }
                 case HELP: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     help();
                     break;
                 }
                 case BACK: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     return;
                 }
                 case EXIT: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     exit(true);
                     return;
                 }

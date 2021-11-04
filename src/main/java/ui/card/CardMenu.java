@@ -48,58 +48,35 @@ public class CardMenu extends Menu {
                 CardCommandType commandType = CardCommandType.getCommandType(parser.nextToken());
                 if (commandType == null) {
                     Errors.print(parser.getString(), Strings.ERR_UNKNOWN_COMMAND);
-                    return;
+                    continue;
                 }
                 if (parser.hasMoreTokens()) {
                     Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                    return;
+                    continue;
                 }
                 switch (commandType) {
                 case LIST: {
                     System.out.println(Strings.LIST_CARD_MESSAGE);
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     listCards();
                     break;
                 }
                 case DELETE: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     deleteCard();
                     break;
                 }
                 case FIND: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     findCard();
                     break;
                 }
                 case HELP: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
+
                     help();
                     break;
                 }
                 case BACK: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     return;
                 }
                 case EXIT: {
-                    if (parser.hasMoreTokens()) {
-                        Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
-                        continue;
-                    }
                     exit(true);
                     return;
                 }
