@@ -11,11 +11,16 @@ public class Strings {
 
     // Application name and version
     public static final String APP_NAME_LONG = "A text-based code game for children ages 6 and up(Code Hunt)";
-    public static final String APP_NAME_SHORT = "Code Hunt [MAIN MENU]";
+    public static final String APP_NAME_SHORT = "Code Hunt";
     public static final String APP_VERSION = "1.0";
 
     // Prompt
-    public static final String MAIN_PROMPT = String.format("%s > ", APP_NAME_SHORT);
+    public static final String MAIN_MENU = " [MAIN MENU]";
+    public static final String GAME_MENU = " [GAME MENU]";
+    public static final String CARD_MENU = " [CARD MENU]";
+    public static final String MAIN_PROMPT = String.format("%s > ", APP_NAME_SHORT + MAIN_MENU);
+    public static final String GAME_PROMPT = String.format("%s > ", APP_NAME_SHORT + GAME_MENU) ;
+    public static final String CARD_PROMPT = String.format("%s > ", APP_NAME_SHORT + CARD_MENU) ;
     public static final String HELP_MESSAGE = "Type \"help\" to see a list of available commands.";
     public static final String SUBCOMMAND_HELP_MESSAGE = "Please provide a subcommand.";
 
