@@ -89,11 +89,11 @@ public class Player {
 
     private Player(String name, List<String> easyRecords, List<String> difficultRecords,
                    CardManager cardsCollected, CardManager cardsToBeCollected) {
-        this.name = name;
-        this.easyRecords = easyRecords;
-        this.difficultRecords = difficultRecords;
-        this.cardsCollected = cardsCollected;
-        this.cardsToBeCollected = cardsToBeCollected;
+        Player.name = name;
+        Player.easyRecords = easyRecords;
+        Player.difficultRecords = difficultRecords;
+        Player.cardsCollected = cardsCollected;
+        Player.cardsToBeCollected = cardsToBeCollected;
 
     }
 
@@ -185,114 +185,7 @@ public class Player {
         }
     }
 
-    /**
-     * save the card information by cardID.
-     * @param path the file path to save the data
-     */
-    /*public static void saveCard(String path) {
-        try {
-            String collectedIDs = "Collected:";
-            String usedIDs = "Used:";
-            for (int i = 0; i < collectedCardIDs.size(); i++) {
-                collectedIDs += collectedCardIDs.get(i);
-                collectedIDs += " ";
-            }
-            for (int i = 0; i < usedCardIDs.size(); i++) {
-                usedIDs += usedCardIDs.get(i);
-                usedIDs += " ";
-            }
-            FileWriter fw = new FileWriter(path);
-            fw.write(collectedIDs);
-            fw.write(System.getProperty("line.separator"));
-            fw.write(usedIDs);
-            fw.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
-    public static void loadCard(String path) throws FileNotFoundException {
-        File f = new File(path);
-        Scanner sc = new Scanner(f);
-        // Assume the first line stores the card message
-        String collectedIDs = sc.nextLine();
-        String usedIDs = sc.nextLine();
-        String[] collectedIdArray = collectedIDs.substring(COLLECTED_LENGTH).split(" ");
-        for (int i = 0; i < collectedIdArray.length; i++) {
-            int collectedCardID = Integer.parseInt(collectedIdArray[i]);
-            cardsToBeCollected.transferTo(cardsCollected, cardsToBeCollected.findCard(collectedCardID));
-            collectedCardIDs.add(collectedCardID);
-        }
-        String[] usedIdArray = usedIDs.substring(USED_LENGTH).split(" ");
-
-        for (int i = 0; i < usedIdArray.length; i++) {
-            int usedCardID = Integer.parseInt(usedIdArray[i]);
-            buyTip(usedCardID);
-        }
-    }
-
-    public static void saveGames(String path) {
-        try {
-            String easyGameRecord = "Easy games:\n";
-            String difficultGameRecord = "Difficult games:\n";
-            for (int i = 0; i < easyRecords.size(); i++) {
-                easyGameRecord += (i + 1) + ". ";
-                easyGameRecord += easyRecords.get(i);
-                easyGameRecord += "\n";
-            }
-            for (int i = 0; i < difficultRecords.size(); i++) {
-                difficultGameRecord += (i + 1) + ". ";
-                difficultGameRecord += difficultRecords.get(i);
-                difficultGameRecord += "\n";
-            }
-            FileWriter fw = new FileWriter(path);
-            fw.write(easyGameRecord);
-            fw.write("------");
-            fw.write(difficultGameRecord);
-            fw.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void loadGames(String path) {
-        easyRecords = new ArrayList<String>();
-        difficultRecords = new ArrayList<String>();
-        try {
-            File record = new File("data");
-            if (!record.exists()) {
-                record.mkdir();
-            }
-
-            File save = new File(path);
-            if (!save.exists()) {
-                save.createNewFile();
-            }
-
-            Scanner s = new Scanner(save);
-
-            while (s.hasNext()) {
-                String reading = s.nextLine();
-                if (reading.equals("Easy games:")) {
-                    continue;
-                }
-                easyRecords.add(reading.substring(3));
-                if (reading.equals("------")) {
-                    break;
-                }
-            }
-
-            while (s.hasNext()) {
-                String reading = s.nextLine();
-                if (reading.equals("Difficult games:")) {
-                    continue;
-                }
-                difficultRecords.add(reading.substring(3));
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }*/
 
     /**
      * Load restaurant previous save state.
