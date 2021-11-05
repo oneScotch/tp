@@ -79,6 +79,7 @@ public class EasyMenu extends Menu {
             Player.winCard(cardId);
 
             // TODO: STORE GAME RECORD
+            Player.addEasyGameRecord(hangmanGame);
 
             System.out.print(hangmanGame.getName());
             int playStatus = setPlayStatus();
@@ -98,6 +99,7 @@ public class EasyMenu extends Menu {
             Player.winCard(cardId);
 
             // TODO: STORE GAME RECORD
+            Player.addEasyGameRecord(quizGame);
 
             System.out.print(quizGame.getName());
             int playStatus = setPlayStatus();
@@ -117,6 +119,7 @@ public class EasyMenu extends Menu {
             Player.winCard(cardId);
 
             // TODO: STORE GAME RECORD
+            Player.addEasyGameRecord(guessingNumGame);
 
             System.out.print(guessingNumGame.getName());
             int playStatus = setPlayStatus();
@@ -136,6 +139,7 @@ public class EasyMenu extends Menu {
             Player.winCard(cardId);
 
             // TODO: STORE GAME RECORD
+            Player.addEasyGameRecord(treasureHuntGame);
 
             System.out.print(treasureHuntGame.getName());
             int playStatus = setPlayStatus();
