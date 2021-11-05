@@ -131,7 +131,7 @@ public class Player {
 
     public static String getEasyRecord() {
         int size = easyRecords.size();
-        if (size == 0){
+        if (size == 0) {
             return "empty";
         } else {
             System.out.println(Strings.GAME_RECORD_LOADING);
@@ -141,7 +141,7 @@ public class Player {
 
     public static String getDifficultRecord() {
         int size = difficultRecords.size();
-        if (size == 0){
+        if (size == 0) {
             return "empty";
         } else {
             System.out.println(Strings.GAME_RECORD_LOADING);

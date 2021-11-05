@@ -41,21 +41,19 @@ public class EasyMenu extends Menu {
 
         switch (Player.getEasyRecord()) {
         case "empty":
-            if (startHangMan() == 3) {
-                return;
-            }
+            if (startHangMan() == 3) { return; }
+            if (startQuizGame() == 3) { return; }
+            if (startGuessNum() == 3) { return; }
+            if (startTreasureHunt() == 3) { return; }
         case "Hang Man":
-            if (startQuizGame() == 3) {
-                return;
-            }
+            if (startQuizGame() == 3) { return; }
+            if (startGuessNum() == 3) { return; }
+            if (startTreasureHunt() == 3) { return; }
         case "Knowledge Quiz":
-            if (startGuessNum() == 3) {
-                return;
-            }
+            if (startGuessNum() == 3) { return; }
+            if (startTreasureHunt() == 3) { return; }
         case "Guess Number":
-            if (startTreasureHunt() == 3) {
-                return;
-            }
+            if (startTreasureHunt() == 3) { return; }
         default:
             break;
         }
