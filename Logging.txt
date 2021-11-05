@@ -1,4 +1,0 @@
-Nov 05, 2021 11:00:21 PM game.Game main
-INFO: going to start processing
-Nov 05, 2021 11:08:53 PM game.Game main
-INFO: end of processing
