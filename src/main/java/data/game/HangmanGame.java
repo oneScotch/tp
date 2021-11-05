@@ -57,7 +57,7 @@ public class HangmanGame extends Game implements Serializable {
 
         isWin = play();
         int start = startDIff;
-        if(isEasy) {
+        if (isEasy) {
             start = startID;
         }
 

@@ -397,8 +397,8 @@ public class Player {
                 + "class extends the child class. For example class C extends class B and class B extends class A.",
                 57,1));
         cardsInit.add(new Card("Hierarchical inheritance: refers to a child and parent class relationship where "
-                + "more than one classes extends the same class. For example, classes B, C & D extends the same class A.",
-                58,1));
+                + "more than one classes extends the same class. For example, classes B, C & D extends the"
+                + " same class A.", 58,1));
         cardsInit.add(new Card("Multiple Inheritance: refers to the concept of one class extending more than one"
                 + " classes, which means a child class has two parent classes. ", 59,1));
         cardsInit.add(new Card("Hybrid inheritance: Combination of more than one types of inheritance in a "
@@ -451,8 +451,8 @@ public class Player {
                 + " although they are not a part of the program itself.", 78,1));
         cardsInit.add(new Card("Polymorphism is one of the OOPs feature that allows us to perform a single"
                 + " action in different ways.", 79,1));
-        cardsInit.add(new Card("An interface which is declared inside another interface or class is called nested " +
-                "interface. They are also known as inner interface. ", 80,1));
+        cardsInit.add(new Card("An interface which is declared inside another interface or class is called nested "
+                + "interface. They are also known as inner interface. ", 80,1));
 
         cardsCollected = new CardManager();
         cardsToBeCollected = new CardManager(cardsInit);
