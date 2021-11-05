@@ -97,11 +97,7 @@ public class QuizGame extends Game implements Serializable {
                 }
             }
             System.out.println("end");
-            int start = startIDDiff;
-            if (isEasy) {
-                start = startID;
-            }
-            return isWin ? start : 0;   // added
+            return isWin ? startIDDiff : 0;   // added
         }
     }
 

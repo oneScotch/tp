@@ -1,2 +1,6 @@
-11тб 05, 2021 8:40:44 обнГ game.Game main
+
+Nov 05, 2021 8:05:39 PM game.Game main
 INFO: going to start processing
+Nov 05, 2021 8:32:23 PM game.Game main
+INFO: end of processing
+
