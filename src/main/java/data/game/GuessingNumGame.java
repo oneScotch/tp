@@ -22,25 +22,15 @@ public class GuessingNumGame extends Game implements Serializable {
             + "You have to guess a number between 0 to " + (MAX_NUM - 1) + " in limited attempts, "
             + "if the guess is not correct, a tip will be given telling "
             + "whether the number you guess is smaller or larger than the secret number.";
-    private final int maxTries;
+    private static int maxTries = 20;
     private final int secretNum;
-    private int remainingTries;
+    private static int remainingTries = 0;
     private static int startID = 11;
 
     Scanner in = new Scanner(System.in);
 
-    /**
-     * Constructs a guessing number game according to whether it is difficult.
-     * @param boolean isDifficult identifies whether the game is at difficult level
-     */
-    public GuessingNumGame(boolean isDifficult) {
+    public GuessingNumGame() {
         this.secretNum = generateSecretNum() % MAX_NUM;
-        if (!isDifficult) {
-            this.maxTries = 20;
-        } else {
-            this.maxTries = 8;
-        }
-        this.remainingTries = maxTries;
     }
 
     /**
@@ -50,8 +40,15 @@ public class GuessingNumGame extends Game implements Serializable {
     @Override
     public int execute(boolean isEasy) {
         displayGameDetails();
-        GuessingNumGame g = new GuessingNumGame(0);
-        boolean isWin = g.play();
+        int max;
+        if (!isEasy) {
+            max = 8;
+        } else {
+            max = 20;
+        }
+        this.maxTries = max;
+        this.remainingTries = max;
+        boolean isWin = play();
         return isWin ? startID : 0;
     }
 
