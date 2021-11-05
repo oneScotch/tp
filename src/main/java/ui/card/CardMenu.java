@@ -88,19 +88,31 @@ public class CardMenu extends Menu {
     }
 
     private void findCard() {
-        System.out.println(Strings.FIND_CARD_MESSAGE);
-        Player.findCard(askCardId());
+        int cardId = askCardId();
+        if (cardId != -1) {
+            Player.findCard(cardId);
+        }
+
     }
 
     private void deleteCard() {
-        System.out.println(Strings.DELETE_CARD_MESSAGE);
-        Player.deleteCard(askCardId());
+        int cardId = askCardId();
+        if (cardId != -1) {
+            Player.deleteCard(cardId);
+        }
     }
 
     private int askCardId() {
-        // TODO:
-        prompt();
-        return 0;
+        int cardId = IO.readInt(in, Strings.ASK_CARD_INDEX);
+        while (cardId != -1) {
+            if (cardId > 0 && cardId <= Player.getCardSize()) {
+                return cardId;
+            } else {
+                System.out.println(Strings.ERR_INVALID_CARD_ID);
+            }
+            cardId = IO.readInt(in, "");
+        }
+        return -1;
     }
 
     /**

@@ -46,16 +46,32 @@ public class CardManager implements Serializable {
      * find the index of the card in the cardList by cardID.
      * @return -1 if the cardID is not found
      */
-    public int findCard(int cardID) {
-        int len = cards.size();
-        int index = -1;
-        for (int i = 0; i < len; i++) {
-            if (cards.get(i).getCardID() == cardID) {
-                index = i;
-                break;
+    public int findCard(int id) {
+        try {
+            boolean isValid = id > 0 && id <= cards.size();
+            assert isValid : "Ops, it seems that you input an invalid card id, please try again!";
+            int len = cards.size();
+            int index = -1;
+            for (int i = 0; i < len; i++) {
+                if (cards.get(i).getCardID() == id) {
+                    index = i;
+                    break;
+                }
             }
+            return index;
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+            return -1;
         }
-        return index;
+
+    }
+
+    public void findPrintCard(int id) {
+        if (findCard(id) != -1) {
+            System.out.println("Your card " + id + " : " + cards.get(id) + " has been found!");
+        } else {
+            System.out.println("Ops, it seems that you input an invalid card id, please try again!");
+        }
     }
 
     public void searchByKeyWord(String message) {
@@ -89,6 +105,7 @@ public class CardManager implements Serializable {
                 diffCardList.add(newCard);
             }
         }
+        System.out.println(Strings.DIVIDER);
         System.out.println("Easy-level cards collected: ");
         for (int i = 0; i < easyCardList.size(); i++) {
             Card card = easyCardList.get(i);
@@ -96,6 +113,7 @@ public class CardManager implements Serializable {
             String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
             System.out.println(id + ". " + card + " " + label);
         }
+        System.out.println(Strings.DIVIDER);
         System.out.println("Difficult-level cards collected: ");
         for (int i = 0; i < diffCardList.size(); i++) {
             Card card = diffCardList.get(i);
@@ -103,6 +121,7 @@ public class CardManager implements Serializable {
             String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
             System.out.println(id + ". " + card + " " + label);
         }
+        System.out.println(Strings.DIVIDER);
     }
 
     public Card deleteCard(int id) {
@@ -149,5 +168,9 @@ public class CardManager implements Serializable {
             cardSelected.setAsUsed();
         }
         return canBeExchanged;
+    }
+
+    public int getSize() {
+        return cards.size();
     }
 }

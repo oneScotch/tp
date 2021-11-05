@@ -69,6 +69,7 @@ public class Player {
      */
     public static boolean winCard(int startID) {
         if (startID == 0) {
+            System.out.println(Strings.NO_CARD_MESSAGE);
             return false;   // if startID = 0 , actually should not enter this method, need to be solved in the menu
         }
         int index = cardsToBeCollected.getCardPosition(startID);
@@ -166,7 +167,11 @@ public class Player {
     }
 
     public static void findCard(int cardID) {
-        cardsCollected.findCard(cardID);
+        cardsCollected.findPrintCard(cardID);
+    }
+
+    public static int getCardSize() {
+        return cardsCollected.getSize();
     }
 
     public static void savePlayer() {
