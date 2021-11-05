@@ -14,16 +14,8 @@ public class TreasureHuntGame extends Game implements Serializable {
     private static int startID = 1;   // the start ID
     private static int startIDDiff = 11;
 
-    /**
-     * Constructs a treasure hunt game according to whether it is difficult.
-     * @param boolean isDifficult identifies whether the game is at difficult level
-     */
-    public TreasureHuntGame(boolean isDifficult) {
-        if (!isDifficult) {
-            this.map = new TreasureHuntMap().getEasyMap();
-        } else {
-            this.map = new TreasureHuntMap().getDifficultMap();
-        }
+    public TreasureHuntGame() {
+
     }
 
     /**
@@ -32,6 +24,11 @@ public class TreasureHuntGame extends Game implements Serializable {
      */
     @Override
     public int execute(boolean isEasy) {
+        if (isEasy) {
+            this.map = new TreasureHuntMap().getEasyMap();
+        } else {
+            this.map = new TreasureHuntMap().getDifficultMap();
+        }
         displayGameDetails();
         displayMapDetails();
         displayMovements();
@@ -176,6 +173,7 @@ public class TreasureHuntGame extends Game implements Serializable {
         System.out.println("Sorry, your input is invalid. Please enter a sequence of movements.\n"
                 + "e.g. 13342 (move right-up-up-down-left)");
     }
+
     /**
      * prints the message that the treasure hunter have found the treasure.
      */

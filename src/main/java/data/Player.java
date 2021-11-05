@@ -1,4 +1,5 @@
 package data;
+
 import data.game.Game;
 import data.card.CardManager;
 import data.card.Card;
@@ -113,12 +114,12 @@ public class Player {
         cardsCollected.listCards();
     }
 
-    public static void deleteCard() {
-
+    public static void deleteCard(int index) {
+        cardsCollected.deleteCard(index);
     }
 
-    public static void getCard() {
-
+    public static void findCard(int cardID) {
+        cardsCollected.findCard(cardID);
     }
 
     public static void savePlayer() {

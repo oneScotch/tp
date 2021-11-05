@@ -79,7 +79,7 @@ public class CardManager implements Serializable {
         List<Card> diffCardList = new ArrayList<>();
         for (int i = 0; i < len; i++) {
             Card card = cards.get(i);
-            Card newCard = new Card(card);
+            Card newCard = new Card(card, card.checkIfIsUsed());
             int id = i + 1;
             newCard.setCardIndex(id);
             int level = newCard.getCardLevel();
