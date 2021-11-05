@@ -94,6 +94,7 @@ public class Strings {
     public static final String FINISH_EASY_MODE = "Congratulation! You have finished all the tasks of Easy Mode!!";
     public static final String GAME_END_SIGN = " Game ended. Enter your choice: \n"
             + "(1) continue | (2) again | (3) exit\n";
+    public static final String NO_CARD_MESSAGE = "Sorry! Since you didn't win the game, No CARDS!";
 
     // Difficult game messages
     public static final String DIFFICULT_LOGO = "                     ==\\\\\n"
@@ -133,8 +134,7 @@ public class Strings {
             + "Here is your package of cards!\n" + HELP_MESSAGE;
     public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
     public static final String CARD_DIVIDER_MESSAGE = "\n♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧\n";
-    public static final String DELETE_CARD_MESSAGE = "Enter the ID of card to delete: ";
-    public static final String FIND_CARD_MESSAGE = "Enter the ID of card to search: ";
+    public static final String ASK_CARD_INDEX = "Enter the ID of card (-1 to exit): ";
 
     // Error messages
     public static final String ERR_PLAYER_FILE_NOTFOUND_MESSAGE =
@@ -152,6 +152,8 @@ public class Strings {
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
     public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
     public static final String ERR_PLAY_INVALID_NUMBER = "Please enter a number from either 1, 2 or 3.";
+    public static final String ERR_INVALID_CARD_ID = "OOPS! It seems that you input an invalid card id, "
+            + "Please try again!";
 
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
