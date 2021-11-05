@@ -25,7 +25,8 @@ public class GuessingNumGame extends Game implements Serializable {
     private final int maxTries;
     private final int secretNum;
     private int remainingTries;
-    private static int startID = 11;
+    private static int startID = 21;
+    private static int startIDDiff = 31;
 
     Scanner in = new Scanner(System.in);
 
@@ -52,7 +53,11 @@ public class GuessingNumGame extends Game implements Serializable {
         displayGameDetails();
         GuessingNumGame g = new GuessingNumGame(0);
         boolean isWin = g.play();
-        return isWin ? startID : 0;
+        int start = startIDDiff;
+        if (isEasy) {
+            start = startID;
+        }
+        return isWin ? start : 0;
     }
 
     /**

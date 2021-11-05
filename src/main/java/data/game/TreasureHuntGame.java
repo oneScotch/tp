@@ -12,6 +12,7 @@ public class TreasureHuntGame extends Game implements Serializable {
             + "Notice: the path is one-time, that is, you will fall if you try going across the path covered.";
     private static int[][] map;
     private static int startID = 1;   // the start ID
+    private static int startIDDiff = 11;
 
     /**
      * Constructs a treasure hunt game according to whether it is difficult.
@@ -36,7 +37,11 @@ public class TreasureHuntGame extends Game implements Serializable {
         displayMovements();
         displayMap();
         boolean isWin = play();    //changed
-        return isWin ? startID : 0;    // return startID if win return 0 indicates lose
+        int start = startIDDiff;
+        if (isEasy) {
+            start = startID;
+        }
+        return isWin ? start : 0;    // return startID if win return 0 indicates lose
     }
 
     /**

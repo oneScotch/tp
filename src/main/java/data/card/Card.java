@@ -11,20 +11,30 @@ public class Card implements Serializable {
     private boolean isUsed;
     private int cardID;
     private boolean isCollected;
+    private int level;  // 0 for easy and 1 for hard
 
-    public Card(String content, int cardID) {
+    public Card(String content, int cardID, int level) {
         this.content = content;
         this.cardID = cardID;
         this.isUsed = false;
         this.isCollected = false;
+        this.level = level;
     }
 
     public Card(Card card) {
-        this(card.getContent(), card.getCardID());
+        this(card.getContent(), card.getCardID(), card.level);
     }
 
     public int getCardID() {
         return cardID;
+    }
+
+    public void setCardIndex(int index) {
+        cardID = index;
+    }
+
+    public int getCardLevel() {
+        return level;
     }
 
     public String getContent() {
