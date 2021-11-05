@@ -16,7 +16,8 @@ public class QuizGame extends Game implements Serializable {
     public static int NumOfCorrect = 0;
     public static int NumOfUserAnswer = 0;
     public String level;
-    private static int startID = 21;
+    private static int startID = 41;
+    private static int startIDDiff = 51;
 
     public QuizGame(String level) {
         this.level = level;
@@ -96,7 +97,7 @@ public class QuizGame extends Game implements Serializable {
                 }
             }
             System.out.println("end");
-            return isWin ? startID : 0;   // added
+            return isWin ? startIDDiff : 0;   // added
         }
     }
 

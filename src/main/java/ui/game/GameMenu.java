@@ -117,7 +117,11 @@ public class GameMenu extends Menu {
      */
     private void showRecord() {
         System.out.println(Strings.GAME_RECORD_MESSAGE);
-        Player.showGameProgress();
+        System.out.println(Strings.DIVIDER);
+        Player.showEasyGameRecord();
+        System.out.println(Strings.DIVIDER);
+        Player.showDifficultGameRecord();
+        System.out.println(Strings.DIVIDER);
     }
 
     /**

@@ -33,7 +33,8 @@ public class HangmanGame extends Game implements Serializable {
     private int length;
     private char[] guessWord;
     private int remainingTries;
-    private static int startID = 31;
+    private static int startID = 61;
+    private static int startDIff = 71;
     private boolean isEasy;
 
     public HangmanGame() {
@@ -55,8 +56,12 @@ public class HangmanGame extends Game implements Serializable {
         boolean isWin;
 
         isWin = play();
+        int start = startDIff;
+        if (isEasy) {
+            start = startID;
+        }
 
-        return isWin ? startID : 0;
+        return isWin ? start : 0;
     }
 
     @Override
