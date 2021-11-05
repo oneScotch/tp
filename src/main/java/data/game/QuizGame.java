@@ -125,7 +125,7 @@ public class QuizGame extends Game implements Serializable {
 
     @Override
     public String getName() {
-        return "QuizGame";
+        return "Knowledge Quiz";
     }
 
     public static String[] MCQ = {"Who is the person that writes code and communicates instructions to a computer? "

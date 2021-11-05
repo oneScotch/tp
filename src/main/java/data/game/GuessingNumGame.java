@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 
 public class GuessingNumGame extends Game implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;
-    public static final String name = "GuessingNumber";
+    public static final String name = "Guess Number";
     public static final int MAX_NUM = 100;
     public static final String LOGO = " _____ _     _____ ____  ____  _  _      _____   "
             + "_      _     _      ____  _____ ____ \n"
