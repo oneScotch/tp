@@ -152,7 +152,8 @@ public class Strings {
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
     public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
     public static final String ERR_PLAY_INVALID_NUMBER = "Please enter a number from either 1, 2 or 3.";
-    public static final String ERR_INVALID_CARD_ID = "OOPS! It seems that you input an invalid card id, Please try again!";
+    public static final String ERR_INVALID_CARD_ID = "OOPS! It seems that you input an invalid card id, "
+            + "Please try again!";
 
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
