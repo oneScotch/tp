@@ -68,6 +68,8 @@ public class GameMenu extends Menu {
                     } else {
                         Errors.print(Integer.toString(selection), Strings.ERR_INVALID_NUMBER);
                     }
+
+                    Player.savePlayer();
                     break;
                 }
                 case CHECK: {

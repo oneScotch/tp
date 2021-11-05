@@ -3,7 +3,6 @@ package data;
 import data.game.Game;
 import data.card.CardManager;
 import data.card.Card;
-import data.game.HangmanGame;
 import utils.Errors;
 import utils.IO;
 import utils.message.Strings;
@@ -44,12 +43,12 @@ public class Player {
     /**
      * The list of easy games.
      */
-    private static List<String> easyGames = new ArrayList<String>();
+    private static List<String> easyRecords = new ArrayList<String>();
 
     /**
      * The list of difficult games.
      */
-    private static List<String> difficultGames = new ArrayList<String>();
+    private static List<String> difficultRecords = new ArrayList<String>();
 
     /**
      * The used cards list.
@@ -98,11 +97,11 @@ public class Player {
 
 
     //TODO 暂时为了过test
-    private Player(String name, List<String> easyGames, List<String> difficultGames,
+    private Player(String name, List<String> easyRecords, List<String> difficultRecords,
                    CardManager cardsCollected, CardManager cardsToBeCollected) {
         this.name = name;
-        this.easyGames = easyGames;
-        this.difficultGames = difficultGames;
+        this.easyRecords = easyRecords;
+        this.difficultRecords = difficultRecords;
         this.cardsCollected = cardsCollected;
         this.cardsToBeCollected = cardsToBeCollected;
 
@@ -110,10 +109,10 @@ public class Player {
 
     public static void showEasyGameRecord() {
         System.out.println(Strings.SHOW_EASY_PROGRESS);
-        if (easyGames.size() == 0) {
+        if (easyRecords.size() == 0) {
             System.out.println(Strings.NO_GAME_RECORD_MESSAGE);
         } else {
-            for (String name : easyGames) {
+            for (String name : easyRecords) {
                 System.out.println(name);
             }
         }
@@ -121,21 +120,41 @@ public class Player {
 
     public static void showDifficultGameRecord() {
         System.out.println(Strings.SHOW_DIFFICULT_PROGRESS);
-        if (difficultGames.size() == 0) {
+        if (difficultRecords.size() == 0) {
             System.out.println(Strings.NO_GAME_RECORD_MESSAGE);
         } else {
-            for (String name : difficultGames) {
+            for (String name : difficultRecords) {
                 System.out.println(name);
             }
         }
     }
 
+    public static String getEasyRecord() {
+        int size = easyRecords.size();
+        if (size == 0) {
+            return "empty";
+        } else {
+            System.out.println(Strings.GAME_RECORD_LOADING);
+            return easyRecords.get(size - 1);
+        }
+    }
+
+    public static String getDifficultRecord() {
+        int size = difficultRecords.size();
+        if (size == 0) {
+            return "empty";
+        } else {
+            System.out.println(Strings.GAME_RECORD_LOADING);
+            return difficultRecords.get(size - 1);
+        }
+    }
+
     public static void addEasyGameRecord(Game easyGame) {
-        easyGames.add(easyGame.getName());
+        easyRecords.add(easyGame.getName());
     }
 
     public static void addDifficultGameRecord(Game difficultGame) {
-        difficultGames.add(difficultGame.getName());
+        difficultRecords.add(difficultGame.getName());
     }
 
     public static void showCollectedCards() {
@@ -160,7 +179,7 @@ public class Player {
             }
         }
 
-        Object[] playerMember = {name, easyGames, difficultGames, cardsCollected, cardsToBeCollected};
+        Object[] playerMember = {name, easyRecords, difficultRecords, cardsCollected, cardsToBeCollected};
 
         Path saveFileName = Paths.get(DATAPATH.toString(), PLAYER_FILE_NAME);
         FileOutputStream fos = null;
@@ -226,14 +245,14 @@ public class Player {
         try {
             String easyGameRecord = "Easy games:\n";
             String difficultGameRecord = "Difficult games:\n";
-            for (int i = 0; i < easyGames.size(); i++) {
+            for (int i = 0; i < easyRecords.size(); i++) {
                 easyGameRecord += (i + 1) + ". ";
-                easyGameRecord += easyGames.get(i);
+                easyGameRecord += easyRecords.get(i);
                 easyGameRecord += "\n";
             }
-            for (int i = 0; i < difficultGames.size(); i++) {
+            for (int i = 0; i < difficultRecords.size(); i++) {
                 difficultGameRecord += (i + 1) + ". ";
-                difficultGameRecord += difficultGames.get(i);
+                difficultGameRecord += difficultRecords.get(i);
                 difficultGameRecord += "\n";
             }
             FileWriter fw = new FileWriter(path);
@@ -247,8 +266,8 @@ public class Player {
     }
 
     public static void loadGames(String path) {
-        easyGames = new ArrayList<String>();
-        difficultGames = new ArrayList<String>();
+        easyRecords = new ArrayList<String>();
+        difficultRecords = new ArrayList<String>();
         try {
             File record = new File("data");
             if (!record.exists()) {
@@ -267,7 +286,7 @@ public class Player {
                 if (reading.equals("Easy games:")) {
                     continue;
                 }
-                easyGames.add(reading.substring(3));
+                easyRecords.add(reading.substring(3));
                 if (reading.equals("------")) {
                     break;
                 }
@@ -278,7 +297,7 @@ public class Player {
                 if (reading.equals("Difficult games:")) {
                     continue;
                 }
-                difficultGames.add(reading.substring(3));
+                difficultRecords.add(reading.substring(3));
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -302,8 +321,8 @@ public class Player {
             playerMember = (Object[]) ois.readObject();
             if (playerMember != null) {
                 name = (String) playerMember[0];
-                easyGames = (ArrayList<String>) playerMember[1];
-                difficultGames = (ArrayList<String>) playerMember[2];
+                easyRecords = (ArrayList<String>) playerMember[1];
+                difficultRecords = (ArrayList<String>) playerMember[2];
                 cardsCollected = (CardManager) playerMember[3];
                 cardsToBeCollected = (CardManager) playerMember[4];
             }

@@ -134,6 +134,7 @@ public class Strings {
     public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
     public static final String CARD_DIVIDER_MESSAGE = "\n♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧\n";
     public static final String DELETE_CARD_MESSAGE = "Enter the ID of card to delete: ";
+    public static final String FIND_CARD_MESSAGE = "Enter the ID of card to search: ";
 
     // Error messages
     public static final String ERR_PLAYER_FILE_NOTFOUND_MESSAGE =
@@ -151,7 +152,9 @@ public class Strings {
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
     public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
     public static final String ERR_PLAY_INVALID_NUMBER = "Please enter a number from either 1, 2 or 3.";
+
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
     public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
+    public static final String GAME_RECORD_LOADING = "Game Loading ...\n0 ███████████████████] 100%";
 }

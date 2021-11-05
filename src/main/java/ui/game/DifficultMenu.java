@@ -39,25 +39,51 @@ public class DifficultMenu extends Menu {
     public void enter() {
         welcome();
 
-        if (startHangMan() == 3) {
-            return;
-        }
-
-        if (startQuizGame() == 3) {
-            return;
-        }
-
-        if (startGuessNum() == 3) {
-            return;
-        }
-
-        if (startTreasureHunt() == 3) {
-            return;
+        switch (Player.getDifficultRecord()) {
+        case "empty":
+            if (startHangMan() == 3) {
+                return;
+            }
+            if (startQuizGame() == 3) {
+                return;
+            }
+            if (startGuessNum() == 3) {
+                return;
+            }
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        case "Hang Man":
+            if (startQuizGame() == 3) {
+                return;
+            }
+            if (startGuessNum() == 3) {
+                return;
+            }
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        case "Knowledge Quiz":
+            if (startGuessNum() == 3) {
+                return;
+            }
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        case "Guess Number":
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        default:
+            break;
         }
 
         System.out.println(Strings.FINISH_DIFFICULT_MODE);
 
-        // TODO: SAVE PLAYER
     }
 
     /**
