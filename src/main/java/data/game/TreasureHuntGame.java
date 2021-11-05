@@ -15,14 +15,10 @@ public class TreasureHuntGame extends Game implements Serializable {
 
     /**
      * Constructs a treasure hunt game according to whether it is difficult.
-     * @param boolean isDifficult identifies whether the game is at difficult level
+     * @param String level identifies the level of the game
      */
-    public TreasureHuntGame(boolean isDifficult) {
-        if (!isDifficult) {
-            this.map = new TreasureHuntMap().getEasyMap();
-        } else {
-            this.map = new TreasureHuntMap().getDifficultMap();
-        }
+    public TreasureHuntGame() {
+
     }
 
     /**
@@ -31,6 +27,11 @@ public class TreasureHuntGame extends Game implements Serializable {
      */
     @Override
     public int execute(boolean isEasy) {
+        if (isEasy) {
+            this.map = new TreasureHuntMap().getEasyMap();
+        } else {
+            this.map = new TreasureHuntMap().getDifficultMap();
+        }
         displayGameDetails();
         displayMapDetails();
         displayMovements();
