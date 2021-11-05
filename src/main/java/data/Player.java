@@ -3,6 +3,7 @@ package data;
 import data.game.Game;
 import data.card.CardManager;
 import data.card.Card;
+import data.game.HangmanGame;
 import utils.Errors;
 import utils.IO;
 import utils.message.Strings;
@@ -41,9 +42,14 @@ public class Player {
     private static String name;
 
     /**
-     * The list of games.
+     * The list of easy games.
      */
-    private static List<Game> games;
+    private static List<String> easyGames = new ArrayList<String>();
+
+    /**
+     * The list of difficult games.
+     */
+    private static List<String> difficultGames = new ArrayList<String>();
 
     /**
      * The used cards list.
@@ -92,22 +98,44 @@ public class Player {
 
 
     //TODO 暂时为了过test
-    private Player(String name, List<Game> games, CardManager cardsCollected, CardManager cardsToBeCollected) {
+    private Player(String name, List<String> easyGames, List<String> difficultGames,
+                   CardManager cardsCollected, CardManager cardsToBeCollected) {
         this.name = name;
-        this.games = games;
+        this.easyGames = easyGames;
+        this.difficultGames = difficultGames;
         this.cardsCollected = cardsCollected;
         this.cardsToBeCollected = cardsToBeCollected;
 
     }
 
-    public static void showGameProgress() {
-        if (games == null) {
+    public static void showEasyGameRecord() {
+        System.out.println(Strings.SHOW_EASY_PROGRESS);
+        if (easyGames.size() == 0) {
             System.out.println(Strings.NO_GAME_RECORD_MESSAGE);
         } else {
-            for (Game game : games) {
-                System.out.println(game.getName());
+            for (String name : easyGames) {
+                System.out.println(name);
             }
         }
+    }
+
+    public static void showDifficultGameRecord() {
+        System.out.println(Strings.SHOW_DIFFICULT_PROGRESS);
+        if (difficultGames.size() == 0) {
+            System.out.println(Strings.NO_GAME_RECORD_MESSAGE);
+        } else {
+            for (String name : difficultGames) {
+                System.out.println(name);
+            }
+        }
+    }
+
+    public static void addEasyGameRecord(Game easyGame) {
+        easyGames.add(easyGame.getName());
+    }
+
+    public static void addDifficultGameRecord(Game difficultGame) {
+        difficultGames.add(difficultGame.getName());
     }
 
     public static void showCollectedCards() {
@@ -132,7 +160,7 @@ public class Player {
             }
         }
 
-        Object[] playerMember = {name, games, cardsCollected, cardsToBeCollected};
+        Object[] playerMember = {name, easyGames, difficultGames, cardsCollected, cardsToBeCollected};
 
         Path saveFileName = Paths.get(DATAPATH.toString(), PLAYER_FILE_NAME);
         FileOutputStream fos = null;
@@ -194,6 +222,69 @@ public class Player {
         }
     }
 
+    public static void saveGames(String path) {
+        try {
+            String easyGameRecord = "Easy games:\n";
+            String difficultGameRecord = "Difficult games:\n";
+            for (int i = 0; i < easyGames.size(); i++) {
+                easyGameRecord += (i + 1) + ". ";
+                easyGameRecord += easyGames.get(i);
+                easyGameRecord += "\n";
+            }
+            for (int i = 0; i < difficultGames.size(); i++) {
+                difficultGameRecord += (i + 1) + ". ";
+                difficultGameRecord += difficultGames.get(i);
+                difficultGameRecord += "\n";
+            }
+            FileWriter fw = new FileWriter(path);
+            fw.write(easyGameRecord);
+            fw.write("------");
+            fw.write(difficultGameRecord);
+            fw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void loadGames(String path) {
+        easyGames = new ArrayList<String>();
+        difficultGames = new ArrayList<String>();
+        try {
+            File record = new File("data");
+            if (!record.exists()) {
+                record.mkdir();
+            }
+
+            File save = new File(path);
+            if (!save.exists()) {
+                save.createNewFile();
+            }
+
+            Scanner s = new Scanner(save);
+
+            while (s.hasNext()) {
+                String reading = s.nextLine();
+                if (reading.equals("Easy games:")) {
+                    continue;
+                }
+                easyGames.add(reading.substring(3));
+                if (reading.equals("------")) {
+                    break;
+                }
+            }
+
+            while (s.hasNext()) {
+                String reading = s.nextLine();
+                if (reading.equals("Difficult games:")) {
+                    continue;
+                }
+                difficultGames.add(reading.substring(3));
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     /**
      * Load restaurant previous save state.
      */
@@ -211,9 +302,10 @@ public class Player {
             playerMember = (Object[]) ois.readObject();
             if (playerMember != null) {
                 name = (String) playerMember[0];
-                games = (ArrayList<Game>) playerMember[1];
-                cardsCollected = (CardManager) playerMember[2];
-                cardsToBeCollected = (CardManager) playerMember[3];
+                easyGames = (ArrayList<String>) playerMember[1];
+                difficultGames = (ArrayList<String>) playerMember[2];
+                cardsCollected = (CardManager) playerMember[3];
+                cardsToBeCollected = (CardManager) playerMember[4];
             }
             ois.close();
         } catch (IOException ex) {
@@ -284,8 +376,8 @@ public class Player {
         // for difficult level
         cardsInit.add(new Card("Objects have two characteristics: They have states and behaviors",
                 11,1));
-        cardsInit.add(new Card("Abstraction is a process where you show only “relevant” data "
-                + "and “hide” unnecessary details of an object from the user.", 12,1));
+        cardsInit.add(new Card("Abstraction is a process where you show only 'relevant' data "
+                + "and 'hide' unnecessary details of an object from the user.", 12,1));
         cardsInit.add(new Card("In java, Encapsulation simply means binding object state(fields) and "
                 + "behaviour(methods) together. If you are creating class, you are doing encapsulation",
                 13,1));
