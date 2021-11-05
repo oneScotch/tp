@@ -144,7 +144,7 @@ public class GameMenu extends Menu {
      * @param promptToSave whether to prompt to save the current state or not
      */
     public void exit(boolean promptToSave) {
-        // TODO: Implement "prompt to save" functionality
+        Player.savePlayer();
         System.out.println(Strings.MAIN_EXIT_MESSAGE);
         System.out.println();
     }

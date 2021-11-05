@@ -35,6 +35,7 @@ public class GameMainMenu extends Menu {
 
     public void enter() {
         welcome();
+        help();
         try {
             while (true) {
                 prompt();
@@ -57,7 +58,7 @@ public class GameMainMenu extends Menu {
                 }
                 case CONTINUE: {
                     String playerId = IO.readString(in, Strings.MAIN_PLAYER_ID_ENTER_PROMPT).trim();
-                    assert playerId == null : "Nothing is inputted!!";
+                    assert playerId != null : "Nothing is inputted!!";
                     Player.loadPlayer(playerId);
                     GameMenu gameMenu = new GameMenu(in, parser);
                     gameMenu.enter();
