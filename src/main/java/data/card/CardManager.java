@@ -67,11 +67,9 @@ public class CardManager implements Serializable {
     }
 
     public void findPrintCard(int id) {
-        if (findCard(id) != -1) {
-            System.out.println("Your card " + id + " : " + cards.get(id) + " has been found!");
-        } else {
-            System.out.println("Ops, it seems that you input an invalid card id, please try again!");
-        }
+        int index = findCard(id);
+        assert index != -1 : "Should not print this line.";
+        System.out.println("Your card " + id + " : " + cards.get(id) + " has been found!");
     }
 
     public void searchByKeyWord(String message) {

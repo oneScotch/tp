@@ -110,7 +110,7 @@ public class CardMenu extends Menu {
             } else {
                 System.out.println(Strings.ERR_INVALID_CARD_ID);
             }
-            cardId = IO.readInt(in, "");
+            cardId = IO.readInt(in, Strings.ASK_CARD_INDEX);
         }
         return -1;
     }
