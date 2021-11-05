@@ -36,7 +36,7 @@ public class QuizGame extends Game implements Serializable {
                     getQuestion(MCQ, MCQAnswers);
                     break;
                 case 1:
-                    System.out.println("2. MRQ (answer format: eg. ABD)");
+                    System.out.println("2. MRQ (answer format: eg. ABD [please input in alphabetical order])");
                     getQuestion(MRQ, MRQAnswers);
                     break;
                 case 2:
@@ -45,7 +45,8 @@ public class QuizGame extends Game implements Serializable {
                     break;
                 case 3:
                     System.out.println("4. FIB (answer format: "
-                        + "[if the answer is a verb, just -ing format] eg. looking)");
+                            + "[if the answer is a verb, just -ing format] "
+                            + "eg. looking [all the characters should be lower case])");
                     getQuestion(FIB, FIBAnswers);
                     break;
                 default:
@@ -56,9 +57,9 @@ public class QuizGame extends Game implements Serializable {
                     System.out.println("Good! You achieve full mark.\n");
                     break;
                 } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
-                    System.out.println("Sorry! You did not pass this challenge. Please try again.\n");
+                    System.out.println("Sorry! You did not pass this challenge.\n");
                     NumOfCorrect = 0;
-                    NumOfUserAnswer = 0;
+                    break;
                 }
             }
             System.out.println("end");
@@ -71,7 +72,7 @@ public class QuizGame extends Game implements Serializable {
                     getQuestion(MCQD, MCQDAnswers);
                     break;
                 case 1:
-                    System.out.println("2. MRQ (answer format: eg. ABD)");
+                    System.out.println("2. MRQ (answer format: eg. ABD [please input in alphabetical order])");
                     getQuestion(MRQD, MRQDAnswers);
                     break;
                 case 2:
@@ -80,7 +81,8 @@ public class QuizGame extends Game implements Serializable {
                     break;
                 case 3:
                     System.out.println("4. FIB (answer format: "
-                        + "[if the answer is a verb, just -ing format] eg. looking)");
+                        + "[if the answer is a verb, just -ing format] "
+                        + "eg. looking [all the characters should be lower case])");
                     getQuestion(FIBD, FIBDAnswers);
                     break;
                 default:
@@ -91,9 +93,9 @@ public class QuizGame extends Game implements Serializable {
                     System.out.println("Good! You achieve full mark.\n");
                     break;
                 } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
-                    System.out.println("Sorry! You did not pass this challenge. Please try again.\n");
+                    System.out.println("Sorry! You did not pass this challenge.\n");
                     NumOfCorrect = 0;
-                    NumOfUserAnswer = 0;
+                    break;
                 }
             }
             System.out.println("end");
@@ -138,7 +140,7 @@ public class QuizGame extends Game implements Serializable {
 
     public static String[] MRQ = {"Which will the following statement return true?"
             + "\n[A: 1 == 1][B: \"abc\" == \"bcd\"][C: \"Hello\" == \"hello\"][D: \"Hello\" == \"Hello\"]",
-        "Choose are programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
+        "Choose all programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
         "Choose all the correct codes. \n[A: 1 = x;[B: x++;][C: return x;][D: return y]",
         "Choose correct statements which satisfy Java coding style."
                 + "\n[A: x=1][B: int a[] = new int[20];][C: int[] a = new int[20];][D: x = 2]",
@@ -169,7 +171,7 @@ public class QuizGame extends Game implements Serializable {
                     + "\n[A: x = 1 + x;][B: x = 1 - x;][C: x = x - 1;][D: x = 1 % x;]"};
 
     public static String[] TFQD = {"Is \"SDLC\" stands for Software Development Life Cycle? \n[True][False]",
-        "Can \"BFS\" and \"DFS\" both be used to graph traversal? \n[True][False]",
+        "Both \"BFS\" and \"DFS\" can be used to graph traversal? \n[True][False]",
         "\"do while\" may not necessarily be executed. \n[True][False]"};
 
     public static String[] MRQD = {"How do you get your website online?(choose all the steps)"
@@ -190,8 +192,8 @@ public class QuizGame extends Game implements Serializable {
     public static String[] TFQDAnswers = {"True", "True", "False"};
     public static String[] MCQDAnswers = {"A", "C", "B"};
     public static String[] MRQDAnswers = {"ABCD", "CD"};
-    public static String[] FIBDAnswers = {"HyperText Markup Language", "Cascading Style Sheets",
-        "Structured Query Language"};
+    public static String[] FIBDAnswers = {"hypertext markup language", "cascading style sheets",
+        "structured query language"};
 
     public static String[] QuizCards = {"Abstraction, means ignoring the non-essential "
             + "details of an object and concentrating on its essential details.",

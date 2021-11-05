@@ -7,9 +7,9 @@ Code Hunt is a text-based adventure game using command lines for children aged
 to learn basic coding knowledge through playing games and collecting knowledge cards.
 
 ### Summary of Contributions
-Given below are my contributions to the project.
+Given below are my contributions to the project Code Hunt.
 
 * New Feature:
-* Code contributed:
+* Code contributed: 
 * Project management
 * Enhancements to existing features:
