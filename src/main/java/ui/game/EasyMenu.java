@@ -39,25 +39,28 @@ public class EasyMenu extends Menu {
     public void enter() {
         welcome();
 
-        if (startHangMan() == 3) {
-            return;
-        }
-
-        if (startQuizGame() == 3) {
-            return;
-        }
-
-        if (startGuessNum() == 3) {
-            return;
-        }
-
-        if (startTreasureHunt() == 3) {
-            return;
+        switch (Player.getEasyRecord()) {
+        case "empty":
+            if (startHangMan() == 3) {
+                return;
+            }
+        case "Hang Man":
+            if (startQuizGame() == 3) {
+                return;
+            }
+        case "Knowledge Quiz":
+            if (startGuessNum() == 3) {
+                return;
+            }
+        case "Guess Number":
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+        default:
+            break;
         }
 
         System.out.println(Strings.FINISH_EASY_MODE);
-
-        // TODO: SAVE PLAYER
     }
 
     /**
@@ -78,7 +81,6 @@ public class EasyMenu extends Menu {
             cardId = hangmanGame.execute(true);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
             Player.addEasyGameRecord(hangmanGame);
 
             System.out.print(hangmanGame.getName());
@@ -98,7 +100,6 @@ public class EasyMenu extends Menu {
             cardId = quizGame.execute(true);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
             Player.addEasyGameRecord(quizGame);
 
             System.out.print(quizGame.getName());
@@ -118,7 +119,6 @@ public class EasyMenu extends Menu {
             cardId = guessingNumGame.execute(true);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
             Player.addEasyGameRecord(guessingNumGame);
 
             System.out.print(guessingNumGame.getName());
@@ -138,7 +138,6 @@ public class EasyMenu extends Menu {
             cardId = treasureHuntGame.execute(true);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
             Player.addEasyGameRecord(treasureHuntGame);
 
             System.out.print(treasureHuntGame.getName());

@@ -9,6 +9,7 @@ import ui.game.GameMenu;
 import ui.main.GameMainCommandType;
 import ui.main.GameMainMenu;
 import utils.Errors;
+import utils.IO;
 import utils.StringParser;
 import utils.message.Strings;
 
@@ -87,13 +88,19 @@ public class CardMenu extends Menu {
     }
 
     private void findCard() {
-
+        System.out.println(Strings.FIND_CARD_MESSAGE);
+        Player.findCard(askCardId());
     }
 
     private void deleteCard() {
         System.out.println(Strings.DELETE_CARD_MESSAGE);
-        prompt();
+        Player.deleteCard(askCardId());
+    }
 
+    private int askCardId() {
+        // TODO:
+        prompt();
+        return 0;
     }
 
     /**
