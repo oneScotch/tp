@@ -97,6 +97,7 @@ public class GuessingNumGame extends Game implements Serializable {
      * @return boolean whether the user has won this game
      */
     public boolean play() {
+        printRemainingTries();
         boolean isWin = false;
         while (this.remainingTries > 0) {
             Scanner in = new Scanner(System.in);
@@ -140,6 +141,13 @@ public class GuessingNumGame extends Game implements Serializable {
     public void displayGameDetails() {
         System.out.println(LOGO);
         System.out.println(GAME_RULES);
+    }
+
+    /**
+     * prints the number of remaining tries.
+     */
+    public void printRemainingTries() {
+        System.out.println("You have " + this.remainingTries + " tries now.");
     }
 
     /**

@@ -40,6 +40,8 @@ public class Strings {
             String.format("Thank you playing %s ! Have a nice day~~", APP_NAME_SHORT);
     public static final String MAIN_PLAYER_ID_ENTER_PROMPT = "Enter your player ID: ";
     public static final String NO_GAME_RECORD_MESSAGE = "Aiyah! There isn't any game record yet.";
+    public static final String SHOW_EASY_PROGRESS = "Here is your game record of easy level:";
+    public static final String SHOW_DIFFICULT_PROGRESS = "Here is your game record of difficult level:";
 
     // Game menu messages
     public static final String GAME_WELCOME_MESSAGE = LOGO
@@ -63,7 +65,7 @@ public class Strings {
     public static final String GAME_RECORD_MESSAGE = GAME_RECORD + "Here is you game history!";
 
     // Easy game messages
-    private static final String DIVIDER = "=========================================================";
+    public static final String DIVIDER = "=========================================================";
     public static final String _GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
         + "We are the Avengers. To protect the world from devastation, we need your help!\n"
         + "We need to get as many cards ad possible for the last Infinity Gem.\n"
