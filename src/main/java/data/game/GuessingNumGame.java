@@ -29,10 +29,6 @@ public class GuessingNumGame extends Game implements Serializable {
 
     Scanner in = new Scanner(System.in);
 
-    /**
-     * Constructs a guessing number game according to whether it is difficult.
-     * @param boolean isDifficult identifies whether the game is at difficult level
-     */
     public GuessingNumGame() {
         this.secretNum = generateSecretNum() % MAX_NUM;
     }

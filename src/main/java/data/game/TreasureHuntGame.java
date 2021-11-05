@@ -13,10 +13,6 @@ public class TreasureHuntGame extends Game implements Serializable {
     private static int[][] map;
     private static int startID = 1;   // the start ID
 
-    /**
-     * Constructs a treasure hunt game according to whether it is difficult.
-     * @param String level identifies the level of the game
-     */
     public TreasureHuntGame() {
 
     }
@@ -172,6 +168,7 @@ public class TreasureHuntGame extends Game implements Serializable {
         System.out.println("Sorry, your input is invalid. Please enter a sequence of movements.\n"
                 + "e.g. 13342 (move right-up-up-down-left)");
     }
+
     /**
      * prints the message that the treasure hunter have found the treasure.
      */
