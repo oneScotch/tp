@@ -75,11 +75,33 @@ public class CardManager implements Serializable {
 
     public void listCards() {
         int len = cards.size();
+        List<Card> easyCardList = new ArrayList<>();
+        List<Card> diffCardList = new ArrayList<>();
         for (int i = 0; i < len; i++) {
             Card card = cards.get(i);
-            String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
+            Card newCard = new Card(card, card.checkIfIsUsed());
             int id = i + 1;
-            System.out.println(id + ". " + cards.get(i) + " " + label);
+            newCard.setCardIndex(id);
+            int level = newCard.getCardLevel();
+            if (level == 0) {
+                easyCardList.add(newCard);
+            } else {
+                diffCardList.add(newCard);
+            }
+        }
+        System.out.println("Easy-level cards collected: ");
+        for (int i = 0; i < easyCardList.size(); i++) {
+            Card card = easyCardList.get(i);
+            int id = card.getCardID();
+            String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
+            System.out.println(id + ". " + card + " " + label);
+        }
+        System.out.println("Difficult-level cards collected: ");
+        for (int i = 0; i < diffCardList.size(); i++) {
+            Card card = diffCardList.get(i);
+            int id = card.getCardID();
+            String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
+            System.out.println(id + ". " + card + " " + label);
         }
     }
 
