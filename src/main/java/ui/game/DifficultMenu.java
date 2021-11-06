@@ -39,25 +39,51 @@ public class DifficultMenu extends Menu {
     public void enter() {
         welcome();
 
-        if (startHangMan() == 3) {
-            return;
-        }
-
-        if (startQuizGame() == 3) {
-            return;
-        }
-
-        if (startGuessNum() == 3) {
-            return;
-        }
-
-        if (startTreasureHunt() == 3) {
-            return;
+        switch (Player.printDifficultRecord()) {
+        case "empty":
+            if (startHangMan() == 3) {
+                return;
+            }
+            if (startQuizGame() == 3) {
+                return;
+            }
+            if (startGuessNum() == 3) {
+                return;
+            }
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        case "Hang Man":
+            if (startQuizGame() == 3) {
+                return;
+            }
+            if (startGuessNum() == 3) {
+                return;
+            }
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        case "Knowledge Quiz":
+            if (startGuessNum() == 3) {
+                return;
+            }
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        case "Guess Number":
+            if (startTreasureHunt() == 3) {
+                return;
+            }
+            break;
+        default:
+            break;
         }
 
         System.out.println(Strings.FINISH_DIFFICULT_MODE);
 
-        // TODO: SAVE PLAYER
     }
 
     /**
@@ -78,12 +104,20 @@ public class DifficultMenu extends Menu {
             cardId = hangmanGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(hangmanGame);
 
-            System.out.print(hangmanGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(hangmanGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(hangmanGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -97,12 +131,20 @@ public class DifficultMenu extends Menu {
             cardId = quizGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(quizGame);
 
-            System.out.print(quizGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(quizGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(quizGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -116,12 +158,20 @@ public class DifficultMenu extends Menu {
             cardId = guessingNumGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(guessingNumGame);
 
-            System.out.print(guessingNumGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(guessingNumGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(guessingNumGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -135,12 +185,20 @@ public class DifficultMenu extends Menu {
             cardId = treasureHuntGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(treasureHuntGame);
 
-            System.out.print(treasureHuntGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(treasureHuntGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(treasureHuntGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -149,8 +207,22 @@ public class DifficultMenu extends Menu {
         int playStatus;
 
         while (true) {
-            playStatus = IO.readInt(in, Strings.GAME_END_SIGN);
+            playStatus = IO.readInt(in, Strings.GAME_END_SIGN_WIN);
             if (playStatus == 1 || playStatus == 2 || playStatus == 3) {
+                break;
+            }
+            Errors.print(Integer.toString(playStatus), Strings.ERR_PLAY_INVALID_NUMBER);
+        }
+
+        return playStatus;
+    }
+
+    private int setPlayStatusLoss() {
+        int playStatus;
+
+        while (true) {
+            playStatus = IO.readInt(in, Strings.GAME_END_SIGN_LOSS);
+            if (playStatus == 1 || playStatus == 3) {
                 break;
             }
             Errors.print(Integer.toString(playStatus), Strings.ERR_PLAY_INVALID_NUMBER);

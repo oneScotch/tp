@@ -1,6 +1,7 @@
 package ui.game;
 
 import data.Player;
+import storage.Storage;
 import ui.Menu;
 import ui.card.CardCommandType;
 import ui.card.CardMenu;
@@ -41,6 +42,7 @@ public class GameMenu extends Menu {
     @Override
     public void enter() {
         welcome();
+        help();
         try {
             while (true) {
                 prompt();
@@ -62,12 +64,16 @@ public class GameMenu extends Menu {
                     if (selection == 1) {
                         EasyMenu easyMenu = new EasyMenu(in, parser);
                         easyMenu.enter();
+                        help();
                     } else if (selection == 2) {
                         DifficultMenu easyMenu = new DifficultMenu(in, parser);
                         easyMenu.enter();
+                        help();
                     } else {
                         Errors.print(Integer.toString(selection), Strings.ERR_INVALID_NUMBER);
                     }
+
+                    Storage.savePlayer();
                     break;
                 }
                 case CHECK: {
@@ -77,6 +83,7 @@ public class GameMenu extends Menu {
                 case CARD: {
                     CardMenu cardMenu = new CardMenu(in, parser);
                     cardMenu.enter();
+                    help();
                     break;
                 }
                 case HELP: {
@@ -117,7 +124,11 @@ public class GameMenu extends Menu {
      */
     private void showRecord() {
         System.out.println(Strings.GAME_RECORD_MESSAGE);
-        Player.showGameProgress();
+        System.out.println(Strings.DIVIDER);
+        Player.showEasyGameRecord();
+        System.out.println(Strings.DIVIDER);
+        Player.showDifficultGameRecord();
+        System.out.println(Strings.DIVIDER);
     }
 
     /**
@@ -138,7 +149,7 @@ public class GameMenu extends Menu {
      * @param promptToSave whether to prompt to save the current state or not
      */
     public void exit(boolean promptToSave) {
-        // TODO: Implement "prompt to save" functionality
+        Storage.savePlayer();
         System.out.println(Strings.MAIN_EXIT_MESSAGE);
         System.out.println();
     }

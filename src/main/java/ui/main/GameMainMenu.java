@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.NoSuchElementException;
 
 import data.Player;
+import storage.Storage;
 import ui.game.GameMenu;
 import utils.IO;
 import utils.message.Strings;
@@ -35,6 +36,7 @@ public class GameMainMenu extends Menu {
 
     public void enter() {
         welcome();
+        help();
         try {
             while (true) {
                 prompt();
@@ -50,17 +52,19 @@ public class GameMainMenu extends Menu {
                 }
                 switch (commandType) {
                 case NEWGAME: {
-                    Player.loadPlayer();
+                    Storage.loadPlayer();
                     GameMenu gameMenu = new GameMenu(in, parser);
                     gameMenu.enter();
+                    help();
                     break;
                 }
                 case CONTINUE: {
                     String playerId = IO.readString(in, Strings.MAIN_PLAYER_ID_ENTER_PROMPT).trim();
-                    assert playerId == null : "Nothing is inputted!!";
-                    Player.loadPlayer(playerId);
+                    assert playerId != null : "Nothing is inputted!!";
+                    Storage.loadPlayer(playerId);
                     GameMenu gameMenu = new GameMenu(in, parser);
                     gameMenu.enter();
+                    help();
                     break;
                 }
                 case HELP: {
@@ -84,6 +88,7 @@ public class GameMainMenu extends Menu {
                         Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
                         continue;
                     }
+                    Storage.savePlayer();
                     exit(true);
                     return;
                 }

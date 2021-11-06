@@ -11,7 +11,7 @@ import ui.main.GameMainMenu;
 /**
  * The main of the programme.
  */
-public class Game {
+public class CodeHunt {
     /**
      * Set the logger.
      */

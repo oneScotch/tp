@@ -40,6 +40,8 @@ public class Strings {
             String.format("Thank you playing %s ! Have a nice day~~", APP_NAME_SHORT);
     public static final String MAIN_PLAYER_ID_ENTER_PROMPT = "Enter your player ID: ";
     public static final String NO_GAME_RECORD_MESSAGE = "Aiyah! There isn't any game record yet.";
+    public static final String SHOW_EASY_PROGRESS = "Here is your game record of easy level:";
+    public static final String SHOW_DIFFICULT_PROGRESS = "Here is your game record of difficult level:";
 
     // Game menu messages
     public static final String GAME_WELCOME_MESSAGE = LOGO
@@ -63,7 +65,7 @@ public class Strings {
     public static final String GAME_RECORD_MESSAGE = GAME_RECORD + "Here is you game history!";
 
     // Easy game messages
-    private static final String DIVIDER = "=========================================================";
+    public static final String DIVIDER = "=========================================================";
     public static final String _GAME_WELCOME_MESSAGE = DIVIDER + "\nHello! Brave cool kids!\n"
         + "We are the Avengers. To protect the world from devastation, we need your help!\n"
         + "We need to get as many cards ad possible for the last Infinity Gem.\n"
@@ -90,8 +92,13 @@ public class Strings {
     public static final String TREASURE_HUNT_START = "\n******************** "
             + "Level 4: Treasure Hunt ********************\n";
     public static final String FINISH_EASY_MODE = "Congratulation! You have finished all the tasks of Easy Mode!!";
+    public static final String GAME_END_SIGN_WIN = " Game won. Well Done!. Enter your choice: \n"
+            + "(1) continue | (2) again | (3) exit\n";
     public static final String GAME_END_SIGN = " Game ended. Enter your choice: \n"
             + "(1) continue | (2) again | (3) exit\n";
+    public static final String GAME_END_SIGN_LOSS = " Game failed. Enter your choice: \n"
+            + "(1) again | (3) exit\n";
+    public static final String NO_CARD_MESSAGE = "Sorry! Since you didn't win the game, No CARDS!";
 
     // Difficult game messages
     public static final String DIFFICULT_LOGO = "                     ==\\\\\n"
@@ -131,7 +138,7 @@ public class Strings {
             + "Here is your package of cards!\n" + HELP_MESSAGE;
     public static final String LIST_CARD_MESSAGE = "Here is all of your cards!";
     public static final String CARD_DIVIDER_MESSAGE = "\n♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧♠♡♢♣♤♥♦♧\n";
-    public static final String DELETE_CARD_MESSAGE = "Enter the ID of card to delete: ";
+    public static final String ASK_CARD_INDEX = "Enter the ID of card (-1 to exit): ";
 
     // Error messages
     public static final String ERR_PLAYER_FILE_NOTFOUND_MESSAGE =
@@ -149,7 +156,11 @@ public class Strings {
     public static final String ERR_TIME_INPUT = "Please enter a valid time.";
     public static final String ERR_INVALID_NUMBER = "Please enter a number from either 1 or 2.";
     public static final String ERR_PLAY_INVALID_NUMBER = "Please enter a number from either 1, 2 or 3.";
+    public static final String ERR_INVALID_CARD_ID = "OOPS! It seems that you input an invalid card id, "
+            + "Please try again!";
+
     //Player messages
     public static final String PLAYER_NAME_ENTER_PROMPT = "Enter your player name: ";
     public static final String PLAYER_ID_PROMPT = "Remember your ID to continue your game next time: %s\n";
+    public static final String GAME_RECORD_LOADING = "Game Loading ...\n0 ███████████████████] 100%";
 }
