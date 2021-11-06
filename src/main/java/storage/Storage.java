@@ -276,7 +276,6 @@ public class Storage {
         cardsInit.add(new Card("Hybrid inheritance: Combination of more than one types of inheritance in a "
                 + "single program.", 60, 1));
 
-
         // For game HangMan
         // for easy level
         cardsInit.add(new Card("a loop is a sequence of instructions that is continually "
