@@ -9,7 +9,19 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 ## Table of Contents
 - [Quick Start](https://github.com/AY2122S1-CS2113-T13-3/tp/blob/master/docs/UserGuide.md#quick-start)
 - [Features](#Features)
-- []
+  - [Notes](#Notes)
+    - [Notes about command format]()
+    - [Notes about game levels in CodeHunt]()
+  - [Main page]()
+  - [Intermediate page]()
+  - [Game page]()
+  - [Games]()
+  - [Card page]()
+- [FAQ]()
+- [Command Summary]()
+  - [Main page]()
+  - [Game page]()
+  - [Card page]()
 
 ***
 
@@ -45,7 +57,7 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 * Different game levels have different rules:
     * For `Easy mode`: Whether you win the game or not, you can choose to enter next game by choosing `continue`, or try
       this game one more time by choosing `again`, or you can exit CodeHunt and save your game records by choosing `exit`
-  ![choice](images/choice.png)
+![choice](images/choice.png)
     * For `Difficult mode`: Only when you win the game, you can go on to enter the next game, otherwise you will have to retry the 
       game by choosing `again` until you win, or you can exit CodeHunt by choosing `exit`.
 * Win cards by winning the games
@@ -83,7 +95,7 @@ Remember your ID to continue your game next time: Lily321016718
 
 
 ### Intermediate page
-- `start`       Start the game and then choose your difficulty level. Enter `1` for easy mode and `2` for difficult mode.
+- `start`       Start the game and then choose your difficulty level. Enter `1` for easy mode and `2` for difficult mode. Enter `Game Page`.
 ```
 Code Hunt [GAME MENU] > start
 Please choose your game mode: 
@@ -113,9 +125,41 @@ Here is your game record of difficult level:
 ***
 
 ### Game page
+- Enter game page by choosing `start` and `game level` in the main page, and you will see this:
+```
+            _.------.                        .----.__
+           /         \_.       ._           /---.__  \
+          |  O    O   |\\___  //|          /       `\ |
+          |  .vvvvv.  | )   `(/ |         | o     o  \|
+          /  |     |  |/      \ |  /|   ./| .vvvvv.  |\
+         /   `^^^^^'  / _   _  `|_ ||  / /| |     |  | \
+       ./  /|         | O)  O   ) \|| //' | `^vvvv'  |/\\
+      /   / |         \        /  | | ~   \          |  \\
+      \  /  |        / \ Y   /'   | \     |          |   ~
+       `'   |  _     |  `._/' |   |  \     7        /
+         _.-'-' `-'-'|  |`-._/   /    \ _ /    .    |
+    __.-'            \  \   .   / \_.  \ -|_/\/ `--.|_
+ --'                  \  \ |   /    |  |              `-
+                       \uU \UU/     |  /   :F_P:
+
+=========================================================
+Hello! Brave cool kids!
+We are the Avengers. To protect the world from devastation, we need your help!
+We need to get as many cards ad possible for the last Infinity Gem.
+Win following games and collect the cards.
+Good luck!
+We will be waiting for you and the cards!
+=========================================================
+```
+- There are 4 levels of games in each mode, you can refer to [Games](#Games) to see the detailed instructions of each game
+    1. `Hangman Game`
+    2. `Guessing Number Game`
+    3. `Treasure Hunt Game`
+    4. `Quiz Game`
+  
 
 
-## Games
+### Games
 - `Guessing Number Game`
   The game is to guess the secret number in a given range in limited attempts
 - `Hangman Game`
@@ -125,12 +169,57 @@ Here is your game record of difficult level:
 - `Treasure Hunt Game`
   The game is to move the treasure hunter to find the treasure noted in the map
 
-## Card
-- `winCard`
-- `listCard`
-- `deleteCard`
-- `findCard`
-- `buyTip`
+### Card Page
+- Enter card page by choosing `card`, and you will see this:
+```
+Code Hunt [GAME MENU] > card
+
+      ___           ___           ___          _____    
+     /  /\         /  /\         /  /\        /  /::\   
+    /  /:/        /  /::\       /  /::\      /  /:/\:\  
+   /  /:/        /  /:/\:\     /  /:/\:\    /  /:/  \:\ 
+  /  /:/  ___   /  /:/~/::\   /  /:/~/:/   /__/:/ \__\:|
+ /__/:/  /  /\ /__/:/ /:/\:\ /__/:/ /:/___ \  \:\ /  /:/
+ \  \:\ /  /:/ \  \:\/:/__\/ \  \:\/:::::/  \  \:\  /:/ 
+  \  \:\  /:/   \  \::/       \  \::/~~~~    \  \:\/:/  
+   \  \:\/:/     \  \:\        \  \:\         \  \::/   
+    \  \::/       \  \:\        \  \:\         \__\/    
+     \__\/         \__\/         \__\/                  
+Here is your package of cards!
+Type "help" to see a list of available commands.
+
+list        Show your package of all holding.
+delete      Delete an unwanted card in your package.
+find        Search cards by keyword.
+help        Display a list of available commands.
+back        Back to game menu.
+```
+- `list` List all the cards you gained for different game levels,
+show card information including the index of the card and if the card is already used.
+  - for example: `1. a variable is an abstract storage location paired with an associated symbolic name [ ]`
+    `1` indicates that this is the first card you collect and `[ ]` indicates this card is not used yet, you can use it to buy tip.
+  ```
+  Code Hunt [CARD MENU] > list
+  Here is all of your cards!
+  =========================================================
+  Easy-level cards collected:
+  1. a variable is an abstract storage location paired with an associated symbolic name [ ]
+  2. Binary search is an efficient algorithm for finding an item from a sorted list of items. [ ]
+  3. 'Sequence' is the order that commands are executed by a computer [ ]
+   =========================================================
+   Difficult-level cards collected:
+   =========================================================
+  ```
+
+- `delete` Delete an unwanted card in your package by index.
+
+  - Always use `list` first to check the index of your collected card and then `delete` the unwanted card.
+  - Format: `delete CARD_INDEX` eg. `delete 1`
+- `find` Search cards by keyword.
+  
+  - Format: `find "CARD_KEYWORD"` eg. `find "loop"`
+- `help` Display a list of available commands.
+- `back` Back to game menu.
 
 
 
@@ -142,7 +231,7 @@ Here is your game record of difficult level:
 this username next time.
 
 ## Command Summary
-
+### Main page
 Action |  Format | Function
  ------------ | ------------- | -------------
 newgame | newgame | Start a new game
@@ -155,4 +244,21 @@ check | check | Check current game progress
 card | card | Manage your holding cards
 back | back | Back to main menu
 
+### Intermediate page
+Action |  Format | Function
+ ------------ | ------------- | -------------
+start | start | Start the game and then choose your difficulty level.
+check | check | Check current game progress.
+card | card |  Manage your holding cards.
+back | back | Back to main menu
+exit | exit | Exit Code Hunt
 
+### Card Page
+Action |  Format | Function
+ ------------ | ------------- | -------------
+list  | list | List all the cards you gained for different game levels
+delete | delete CARD_INDEX | Delete an unwanted card in your package.
+find | find CARD_KEYWORD |  Search cards by keyword.
+help | help | Display a list of available commands.
+back | back | Back to game menu
+exit | exit | Exit Code Hunt
