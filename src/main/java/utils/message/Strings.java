@@ -96,7 +96,7 @@ public class Strings {
             + "(1) continue | (2) again | (3) exit\n";
     public static final String GAME_END_SIGN = " Game ended. Enter your choice: \n"
             + "(1) continue | (2) again | (3) exit\n";
-    public static final String GAME_END_SIGN_LOSS= " Game failed. Enter your choice: \n"
+    public static final String GAME_END_SIGN_LOSS = " Game failed. Enter your choice: \n"
             + "(1) again | (3) exit\n";
     public static final String NO_CARD_MESSAGE = "Sorry! Since you didn't win the game, No CARDS!";
 
