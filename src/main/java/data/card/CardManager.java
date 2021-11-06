@@ -66,25 +66,6 @@ public class CardManager implements Serializable {
 
     }
 
-    /**
-     * list all the cards by keyword.
-     * @param keyword
-     */
-    public void findCardByKeyword(String keyword) {
-        int found = 0;
-        System.out.println("Here are all the cards found:");
-        for (int i = 0; i < cards.size(); i++) {
-            Card card = cards.get(i);
-            if (card.getContent().contains(keyword)) {
-                System.out.println(i + ". " +  card.getContent());
-                found++;
-            }
-        }
-        if (found == 0) {
-            System.out.println("Ops! It seems that you do not have a card containing that keyword!");
-        }
-    }
-
     public void findPrintCard(int id) {
         int index = findCard(id);
         assert index != -1 : "Should not print this line.";
