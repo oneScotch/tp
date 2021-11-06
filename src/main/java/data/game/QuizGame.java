@@ -110,7 +110,7 @@ public class QuizGame extends Game implements Serializable {
         int index = chooseQuestion(questions);
         Scanner in = new Scanner(System.in);
         String answer = in.nextLine();
-        if (answer.equals(answers[index])) {
+        if (answer.toLowerCase().equals(answers[index].toLowerCase())) {
             System.out.println("Congratulations! The answer is correct!\n");
             NumOfCorrect++;
         } else {
@@ -170,7 +170,7 @@ public class QuizGame extends Game implements Serializable {
         "What is CSS used for?"
                     + "\n[A: Create web pages][B: Create music][C: Add style to the document][D: Code games]",
         "Let x be an integer which can take a value of 0 or 1. "
-                    + "The statement if(x ==0) x = 1; else x = 0; is equivalent to which one of the following?"
+                    + "The statement if(x == 0) x = 1; else x = 0; is equivalent to which one of the following?"
                     + "\n[A: x = 1 + x;][B: x = 1 - x;][C: x = x - 1;][D: x = 1 % x;]"};
 
     public static String[] TFQD = {"Is \"SDLC\" stands for Software Development Life Cycle? \n[True][False]",

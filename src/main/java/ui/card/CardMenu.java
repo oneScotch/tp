@@ -41,6 +41,7 @@ public class CardMenu extends Menu {
     @Override
     public void enter() {
         welcome();
+        help();
         try {
             while (true) {
                 prompt();
