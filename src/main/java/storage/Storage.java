@@ -109,10 +109,16 @@ public class Storage {
         initCards();
     }
 
+    /**
+     * Initialise easy game records.
+     */
     public static void initEasyGameRecords() {
         Player.setEasyRecords(new ArrayList<>());
     }
 
+    /**
+     * Initialise difficult game records.
+     */
     public static void initDifficultGameRecords() {
         Player.setDifficultRecords(new ArrayList<>());
     }
