@@ -16,7 +16,7 @@ public enum CardCommandType {
     /**
      * Command "find".
      */
-    FIND("find", "Search cards by keyword."),
+    FIND("find", "Search cards by card index."),
 
     /**
      * Command "help".
