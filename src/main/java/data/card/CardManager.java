@@ -68,7 +68,7 @@ public class CardManager implements Serializable {
 
     /**
      * list all the cards by keyword.
-     * @param keyword
+     * @param keyword the keyword user input
      */
     public void findCardByKeyword(String keyword) {
         int found = 0;
