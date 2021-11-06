@@ -103,9 +103,7 @@ public class EasyMenu extends Menu {
             cardId = hangmanGame.execute(true);
             Player.winCard(cardId);
 
-            if (cardId != 0) {
-                Player.addEasyGameRecord(hangmanGame);
-            }
+            Player.addEasyGameRecord(hangmanGame);
 
             System.out.print(hangmanGame.getName());
             int playStatus = setPlayStatus();
@@ -124,9 +122,7 @@ public class EasyMenu extends Menu {
             cardId = quizGame.execute(true);
             Player.winCard(cardId);
 
-            if (cardId != 0) {
-                Player.addEasyGameRecord(quizGame);
-            }
+            Player.addEasyGameRecord(quizGame);
 
             System.out.print(quizGame.getName());
             int playStatus = setPlayStatus();
@@ -145,9 +141,7 @@ public class EasyMenu extends Menu {
             cardId = guessingNumGame.execute(true);
             Player.winCard(cardId);
 
-            if (cardId != 0) {
-                Player.addEasyGameRecord(guessingNumGame);
-            }
+            Player.addEasyGameRecord(guessingNumGame);
 
             System.out.print(guessingNumGame.getName());
             int playStatus = setPlayStatus();
@@ -166,9 +160,7 @@ public class EasyMenu extends Menu {
             cardId = treasureHuntGame.execute(true);
             Player.winCard(cardId);
 
-            if (cardId != 0) {
-                Player.addEasyGameRecord(treasureHuntGame);
-            }
+            Player.addEasyGameRecord(treasureHuntGame);
 
             System.out.print(treasureHuntGame.getName());
             int playStatus = setPlayStatus();
