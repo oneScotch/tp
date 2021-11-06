@@ -84,6 +84,7 @@ public class TreasureHuntGame extends Game implements Serializable {
                 default:
                     System.out.println("Error!");
                 }
+                
                 if (canMove(x, y)) {
                     if (found(x, y)) {
                         find = true;
