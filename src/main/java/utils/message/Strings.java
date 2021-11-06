@@ -92,8 +92,12 @@ public class Strings {
     public static final String TREASURE_HUNT_START = "\n******************** "
             + "Level 4: Treasure Hunt ********************\n";
     public static final String FINISH_EASY_MODE = "Congratulation! You have finished all the tasks of Easy Mode!!";
+    public static final String GAME_END_SIGN_WIN = " Game won. Well Done!. Enter your choice: \n"
+            + "(1) continue | (2) again | (3) exit\n";
     public static final String GAME_END_SIGN = " Game ended. Enter your choice: \n"
             + "(1) continue | (2) again | (3) exit\n";
+    public static final String GAME_END_SIGN_LOSS = " Game failed. Enter your choice: \n"
+            + "(1) again | (3) exit\n";
     public static final String NO_CARD_MESSAGE = "Sorry! Since you didn't win the game, No CARDS!";
 
     // Difficult game messages

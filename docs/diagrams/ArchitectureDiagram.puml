@@ -12,7 +12,7 @@ Package " "<<Rectangle>>{
             Class Card MODEL_COLOR_T2
     }
     Class CodeHunt #grey
-    Class Commons LOGIC_COLOR_T2
+    Class Utils LOGIC_COLOR_T2
 }
 
 Class "<$user>" as User MODEL_COLOR_T2
@@ -25,7 +25,7 @@ Game -down[#blue]-> Player
 CodeHunt -up[#grey]-> UI
 CodeHunt -right[#grey]-> Storage
 CodeHunt -up[#grey]-> Player
-CodeHunt -down[hidden]-> Commons
+CodeHunt -down[hidden]-> Utils
 
 Storage -up[STORAGE_COLOR].> Player
 Storage .right[STORAGE_COLOR].>File
