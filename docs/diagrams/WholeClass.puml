@@ -35,6 +35,14 @@ abstract class Menu {
 +<<abstract>> enter()
 }
 
+Storage ..> Card
+Storage ..>CardManager
+Storage ..> Player
+GameMenu ..>Storage
+GameMainMenu ..> Storage
+class Storage {
+}
+
 class Card {
 -String content
 -boolean isUsed

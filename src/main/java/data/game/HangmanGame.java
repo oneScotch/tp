@@ -109,7 +109,7 @@ public class HangmanGame extends Game implements Serializable {
 
             if (secretWord.equals(new String(guessWord))) {
                 System.out.println("\nCongratulation! You won.");
-                isWin = true;   // changed
+                isWin = true;
                 break;
             }
         }
@@ -117,7 +117,7 @@ public class HangmanGame extends Game implements Serializable {
             System.out.println("\nToo many Guesses! You have been hanged.");
             System.out.println("\nThe secret word was: " + this.secretWord);
         }
-        return isWin;  // changed
+        return isWin;
     }
 
     // choose next word randomly

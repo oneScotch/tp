@@ -28,7 +28,7 @@ public class QuizGame extends Game implements Serializable {
     @Override
     public int execute(boolean isEasy) {
         System.out.println("Welcome to quiz game. "
-                + "You must get all correct answers of four questions to pass this challenge!");
+                + "You must get all correct answers of four questions to win the card and pass this challenge!");
         boolean isWin = false;   // changed
         if (isEasy) {
             while (NumOfCorrect < 4) {
