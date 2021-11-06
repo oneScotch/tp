@@ -68,7 +68,7 @@ public class TreasureHuntGame extends Game implements Serializable {
                 continue;
             }
             for (int i = 0; i < input.length(); i++) {
-                switch(input.charAt(i)) {
+                switch (input.charAt(i)) {
                 case '1':
                     x = x + 1;
                     break;
