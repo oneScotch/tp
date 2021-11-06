@@ -21,6 +21,8 @@ public class QuizGame extends Game implements Serializable {
 
     public QuizGame(String level) {
         this.level = level;
+        NumOfCorrect = 0;
+        NumOfUserAnswer = 0;
     }
 
     @Override
@@ -59,6 +61,7 @@ public class QuizGame extends Game implements Serializable {
                 } else if (NumOfUserAnswer == 4 && NumOfCorrect < 4) {
                     System.out.println("Sorry! You did not pass this challenge.\n");
                     NumOfCorrect = 0;
+                    NumOfUserAnswer = 0;
                     break;
                 }
             }
@@ -150,7 +153,7 @@ public class QuizGame extends Game implements Serializable {
         "Can \"for\" and \"while\" both be used to form a loop? \n[True][False]",
         "\"hello\" is a Java Language Keywords. \n[True][False]"};
 
-    public static String[] FIB = {"What is loop that can loop endlessly?",
+    public static String[] FIB = {"What loop can loop endlessly?",
         "Which integer number represents false in C language?",
         "______ is the process of finding errors and fixing them within a program.",
         "______ defines the common variables and methods of a set of objects.",

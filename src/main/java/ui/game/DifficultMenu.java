@@ -39,7 +39,7 @@ public class DifficultMenu extends Menu {
     public void enter() {
         welcome();
 
-        switch (Player.getDifficultRecord()) {
+        switch (Player.printDifficultRecord()) {
         case "empty":
             if (startHangMan() == 3) {
                 return;
