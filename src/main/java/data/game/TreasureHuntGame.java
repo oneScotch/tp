@@ -68,14 +68,21 @@ public class TreasureHuntGame extends Game implements Serializable {
                 continue;
             }
             for (int i = 0; i < input.length(); i++) {
-                if (input.charAt(i) == '1') {
+                switch(input.charAt(i)) {
+                case '1':
                     x = x + 1;
-                } else if (input.charAt(i) == '2') {
+                    break;
+                case '2':
                     x = x - 1;
-                } else if (input.charAt(i) == '3') {
+                    break;
+                case '3':
                     y = y - 1;
-                } else if (input.charAt(i) == '4') {
+                    break;
+                case '4':
                     y = y + 1;
+                    break;
+                default:
+                    System.out.println("Error!");
                 }
                 if (canMove(x, y)) {
                     if (found(x, y)) {
@@ -105,7 +112,7 @@ public class TreasureHuntGame extends Game implements Serializable {
      * @return boolean whether the input command is valid
      */
     public boolean isValidCommand(String input) {
-        for (int i = 0;i < input.length(); i++) {
+        for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) < 49 || input.charAt(i) > 52) {
                 return false;
             }
