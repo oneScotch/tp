@@ -66,6 +66,7 @@ public class CardManager implements Serializable {
 
     }
 
+
     /**
      * list all the cards by keyword.
      * @param keyword the keyword user input
@@ -84,6 +85,7 @@ public class CardManager implements Serializable {
             System.out.println("Ops! It seems that you do not have a card containing that keyword!");
         }
     }
+
 
     public void findPrintCard(int id) {
         int index = findCard(id);
