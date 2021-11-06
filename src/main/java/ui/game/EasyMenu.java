@@ -39,7 +39,7 @@ public class EasyMenu extends Menu {
     public void enter() {
         welcome();
 
-        switch (Player.getEasyRecord()) {
+        switch (Player.printEasyRecord()) {
         case "empty":
             if (startHangMan() == 3) {
                 return;
