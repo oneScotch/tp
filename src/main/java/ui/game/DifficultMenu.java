@@ -104,13 +104,20 @@ public class DifficultMenu extends Menu {
             cardId = hangmanGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
-            Player.addDifficultGameRecord(hangmanGame);
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(hangmanGame);
 
-            System.out.print(hangmanGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(hangmanGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(hangmanGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -124,13 +131,20 @@ public class DifficultMenu extends Menu {
             cardId = quizGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
-            Player.addDifficultGameRecord(quizGame);
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(quizGame);
 
-            System.out.print(quizGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(quizGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(quizGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -144,13 +158,20 @@ public class DifficultMenu extends Menu {
             cardId = guessingNumGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
-            Player.addDifficultGameRecord(guessingNumGame);
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(guessingNumGame);
 
-            System.out.print(guessingNumGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(guessingNumGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(guessingNumGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -164,13 +185,20 @@ public class DifficultMenu extends Menu {
             cardId = treasureHuntGame.execute(false);
             Player.winCard(cardId);
 
-            // TODO: STORE GAME RECORD
-            Player.addDifficultGameRecord(treasureHuntGame);
+            if (cardId != 0) { // Win the Game
+                Player.addDifficultGameRecord(treasureHuntGame);
 
-            System.out.print(treasureHuntGame.getName());
-            int playStatus = setPlayStatus();
-            if (playStatus != 2) {
-                return playStatus;
+                System.out.print(treasureHuntGame.getName());
+                int playStatus = setPlayStatus();
+                if (playStatus != 2) {
+                    return playStatus;
+                }
+            } else {
+                System.out.print(treasureHuntGame.getName());
+                int playStatus = setPlayStatusLoss();
+                if (playStatus == 3) {
+                    return playStatus;
+                }
             }
         }
     }
@@ -179,8 +207,22 @@ public class DifficultMenu extends Menu {
         int playStatus;
 
         while (true) {
-            playStatus = IO.readInt(in, Strings.GAME_END_SIGN);
+            playStatus = IO.readInt(in, Strings.GAME_END_SIGN_WIN);
             if (playStatus == 1 || playStatus == 2 || playStatus == 3) {
+                break;
+            }
+            Errors.print(Integer.toString(playStatus), Strings.ERR_PLAY_INVALID_NUMBER);
+        }
+
+        return playStatus;
+    }
+
+    private int setPlayStatusLoss() {
+        int playStatus;
+
+        while (true) {
+            playStatus = IO.readInt(in, Strings.GAME_END_SIGN_LOSS);
+            if (playStatus == 1 || playStatus == 3) {
                 break;
             }
             Errors.print(Integer.toString(playStatus), Strings.ERR_PLAY_INVALID_NUMBER);
