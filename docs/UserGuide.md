@@ -118,7 +118,7 @@ Here is your game record of easy level:
 Here is your game record of difficult level:
 =========================================================
 ```
-- `card`        Manage your holding cards. You can refer to detailed introduction about `card` here [Card Page](https://github.com/AY2122S1-CS2113-T13-3/tp/blob/master/docs/UserGuide.md#card-page-1)
+- `card`        Manage your holding cards. You can refer to detailed introduction about `card` here [Card Page](#card page)
 - `back`        Back to main menu
 - `exit`        Exit Code Hunt
 
@@ -151,7 +151,7 @@ Good luck!
 We will be waiting for you and the cards!
 =========================================================
 ```
-- There are 4 levels of games in each mode, you can refer to [Games](https://github.com/AY2122S1-CS2113-T13-3/tp/blob/master/docs/UserGuide.md#game-page) to see the detailed instructions of each game
+- There are 4 levels of games in each mode, you can refer to [Games](#Games) to see the detailed instructions of each game
     1. `Hangman Game`
     2. `Guessing Number Game`
     3. `Treasure Hunt Game`
@@ -214,10 +214,19 @@ show card information including the index of the card and if the card is already
 - `delete` Delete an unwanted card in your package by index.
 
   - Always use `list` first to check the index of your collected card and then `delete` the unwanted card.
-  - Format: `delete CARD_INDEX` eg. `delete 1`
-- `find` Search cards by keyword.
-  
-  - Format: `find "CARD_KEYWORD"` eg. `find "loop"`
+  - Format: `delete` and then you will be asked for card index. eg. 
+```
+Code Hunt [CARD MENU] > delete
+Enter the ID of card (-1 to exit): 1
+Your card 1 : a loop is a sequence of instructions that is continually repeated until a certain condition is reached.  has been removed!
+```
+- `find` Search cards by index.
+  - Format: `find` and then you will be asked for card index  eg. 
+```
+Code Hunt [CARD MENU] > find
+Enter the ID of card (-1 to exit): 1
+Your card 1 : a loop is a sequence of instructions that is continually repeated until a certain condition is reached.  has been found!
+```
 - `help` Display a list of available commands.
 - `back` Back to game menu.
 
@@ -257,8 +266,8 @@ exit | exit | Exit Code Hunt
 Action |  Format | Function
  ------------ | ------------- | -------------
 list  | list | List all the cards you gained for different game levels
-delete | delete CARD_INDEX | Delete an unwanted card in your package.
-find | find CARD_KEYWORD |  Search cards by keyword.
+delete | delete +  CARD_INDEX | Delete an unwanted card in your package.
+find | find + CARD_INDEX |  Search cards by index.
 help | help | Display a list of available commands.
 back | back | Back to game menu
 exit | exit | Exit Code Hunt
