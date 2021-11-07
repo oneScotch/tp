@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class DukeTest {
+class CodeHuntTest {
     @Test
     public void sampleTest() {
         assertTrue(true);
@@ -13,6 +13,6 @@ class DukeTest {
 
     @Test
     void checkEchoFunction() {
-        assertEquals("Test Message", seedu.duke.Duke.echoMessage("Test Message"));
+        assertEquals("Test Message", CodeHunt.echoMessage("Test Message"));
     }
 }

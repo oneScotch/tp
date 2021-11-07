@@ -2,7 +2,7 @@ package seedu.duke;
 
 import java.util.Scanner;
 
-public class Duke {
+public class CodeHunt {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
