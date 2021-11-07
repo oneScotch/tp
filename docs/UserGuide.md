@@ -118,7 +118,7 @@ Here is your game record of easy level:
 Here is your game record of difficult level:
 =========================================================
 ```
-- `card`        Manage your holding cards. You can refer to detailed introduction about `card` here [Card Page](#card page)
+- `card`        Manage your holding cards. You can refer to detailed introduction about `card` here [Card Page](https://github.com/AY2122S1-CS2113-T13-3/tp/blob/master/docs/UserGuide.md#card-page-1)
 - `back`        Back to main menu
 - `exit`        Exit Code Hunt
 
@@ -151,7 +151,7 @@ Good luck!
 We will be waiting for you and the cards!
 =========================================================
 ```
-- There are 4 levels of games in each mode, you can refer to [Games](#Games) to see the detailed instructions of each game
+- There are 4 levels of games in each mode, you can refer to [Games](https://github.com/AY2122S1-CS2113-T13-3/tp/blob/master/docs/UserGuide.md#game-page) to see the detailed instructions of each game
     1. `Hangman Game`
     2. `Guessing Number Game`
     3. `Treasure Hunt Game`
