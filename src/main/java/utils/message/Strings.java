@@ -25,8 +25,8 @@ public class Strings {
     public static final String SUBCOMMAND_HELP_MESSAGE = "Please provide a subcommand.";
 
     // Main menu messages
-    private static final String LOGO = "  ____          _        _   _             _  \n"
-            + " / ___|___   __| | ___  | | | |_   _ _ __ | |_ \n"
+    private static final String LOGO = "  ____          _        _   _             _\n"
+            + " / ___|___   __| | ___  | | | |_   _ _ __ | |_\n"
             + "| |   / _ \\ / _` |/ _ \\ | |_| | | | | '_ \\| __|\n"
             + "| |__| (_) | (_| |  __/ |  _  | |_| | | | | |_\n"
             + " \\____\\___/ \\__,_|\\___| |_| |_|\\__,_|_| |_|\\__|\n";
