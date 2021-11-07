@@ -90,7 +90,7 @@ public class CardManager implements Serializable {
     public void findPrintCard(int id) {
         int index = findCard(id);
         assert index != -1 : "Should not print this line.";
-        System.out.println("Your card " + id + " : " + cards.get(id) + " has been found!");
+        System.out.println("Your card " + id + " : " + cards.get(id - 1) + " has been found!");
     }
 
     public void searchByKeyWord(String message) {
@@ -144,21 +144,15 @@ public class CardManager implements Serializable {
     }
 
     public Card deleteCard(int id) {
-        try {
-            boolean isValid = id > 0 && id <= cards.size();
-            assert isValid : "Ops, it seems that you input an invalid card id, please try again!";
-            System.out.println("Your card " + id + " : " + cards.get(id) + " has been removed!");
-            return cards.remove(id - 1);
-        } catch (AssertionError e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+        boolean isValid = id > 0 && id <= cards.size();
+        assert isValid : "Ops, it seems that you input an invalid card id, please try again!";
+        System.out.println("Your card " + id + " : " + cards.get(id - 1) + " has been removed!");
+        return cards.remove(id - 1);
     }
 
     public void setAsCollected(int index) {
         Card cardToCollect = cards.get(index);
         cardToCollect.setAsCollected();
-
     }
 
     /**

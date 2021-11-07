@@ -214,10 +214,19 @@ show card information including the index of the card and if the card is already
 - `delete` Delete an unwanted card in your package by index.
 
   - Always use `list` first to check the index of your collected card and then `delete` the unwanted card.
-  - Format: `delete CARD_INDEX` eg. `delete 1`
-- `find` Search cards by keyword.
-  
-  - Format: `find "CARD_KEYWORD"` eg. `find "loop"`
+  - Format: `delete` and then you will be asked for card index. eg. 
+```
+Code Hunt [CARD MENU] > delete
+Enter the ID of card (-1 to exit): 1
+Your card 1 : a loop is a sequence of instructions that is continually repeated until a certain condition is reached.  has been removed!
+```
+- `find` Search cards by index.
+  - Format: `find` and then you will be asked for card index  eg. 
+```
+Code Hunt [CARD MENU] > find
+Enter the ID of card (-1 to exit): 1
+Your card 1 : a loop is a sequence of instructions that is continually repeated until a certain condition is reached.  has been found!
+```
 - `help` Display a list of available commands.
 - `back` Back to game menu.
 
@@ -257,8 +266,8 @@ exit | exit | Exit Code Hunt
 Action |  Format | Function
  ------------ | ------------- | -------------
 list  | list | List all the cards you gained for different game levels
-delete | delete CARD_INDEX | Delete an unwanted card in your package.
-find | find CARD_KEYWORD |  Search cards by keyword.
+delete | delete +  CARD_INDEX | Delete an unwanted card in your package.
+find | find + CARD_INDEX |  Search cards by index.
 help | help | Display a list of available commands.
 back | back | Back to game menu
 exit | exit | Exit Code Hunt
