@@ -115,7 +115,13 @@ public class Storage {
 
         initEasyGameRecords();
         initDifficultGameRecords();
-        CardContent.initCards();
+        initCards();
+        System.out.println(Strings.GAME_RECORD_LOADING);
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -130,5 +136,14 @@ public class Storage {
      */
     public static void initDifficultGameRecords() {
         Player.setDifficultRecords(new ArrayList<>());
+    }
+
+    /**
+     * Initialise cards. Cards contents are retrieved from data.card.CardContent.
+     */
+    public static void initCards() {
+        ArrayList<Card> cardsInit = CardContent.initCards();
+        Player.setCardsCollected(new CardManager());
+        Player.setCardsToBeCollected(new CardManager(cardsInit));
     }
 }

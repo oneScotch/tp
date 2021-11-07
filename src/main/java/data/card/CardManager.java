@@ -86,7 +86,10 @@ public class CardManager implements Serializable {
         }
     }
 
-
+    /**
+     * list the card by id.
+     * @param id the id user input
+     */
     public void findPrintCard(int id) {
         int index = findCard(id);
         assert index != -1 : "Should not print this line.";
@@ -94,10 +97,8 @@ public class CardManager implements Serializable {
     }
 
     public void searchByKeyWord(String message) {
-        int len = cards.size();
         int count = 0;
-        for (int i = 0; i < len; i++) {
-            Card currentCard = cards.get(i);
+        for (Card currentCard : cards) {
             if (currentCard.getContent().contains(message)) {
                 System.out.println(currentCard);
                 count++;
@@ -126,16 +127,14 @@ public class CardManager implements Serializable {
         }
         System.out.println(Strings.DIVIDER);
         System.out.println("Easy-level cards collected: ");
-        for (int i = 0; i < easyCardList.size(); i++) {
-            Card card = easyCardList.get(i);
+        for (Card card : easyCardList) {
             int id = card.getCardID();
             String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
             System.out.println(id + ". " + card + " " + label);
         }
         System.out.println(Strings.DIVIDER);
         System.out.println("Difficult-level cards collected: ");
-        for (int i = 0; i < diffCardList.size(); i++) {
-            Card card = diffCardList.get(i);
+        for (Card card : diffCardList) {
             int id = card.getCardID();
             String label = card.checkIfIsUsed() ? MARK_USED : MARK_NOT_USED;
             System.out.println(id + ". " + card + " " + label);
