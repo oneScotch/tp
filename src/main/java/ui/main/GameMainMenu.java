@@ -88,7 +88,9 @@ public class GameMainMenu extends Menu {
                         Errors.print(parser.getRemaining(), Strings.ERR_UNEXPECTED_INPUT);
                         continue;
                     }
-                    Storage.savePlayer();
+                    if (Player.getName() != null) {
+                        Storage.savePlayer();
+                    }
                     exit(true);
                     return;
                 }
