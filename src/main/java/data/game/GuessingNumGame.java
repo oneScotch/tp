@@ -93,11 +93,13 @@ public class GuessingNumGame extends Game implements Serializable {
             } catch (InputMismatchException i) {
                 System.out.println("Sorry, please enter an integer between 0 to " + MAX_NUM + ":(\n");
                 isCorrectInput = false;
+                continue;
             }
 
             if (input >= MAX_NUM || input < 0) {
                 System.out.println("Please enter a number between 0 to " + MAX_NUM + ":(\n");
                 isCorrectInput = false;
+                continue;
             }
             assert input < MAX_NUM && input >= 0 : "Please enter a number between 0 to ";
 
