@@ -27,6 +27,9 @@ import java.util.Scanner;
  */
 
 public class Storage {
+    /**
+     * Storage player data for next time use.
+     */
     public static void savePlayer() {
 
         if (!Files.exists(Player.DATAPATH)) {
@@ -57,7 +60,7 @@ public class Storage {
 
 
     /**
-     * Load restaurant previous save state.
+     * Load player previous save state.
      */
     @SuppressWarnings("unchecked")
     public static void loadPlayer(String playerId) {
