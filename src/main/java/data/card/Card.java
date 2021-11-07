@@ -1,11 +1,8 @@
 package data.card;
 
 
-import utils.message.Strings;
-
-import javax.swing.table.TableRowSorter;
 import java.io.Serializable;
-import java.util.TimerTask;
+
 
 public class Card implements Serializable {
     private static final long serialVersionUID = -9135686500512288865L;

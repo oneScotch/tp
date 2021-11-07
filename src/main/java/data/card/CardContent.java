@@ -1,7 +1,5 @@
 package data.card;
 
-import data.Player;
-
 import java.util.ArrayList;
 
 public class CardContent {
@@ -9,7 +7,7 @@ public class CardContent {
      * Initial cards for diff games, each with a unique cardID.
      * Initial cardManager for cards and used cards.
      */
-    public static void initCards() {
+    public static ArrayList<Card> initCards() {
         ArrayList<Card> cardsInit = new ArrayList<>();
         // Init cards for diff games
         // For game Treasure
@@ -206,7 +204,6 @@ public class CardContent {
         cardsInit.add(new Card("An interface which is declared inside another interface or class is called nested "
                 + "interface. They are also known as inner interface. ", 80, 1));
 
-        Player.setCardsCollected(new CardManager());
-        Player.setCardsToBeCollected(new CardManager(cardsInit));
+        return cardsInit;
     }
 }

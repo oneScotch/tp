@@ -107,9 +107,13 @@ public class QuizGame extends Game implements Serializable {
     }
 
     public void getQuestion(String[] questions, String[] answers) {
-        int index = chooseQuestion(questions);
         Scanner in = new Scanner(System.in);
         String answer = in.nextLine();
+        answer = answer.replace("(","");
+        answer = answer.replace(")","");
+        answer = answer.replace("[","");
+        answer = answer.replace("]","");
+        int index = chooseQuestion(questions);
         if (answer.toLowerCase().equals(answers[index].toLowerCase())) {
             System.out.println("Congratulations! The answer is correct!\n");
             NumOfCorrect++;
@@ -144,7 +148,7 @@ public class QuizGame extends Game implements Serializable {
     public static String[] MRQ = {"Which will the following statement return true?"
             + "\n[A: 1 == 1][B: \"abc\" == \"bcd\"][C: \"Hello\" == \"hello\"][D: \"Hello\" == \"Hello\"]",
         "Choose all programming languages.\n[A: Python][B: Chinese][C: Java][D: C-+]",
-        "Choose all the correct codes. \n[A: 1 = x;[B: x++;][C: return x;][D: return y]",
+        "Choose all the correct codes. \n[A: 1 = x];[B: x++;][C: return x;][D: return y]",
         "Choose correct statements which satisfy Java coding style."
                 + "\n[A: x=1][B: int a[] = new int[20];][C: int[] a = new int[20];][D: x = 2]",
         "Choose all Java Language Keywords. \n[A: continue][B: final][C: hello][D: private]"};
