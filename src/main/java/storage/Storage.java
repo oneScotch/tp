@@ -115,6 +115,11 @@ public class Storage {
         initEasyGameRecords();
         initDifficultGameRecords();
         initCards();
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
