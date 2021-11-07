@@ -67,7 +67,7 @@ Code Hunt is a text-based adventure game using command lines for children aged 4
 ***
     
 ### Main page:
-```
+```markdown
  ____          _        _   _             _  
 / ___|___   __| | ___  | | | |_   _ _ __ | |_
 | |   / _ \ / _` |/ _ \ | |_| | | | | '_ \| __|
@@ -102,7 +102,7 @@ Please choose your game mode:
 (1) Easy Mode | (2) Difficult Mode.
 ```
 - `check`       Check current game progress. You will see something like this:
-```
+```markdown
 Code Hunt [GAME MENU] > check
    ____      _      __  __  U _____ u       ____    U _____ u   ____   U  ___ u   ____     ____    
 U /"___|uU  /"\  uU|' \/ '|u\| ___"|/    U |  _"\ u \| ___"|/U /"___|   \/"_ \/U |  _"\ u |  _"\   
@@ -126,7 +126,7 @@ Here is your game record of difficult level:
 
 ### Game page
 - Enter game page by choosing `start` and `game level` in the main page, and you will see this:
-```
+```markdown
             _.------.                        .----.__
            /         \_.       ._           /---.__  \
           |  O    O   |\\___  //|          /       `\ |
@@ -171,7 +171,7 @@ We will be waiting for you and the cards!
 
 ### Card Page
 - Enter card page by choosing `card`, and you will see this:
-```
+```markdown
 Code Hunt [GAME MENU] > card
 
       ___           ___           ___          _____    
@@ -198,18 +198,18 @@ back        Back to game menu.
 show card information including the index of the card and if the card is already used.
   - for example: `1. a variable is an abstract storage location paired with an associated symbolic name [ ]`
     `1` indicates that this is the first card you collect and `[ ]` indicates this card is not used yet, you can use it to buy tip.
-  ```
-  Code Hunt [CARD MENU] > list
-  Here is all of your cards!
-  =========================================================
-  Easy-level cards collected:
-  1. a variable is an abstract storage location paired with an associated symbolic name [ ]
-  2. Binary search is an efficient algorithm for finding an item from a sorted list of items. [ ]
-  3. 'Sequence' is the order that commands are executed by a computer [ ]
-   =========================================================
-   Difficult-level cards collected:
-   =========================================================
-  ```
+```markdown
+Code Hunt [CARD MENU] > list
+Here is all of your cards!
+=========================================================
+Easy-level cards collected:
+1. a variable is an abstract storage location paired with an associated symbolic name [ ]
+2. Binary search is an efficient algorithm for finding an item from a sorted list of items. [ ]
+3. 'Sequence' is the order that commands are executed by a computer [ ]
+=========================================================
+Difficult-level cards collected:
+=========================================================
+```
 
 - `delete` Delete an unwanted card in your package by index.
 
@@ -222,7 +222,7 @@ Your card 1 : a loop is a sequence of instructions that is continually repeated 
 ```
 - `find` Search cards by index.
   - Format: `find` and then you will be asked for card index  eg. 
-```
+```markdown
 Code Hunt [CARD MENU] > find
 Enter the ID of card (-1 to exit): 1
 Your card 1 : a loop is a sequence of instructions that is continually repeated until a certain condition is reached.  has been found!
@@ -241,33 +241,36 @@ this username next time.
 
 ## Command Summary
 ### Main page
-Action |  Format | Function
- ------------ | ------------- | -------------
-newgame | newgame | Start a new game
-continue | econtinue | Continue the game stored previously
-help | help | Display a list of available commands
-about | about | Display information about Code Hunt
-exit | exit | Exit Code Hunt
-start | start | Start the game
-check | check | Check current game progress
-card | card | Manage your holding cards
-back | back | Back to main menu
+| Action |  Format | Function   |
+| ------------ | ------------- | ------------- |
+| newgame | newgame | Start a new game  |
+| continue | econtinue | Continue the game stored previously  |
+| help | help | Display a list of available commands  |
+| about | about | Display information about Code Hunt  |
+| exit | exit | Exit Code Hunt  |
+| start | start | Start the game  |
+| check | check | Check current game progress  |
+| card | card | Manage your holding cards  |
+| back | back | Back to main menu  |
 
 ### Intermediate page
-Action |  Format | Function
- ------------ | ------------- | -------------
-start | start | Start the game and then choose your difficulty level.
-check | check | Check current game progress.
-card | card |  Manage your holding cards.
-back | back | Back to main menu
-exit | exit | Exit Code Hunt
+| Action |  Format | Function    |
+| ------------ | ------------- | -------------  |
+| start | start | Start the game and then choose your difficulty level.  |
+| check | check | Check current game progress.  |
+| card | card |  Manage your holding cards.  |
+| back | back | Back to main menu  |
+| exit | exit | Exit Code Hunt  |
 
 ### Card Page
-Action |  Format | Function
- ------------ | ------------- | -------------
-list  | list | List all the cards you gained for different game levels
-delete | delete +  CARD_INDEX | Delete an unwanted card in your package.
-find | find + CARD_INDEX |  Search cards by index.
-help | help | Display a list of available commands.
-back | back | Back to game menu
-exit | exit | Exit Code Hunt
+| Action |  Format | Function  |
+| ------------ | ------------- | -------------  |
+| list  | list | List all the cards you gained for different game levels  |
+| delete | delete +  CARD_INDEX | Delete an unwanted card in your package.  |
+| find | find + CARD_INDEX |  Search cards by index.  |
+| help | help | Display a list of available commands.  |
+| back | back | Back to game menu |
+| exit | exit | Exit Code Hunt |
+
+
+
