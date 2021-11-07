@@ -99,6 +99,7 @@ public class GuessingNumGame extends Game implements Serializable {
                 System.out.println("Please enter a number between 0 to " + MAX_NUM + ":(\n");
                 isCorrectInput = false;
             }
+            assert input < MAX_NUM && input >= 0 : "Please enter a number between 0 to ";
 
             if (isCorrectInput) {
                 this.remainingTries--;
